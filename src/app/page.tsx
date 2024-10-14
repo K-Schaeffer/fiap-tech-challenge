@@ -46,7 +46,7 @@ export default function Home() {
           >
             Read our docs
           </a>
-          <Button variant="outlined">Outlined - MUI Working</Button>
+          <Button variant="contained" color="primary">Outlined - MUI Working</Button>
           <AccessAlarm /> Icon working
         </div>
       </main>
