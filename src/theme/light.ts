@@ -18,13 +18,6 @@ const light = createTheme({
       dark: '#BE311B',
       contrastText: '#FFFFFF',
     },
-    // dark: {
-    //   palette: {
-    //     primary: {
-    //       main: '#47A138',
-    //     }
-    //   }
-    // }
   },
 });
 
