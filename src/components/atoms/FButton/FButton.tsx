@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Typography } from "@mui/material";
+import { Button, ButtonProps, Typography, Box } from "@mui/material";
 
 interface FButtonProps {
   innerText?: string;
@@ -7,11 +7,13 @@ interface FButtonProps {
 
 export default function FButton(props: FButtonProps) {
   return (
-    <Button {...props.options}>
+    <Button {...props.options} style={{textTransform: 'none', padding: 0, borderRadius: 8, maxHeight: 48 }}>
       { props.innerText &&  
-        <Typography variant="body1" fontWeight={700}>
-          {props.innerText}
-        </Typography>
+        <Box padding={2}>
+          <Typography variant="body1" fontWeight={600}>
+            {props.innerText}
+          </Typography>
+        </Box>
       }
     </Button>
   );

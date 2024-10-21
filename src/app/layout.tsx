@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "By FIAP Tech Challenge",
 };
 
-const font = Inter({
+export const font = Inter({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
