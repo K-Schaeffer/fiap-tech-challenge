@@ -1,0 +1,86 @@
+{
+  "account": {
+    "name": "Joana",
+    "balance": "2500",
+    "currency": "R$",
+    "closestTransactions": [
+      { 
+        "id": "1", 
+        "type": "transfer",
+        "date": "25-10-2024",
+        "amount": "200",
+        "currency": "R$"
+      },
+      { 
+        "id": "2", 
+        "type": "deposit",
+        "date": "11-10-2024",
+        "amount": "250",
+        "currency": "R$"
+      },
+      { 
+        "id": "3", 
+        "type": "deposit",
+        "date": "15-10-2024",
+        "amount": "500",
+        "currency": "R$"
+      },
+      { 
+        "id": "4", 
+        "type": "payment",
+        "date": "19-10-2024",
+        "amount": "100",
+        "currency": "R$"
+      },
+      { 
+        "id": "5", 
+        "type": "transfer",
+        "date": "12-10-2024",
+        "amount": "200",
+        "currency": "R$"
+      },
+      { 
+        "id": "6", 
+        "type": "withdrawal",
+        "date": "16-10-2024",
+        "amount": "200",
+        "currency": "R$"
+      },
+      { 
+        "id": "7", 
+        "type": "deposit",
+        "date": "03-10-2024",
+        "amount": "1250",
+        "currency": "R$"
+      },
+      { 
+        "id": "8", 
+        "type": "transfer",
+        "date": "21-10-2024",
+        "amount": "600",
+        "currency": "R$"
+      },
+      { 
+        "id": "9", 
+        "type": "transfer",
+        "date": "13-10-2024",
+        "amount": "250",
+        "currency": "R$"
+      },
+      { 
+        "id": "10", 
+        "type": "transfer",
+        "date": "14-10-2024",
+        "amount": "20",
+        "currency": "R$"
+      }
+    ]
+  },
+  "transaction": {
+     "id": "11", 
+     "type": "transfer",
+     "date": "01-11-2024",
+     "amount": "100",
+     "currency": "R$"
+  }
+}
