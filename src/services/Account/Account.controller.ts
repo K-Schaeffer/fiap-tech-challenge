@@ -1,4 +1,4 @@
-import { Account } from './Account.model';
+import { Account, AccountData } from './Account.model';
 
 export const getAccountInfo = async () => {
   const res = await fetch('http://localhost:3004/account', {
@@ -8,7 +8,7 @@ export const getAccountInfo = async () => {
     },
   })
  
-  const data: Account = await res.json();
+  const data: AccountData = await res.json();
 
   return new Account(data);
 }
