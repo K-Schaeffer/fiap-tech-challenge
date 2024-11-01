@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
 import FButton from './FButton';
 
@@ -8,6 +9,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  args: { onClick: fn() },
   tags: ['autodocs'],
 } satisfies Meta<typeof FButton>;
 
