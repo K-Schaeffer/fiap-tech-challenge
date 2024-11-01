@@ -1,6 +1,15 @@
 import { ThemeOptions } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 
+declare module "@mui/material/styles" {
+  interface Palette {
+    tertiary?: Palette["primary"];
+  }
+  interface PaletteOptions {
+    tertiary?: PaletteOptions["primary"];
+  }
+}
+
 const defaultTheme: ThemeOptions = {
   typography: {
     fontFamily: 'var(--font-family)',
@@ -36,6 +45,12 @@ export const light = createTheme({
       dark: '#BE311B',
       contrastText: '#FFFFFF',
     },
+    tertiary: {
+      main: '#47A138',
+      light: '#C4E7C5',
+      dark: '#2B7E2E',
+      contrastText: '#FFFFFF',
+    }
   },
 });
 
