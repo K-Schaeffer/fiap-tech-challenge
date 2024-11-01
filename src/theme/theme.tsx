@@ -4,9 +4,11 @@ import { createTheme } from '@mui/material/styles';
 declare module "@mui/material/styles" {
   interface Palette {
     tertiary?: Palette["primary"];
+    textLight?: Palette["primary"];
   }
   interface PaletteOptions {
     tertiary?: PaletteOptions["primary"];
+    textLight?: PaletteOptions["primary"];
   }
 }
 
@@ -47,9 +49,9 @@ export const light = createTheme({
     },
     tertiary: {
       main: '#47A138',
-      light: '#C4E7C5',
-      dark: '#2B7E2E',
-      contrastText: '#FFFFFF',
+    },
+    textLight: {
+      main: '#8B8B8B',
     }
   },
 });
