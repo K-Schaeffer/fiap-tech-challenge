@@ -6,12 +6,14 @@ interface FTransactionItemProps {
   date: string;
   type: string;
   value: number;
+  currency: string;
 }
 
 export default function FTransactionItem({
   date,
   type,
   value,
+  currency,
 }: FTransactionItemProps) {
   return (
     <Grid2 container>
@@ -21,7 +23,7 @@ export default function FTransactionItem({
         </Typography>
         <Typography variant="body1">{type}</Typography>
         <Typography variant="body1" fontWeight={600}>
-          {formatCurrency(value, "R$")}
+          {formatCurrency(value, currency)}
         </Typography>
       </Grid2>
       <Grid2
