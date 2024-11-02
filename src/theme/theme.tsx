@@ -15,7 +15,7 @@ declare module "@mui/material/styles" {
 
 const defaultTheme: ThemeOptions = {
   typography: {
-    fontFamily: "var(--font-family)",
+    fontFamily: "Inter",
     h1: {
       fontSize: "1.562rem",
     },
