@@ -9,14 +9,14 @@ O protótipo das telas desenvolvidas pode ser encontrado no [Figma](https://www.
 
 ## Arquitetura do projeto
 
-![Archictecture preview](./github/architecture.png)
+![Archictecture preview](.github/architecture.png)
 
 ### Styleguide
 
 Para o desenvolvimento do projeto nós seguimos o style guide proposto, porém com adaptações para seguir o [Material Design](https://m3.material.io/) e outras práticas que o grupo achou pertinente mudar.
 
-![Style guide preview](./github/styleguide.png)
-![Color pallete preview](./github/pallete.png)
+![Style guide preview](.github/styleguide.png)
+![Color pallete preview](.github/pallete.png)
 
 ### Demo
 
