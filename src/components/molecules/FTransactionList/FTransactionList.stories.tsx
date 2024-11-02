@@ -19,21 +19,25 @@ const transactionItems = [
     date: "2024-11-02",
     type: "Depósito",
     value: 2000,
+    currency: "R$",
   },
   {
     date: "2024-11-01",
     type: "Depósito",
     value: 69.99,
+    currency: "$",
   },
   {
     date: "2024-11-01",
     type: "Depósito",
     value: 100,
+    currency: "$",
   },
   {
     date: "2024-10-31",
     type: "Transferência",
     value: -500,
+    currency: "R$",
   },
 ];
 
