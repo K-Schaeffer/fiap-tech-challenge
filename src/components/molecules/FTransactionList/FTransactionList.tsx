@@ -6,6 +6,7 @@ interface FTransactionListProps {
     date: string;
     type: string;
     value: number;
+    currency: string;
   }[];
 }
 
@@ -14,12 +15,13 @@ export default function FTransactionList({
 }: FTransactionListProps) {
   return (
     <List>
-      {transactionItems.map(({ date, type, value }, index) => (
+      {transactionItems.map(({ date, type, value, currency }, index) => (
         <FTransactionItem
           key={`transaction-item-${index}`}
           date={date}
           type={type}
           value={value}
+          currency={currency}
         />
       ))}
     </List>
