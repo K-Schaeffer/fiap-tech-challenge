@@ -7,6 +7,9 @@ import styles from "./page.module.css";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
 import Input from "@/components/atoms/Input/FInput";
+import FCard from "@/components/organisms/FCard/FCard";
+import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
+import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 
 export default async function Dashboard() {
   const account: Account = await getAccountInfo();
@@ -40,6 +43,34 @@ export default async function Dashboard() {
           value={100}
           currency="USD"
         />
+        <FMenuDropdown
+          menuItems={[
+            {
+              label: "Início",
+              path: "/",
+              current: true,
+            },
+            {
+              label: "Dashboard",
+              path: "/dashboard",
+            },
+          ]}
+        />
+        <FCard>
+          <FMenuList
+            menuItems={[
+              {
+                label: "Início",
+                path: "/",
+                current: true,
+              },
+              {
+                label: "Dashboard",
+                path: "/dashboard",
+              },
+            ]}
+          />
+        </FCard>
         <Input placeholder="00,00" textposition="center" />
       </main>
       <aside>
