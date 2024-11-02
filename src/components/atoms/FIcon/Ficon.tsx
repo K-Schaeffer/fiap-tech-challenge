@@ -1,27 +1,33 @@
-import { Button, ButtonProps, Box } from "@mui/material";
-import { icons, IconName } from "./icons";
+import { IconButton } from '@mui/material';
+import {
+  AccountCircleTwoTone,
+  DeleteTwoTone,
+  EditTwoTone,
+  VisibilityTwoTone,
+  MenuTwoTone
+} from '@mui/icons-material';
 
-interface IconButtonProps {
+const Icons = {
+  avatar: AccountCircleTwoTone,
+  delete: DeleteTwoTone,
+  edit: EditTwoTone,
+  eye: VisibilityTwoTone,
+  menu: MenuTwoTone
+};
+
+export type IconName = keyof typeof Icons;
+
+interface FIconProps {
   icon: IconName;
-  options?: ButtonProps;
   onClick?: () => void;
 }
 
-export default function FIcon(props: IconButtonProps) {
-  const { icon, options} = props;
+export default function FIcon({ icon, onClick }: FIconProps) {
+  const IconComponent = Icons[icon];
 
   return (
-    <Button 
-      {...options} 
-      style={{ display: 'inline-flex', alignItems: 'center'}}
-      onClick={props.onClick}
-    >
-      <Box component="span" style={{ display: 'inline-block' }}>
-        <img 
-          src={icons[icon]}
-          style={{ display: 'block' }} 
-        />
-      </Box>
-    </Button>
+    <IconButton onClick={onClick}>
+      {IconComponent ? <IconComponent /> : null}
+    </IconButton>
   );
 }

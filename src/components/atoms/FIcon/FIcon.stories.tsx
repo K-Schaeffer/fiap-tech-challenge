@@ -32,14 +32,15 @@ export const Edit: Story = {
   }
 };
 
+export const Eye: Story = {
+  args: {
+    icon: 'eye'
+  }
+};
+
 export const Menu: Story = {
   args: {
     icon: 'menu'
   }
 };
-
-export const Olho: Story = {
-    args: {
-      icon: 'olho'
-    }
-  };
+ 

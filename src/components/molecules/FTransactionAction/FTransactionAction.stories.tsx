@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CardAction from './CardAction';
+import CardAction from './FTransactionAction';
 
 const meta = {
   title: 'Atoms/Icon',
@@ -14,9 +14,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Action: Story = {
-  args: {
-    icon1: 'edit',
-    icon2: 'delete'
-  }
-};
+export const Action: Story = {};
