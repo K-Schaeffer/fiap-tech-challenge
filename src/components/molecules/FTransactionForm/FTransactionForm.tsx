@@ -10,7 +10,7 @@ export default function FTransactionForm() {
       <Stack
         spacing={{ md: 4, xs: 3 }}
         sx={{
-          width: { md: "80%", xs: "100%" },
+          width: { md: "75%", xs: "100%" },
         }}
       >
         <FSelectInput />
