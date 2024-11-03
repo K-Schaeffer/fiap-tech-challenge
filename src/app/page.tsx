@@ -2,9 +2,11 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
 
 import FButton from "@/components/atoms/FButton/FButton";
-import Input from "@/components/atoms/FInput/FInput";
+import FInput from "@/components/atoms/FInput/FInput";
 import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
+import FHomeUserButtons from "@/components/molecules/FHomeUserButtons/FHomeUserButtons";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
+import FFooter from "@/components/organisms/FFooter/FFooter";
 
 export default function Home() {
   return (
@@ -25,14 +27,10 @@ export default function Home() {
           innerText="Oi outlined"
         />
         <SelectInput />
-        <Input
-          placeholder="00,00"
-          textposition="center"
-          borderColor="#004D61"
-          maxWidth="200px"
-        />
+        <FInput textposition="center" maxWidth="200px" />
 
         <FAdvantageContainer />
+        <FHomeUserButtons />
       </main>
       <aside>
         <Typography variant="body1" color="primary">
@@ -42,6 +40,9 @@ export default function Home() {
           Bar
         </Typography>
       </aside>
+      <footer>
+        <FFooter />
+      </footer>
     </Grid2>
   );
 }
