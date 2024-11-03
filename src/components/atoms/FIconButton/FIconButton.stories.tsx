@@ -1,32 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import FIcon from './Ficon';
+import FIconButton from './FIconButton';
 
 const meta = {
-  title: 'Atoms/Icon',
-  component: FIcon,
+  title: 'Atoms/IconButton',
+  component: FIconButton,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof FIcon>;
+} satisfies Meta<typeof FIconButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Avatar: Story = {
+export const Plain: Story = {
   args: {
-    icon: 'avatar'
+    variant: 'plain',
+    children: 'VisibilityTwoTone'
   }
 };
 
-export const Delete: Story = {
+export const Fancy: Story = {
   args: {
-    icon: 'delete'
+    variant: 'fancy',
+    children: 'EditTwoTone'
   }
 };
 
-export const Edit: Story = {
+/*export const Edit: Story = {
   args: {
     icon: 'edit'
   }
@@ -42,5 +44,5 @@ export const Menu: Story = {
   args: {
     icon: 'menu'
   }
-};
+};*/
  

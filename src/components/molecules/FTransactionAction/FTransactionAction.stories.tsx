@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CardAction from './FTransactionAction';
+import FTransactionAction from './FTransactionAction';
 
 const meta = {
-  title: 'Atoms/Icon',
-  component: CardAction,
+  title: 'Molecules/TransactionAction',
+  component: FTransactionAction,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof CardAction>;
+} satisfies Meta<typeof FTransactionAction>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

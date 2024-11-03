@@ -1,14 +1,16 @@
 import { Stack } from "@mui/material";
-import FIcon from '../../atoms/FIcon/Ficon';
-import React from "react";
+import FIconButton from '../../atoms/FIconButton/FIconButton';
+import { DeleteTwoTone, EditTwoTone } from "@mui/icons-material";
 
-const FTransactionAction: React.FC = () => {
+export default function FTransactionAction() {
     return (
       <Stack direction="row" spacing={1.875}>
-        <FIcon icon={"edit"} />
-        <FIcon icon="delete" />
+        <FIconButton variant="fancy">
+          <EditTwoTone />
+        </FIconButton>
+        <FIconButton variant="fancy">
+          <DeleteTwoTone />
+        </FIconButton>
       </Stack>
     );
   };
-
-  export default FTransactionAction;
