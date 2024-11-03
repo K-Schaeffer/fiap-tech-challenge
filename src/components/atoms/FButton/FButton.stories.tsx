@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import FButton from './FButton';
+import FButton from "./FButton";
 
 const meta = {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: FButton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
   args: { onClick: fn() },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof FButton>;
 
 export default meta;
@@ -18,20 +18,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    innerText: 'Hello world!',
+    innerText: "Hello world!",
     options: {
-      variant: 'contained',
-      color: 'primary'
+      variant: "contained",
+      color: "primary",
     },
   },
 };
 
 export const Secondary: Story = {
   args: {
-    innerText: 'Hello world!',
+    innerText: "Hello world!",
     options: {
-      variant: 'contained',
-      color: 'secondary'
+      variant: "contained",
+      color: "secondary",
     },
   },
 };
@@ -41,10 +41,10 @@ export const PrimaryDark: Story = {
     isDark: true,
   },
   args: {
-    innerText: 'Hello world!',
+    innerText: "Hello world!",
     options: {
-      variant: 'contained',
-      color: 'primary'
+      variant: "contained",
+      color: "primary",
     },
   },
 };
@@ -54,12 +54,10 @@ export const OutlinedDark: Story = {
     isDark: true,
   },
   args: {
-    innerText: 'Hello world!',
+    innerText: "Hello world!",
     options: {
-      variant: 'outlined',
-      color: 'primary'
+      variant: "outlined",
+      color: "primary",
     },
   },
 };
-
-

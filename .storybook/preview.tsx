@@ -1,10 +1,9 @@
-
-import React from 'react';
+import React from "react";
 
 import type { Preview } from "@storybook/react";
-import { ThemeProvider } from '@mui/material/styles';
-import { light, dark } from '../src/theme/theme';
-import { font } from '../src/app/layout';
+import { ThemeProvider } from "@mui/material/styles";
+import { light, dark } from "../src/theme/theme";
+import { font } from "../src/app/layout";
 
 const preview: Preview = {
   parameters: {
@@ -23,7 +22,7 @@ const preview: Preview = {
         </ThemeProvider>
       </div>
     ),
-  ]
+  ],
 };
 
 export default preview;
