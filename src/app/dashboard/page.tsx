@@ -73,7 +73,7 @@ export default async function Dashboard() {
             ]}
           />
         </FCard>
-        <FInput placeholder="00,00" textposition="center" maxWidth="200px" />
+        <FInput textposition="center" maxWidth="200px" />
         <FFormTransaction />
       </main>
       <aside>
