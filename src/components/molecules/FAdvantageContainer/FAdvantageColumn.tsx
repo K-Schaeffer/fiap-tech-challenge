@@ -1,13 +1,13 @@
-import Image from 'next/image'
 import { Grid2, Typography } from "@mui/material";
+import Image from 'next/image';
 
-interface CardsProps {
+interface AdvantageColumnProps {
     imgPathName: string,
     title: string,
     description: string
 }
 
-export default function FCard({ imgPathName, title, description }: CardsProps) {
+export default function FAdvantageColumn({ imgPathName, title, description }: AdvantageColumnProps) {
     return (
         <Grid2 container size={{ xs: 12, sm: 6, md: 3 }} component="div" alignItems="center" direction="column">
             <Image src={`/assets/${imgPathName}.svg`} alt={`${imgPathName}`} width="64" height="64" />

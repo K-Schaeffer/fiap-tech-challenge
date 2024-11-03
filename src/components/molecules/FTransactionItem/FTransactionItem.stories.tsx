@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import FTransactionItem from './FTransactionItem';
+import FTransactionItem from "./FTransactionItem";
 
 const meta = {
-  title: 'Molecules/TransactionItem',
+  title: "Molecules/TransactionItem",
   component: FTransactionItem,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionItem>;
 
 export default meta;
@@ -16,8 +16,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    date: '2024-10-31',
-    type: 'Depósito',
-    value: 100
+    date: "2024-10-31",
+    type: "Depósito",
+    value: 100,
+    currency: "R$",
   },
 };
