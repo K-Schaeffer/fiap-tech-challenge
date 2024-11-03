@@ -7,6 +7,7 @@ const meta = {
   component: FMenuDropdown,
   parameters: {
     layout: "centered",
+    isDark: false,
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof FMenuDropdown>;
@@ -27,6 +28,15 @@ const menuItems = [
 ];
 
 export const Default: Story = {
+  args: {
+    menuItems,
+  },
+};
+
+export const Dark: Story = {
+  parameters: {
+    isDark: true,
+  },
   args: {
     menuItems,
   },
