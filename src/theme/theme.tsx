@@ -5,17 +5,19 @@ declare module "@mui/material/styles" {
     tertiary?: Palette["primary"];
     textLight?: Palette["primary"];
     bgCard?: Palette["primary"];
+    bgHeader?: Palette["primary"];
   }
   interface PaletteOptions {
     tertiary?: PaletteOptions["primary"];
     textLight?: PaletteOptions["primary"];
     bgCard?: PaletteOptions["primary"];
+    bgHeader?: PaletteOptions["primary"];
   }
 }
 
 const defaultTheme: ThemeOptions = {
   typography: {
-    fontFamily: "var(--font-family)",
+    fontFamily: "Inter",
     h1: {
       fontSize: "1.562rem",
     },
@@ -60,6 +62,9 @@ export const light = createTheme({
       dark: "#004D61",
       contrastText: "#FFFFFF",
     },
+    bgHeader: {
+      main: "#004D61",
+    },
   },
 });
 
@@ -75,6 +80,9 @@ export const dark = createTheme({
     secondary: {
       main: "#FFFFFF",
       contrastText: "#000000",
+    },
+    bgHeader: {
+      main: "#000000",
     },
   },
 });
