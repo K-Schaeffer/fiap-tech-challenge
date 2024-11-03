@@ -8,9 +8,9 @@ import styles from "./page.module.css";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
 import FInput from "@/components/atoms/FInput/FInput";
 import FCard from "@/components/organisms/FCard/FCard";
-import FFormTransaction from "@/components/organisms/FFormTransaction/FFormTransaction";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
+import FFormTransaction from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 
 export default async function Dashboard() {
   const account: Account = await getAccountInfo();

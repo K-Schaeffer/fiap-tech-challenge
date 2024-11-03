@@ -2,10 +2,7 @@ import { Box, TextField, TextFieldProps } from "@mui/material";
 
 interface InputProps {
   options?: TextFieldProps;
-  placeholder: string;
   textposition: "left" | "center";
-  borderColor?: string;
-  labelInput?: string;
   maxWidth?: string;
   onChange?: () => void;
 }
