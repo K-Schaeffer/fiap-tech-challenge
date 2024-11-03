@@ -7,12 +7,14 @@ interface InputProps {
   borderColor?: string;
   labelInput?: string;
   maxWidth?: string;
+  onChange?: () => void;
 }
 
 export default function FInput({
   options,
   textposition,
   maxWidth,
+  onChange,
 }: InputProps) {
   return (
     <Box
@@ -70,6 +72,7 @@ export default function FInput({
             },
           },
         }}
+        onChange={onChange}
       />
     </Box>
   );

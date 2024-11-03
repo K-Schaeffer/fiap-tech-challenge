@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import Input from "./FInput";
 
 const meta: Meta<typeof Input> = {
@@ -21,6 +22,7 @@ const meta: Meta<typeof Input> = {
       description: "Largura do campo",
     },
   },
+  args: { onChange: fn() },
   parameters: {
     layout: "padded",
   },

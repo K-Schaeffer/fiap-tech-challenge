@@ -5,25 +5,20 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  SelectChangeEvent,
   SelectProps,
 } from "@mui/material";
-import React from "react";
 
 interface SelectInputProps {
   formControlOptions?: FormControlProps;
-  selectOptions?: SelectProps<string>;
+  options?: SelectProps<string>;
+  onChange?: () => {};
 }
 
 export default function SelectInput({
   formControlOptions,
-  selectOptions,
+  options,
+  onChange,
 }: SelectInputProps) {
-  const [transactionType, setTransactionType] = React.useState<string>("");
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setTransactionType(event.target.value);
-  };
-
   return (
     <FormControl
       fullWidth
@@ -39,15 +34,14 @@ export default function SelectInput({
       <Select
         labelId="transaction-type-select-label"
         id="transaction-type-select"
-        value={transactionType}
         label="Selecione o tipo de transação"
-        onChange={handleChange}
-        {...selectOptions}
+        onChange={onChange}
+        {...options}
         style={{
           minHeight: 40,
           borderRadius: 8,
           backgroundColor: "#FFFFFF",
-          ...selectOptions?.style,
+          ...options?.style,
         }}
         sx={{
           color: "var(--mui-palette-primary-main)",
@@ -63,7 +57,7 @@ export default function SelectInput({
           ".MuiSvgIcon-root": {
             color: "var(--mui-palette-primary-main)",
           },
-          ...selectOptions?.sx,
+          ...options?.sx,
         }}
       >
         <MenuItem value="cambio">Câmbio de Moeda</MenuItem>

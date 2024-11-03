@@ -1,14 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import FTransactionAction from './FTransactionAction';
+import FTransactionAction from "./FTransactionAction";
 
 const meta = {
-  title: 'Molecules/TransactionAction',
+  title: "Molecules/TransactionAction",
   component: FTransactionAction,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  args: { onClick: fn() },
+  tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionAction>;
 
 export default meta;

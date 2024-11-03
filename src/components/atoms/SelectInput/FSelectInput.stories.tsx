@@ -1,6 +1,6 @@
-// src/components/stories/SelectInput.stories.tsx
 import { MenuItem } from "@mui/material";
 import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 import SelectInput from "./FSelectInput";
 
 const meta: Meta<typeof SelectInput> = {
@@ -13,13 +13,14 @@ const meta: Meta<typeof SelectInput> = {
       },
       description: "Opções para o FormControl",
     },
-    selectOptions: {
+    options: {
       control: {
         type: "object",
       },
       description: "Opções para o Select",
     },
   },
+  args: { onChange: fn() },
   tags: ["autodocs"],
 };
 
@@ -31,7 +32,7 @@ export const Default: Story = {
     formControlOptions: {
       style: { color: "#004D61" },
     },
-    selectOptions: {
+    options: {
       children: [
         <MenuItem key="cambio" value="cambio">
           Câmbio de Moeda
