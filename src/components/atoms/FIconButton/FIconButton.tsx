@@ -1,8 +1,8 @@
-import { IconButton, IconButtonProps, Box } from "@mui/material";
+import { Box, IconButton, IconButtonProps } from "@mui/material";
 import React from "react";
 
 interface FIconButtonProps {
-  variant: 'plain' | 'fancy';
+  variant: "plain" | "fancy";
   options?: IconButtonProps;
   onClick?: () => void;
   children: React.ReactNode;
@@ -10,25 +10,26 @@ interface FIconButtonProps {
 
 export default function FIconButton(props: FIconButtonProps) {
   return (
-    <IconButton 
-    {...props.options}
-    style={{ padding: 0 }}
-    onClick={props.onClick}
+    <IconButton
+      {...props.options}
+      style={{ padding: 0 }}
+      onClick={props.onClick}
     >
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          ...(props.variant === 'fancy' && {
-            backgroundColor: 'var(--mui-palette-primary-main)',
-            color: 'var(--mui-palette-primary-contrastText)',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          ...(props.variant === "fancy" && {
+            backgroundColor: "var(--mui-palette-primary-main)",
+            color: "var(--mui-palette-primary-contrastText)",
             width: 40,
             height: 40,
-            borderRadius: '50%',
+            borderRadius: "50%",
           }),
-        }}>
-        { props.children }
+        }}
+      >
+        {props.children}
       </Box>
     </IconButton>
   );

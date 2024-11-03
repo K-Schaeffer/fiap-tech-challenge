@@ -20,6 +20,7 @@ const meta: Meta<typeof SelectInput> = {
       description: "Opções para o Select",
     },
   },
+  tags: ["autodocs"],
 };
 
 export default meta;
@@ -43,51 +44,6 @@ export const Default: Story = {
           value="emprestimo-financiamento"
         >
           Empréstimo e Financiamento
-        </MenuItem>,
-      ],
-    },
-  },
-};
-
-export const CustomColor: Story = {
-  args: {
-    formControlOptions: {
-      style: { color: "#FF5031" },
-    },
-    selectOptions: {
-      children: [
-        <MenuItem key="cambio" value="cambio">
-          Câmbio de Moeda
-        </MenuItem>,
-        <MenuItem key="doc-ted" value="doc-ted">
-          DOC/TED
-        </MenuItem>,
-        <MenuItem
-          key="emprestimo-financiamento"
-          value="emprestimo-financiamento"
-        >
-          Empréstimo e Financiamento
-        </MenuItem>,
-      ],
-    },
-  },
-};
-
-export const WithDifferentOptions: Story = {
-  args: {
-    formControlOptions: {
-      style: { color: "#004D61" },
-    },
-    selectOptions: {
-      children: [
-        <MenuItem key="option1" value="option1">
-          Opção 1
-        </MenuItem>,
-        <MenuItem key="option2" value="option2">
-          Opção 2
-        </MenuItem>,
-        <MenuItem key="option3" value="option3">
-          Opção 3
         </MenuItem>,
       ],
     },

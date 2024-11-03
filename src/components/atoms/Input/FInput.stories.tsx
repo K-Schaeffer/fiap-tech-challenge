@@ -16,10 +16,6 @@ const meta: Meta<typeof Input> = {
       },
       description: "Alinhamento do texto dentro do campo",
     },
-    borderColor: {
-      control: "color",
-      description: "Cor da borda e do placeholder",
-    },
     maxWidth: {
       control: "text",
       description: "Largura do campo",
@@ -41,7 +37,6 @@ export const NumberInput: Story = {
       placeholder: "00,00",
     },
     textposition: "center",
-    borderColor: "#000000",
     maxWidth: "400px",
   },
 };

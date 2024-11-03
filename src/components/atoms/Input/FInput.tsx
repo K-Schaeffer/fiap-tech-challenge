@@ -12,11 +12,8 @@ interface InputProps {
 export default function FInput({
   options,
   textposition,
-  borderColor,
   maxWidth,
 }: InputProps) {
-  const isHexColor = borderColor! ?? "#004D61";
-
   return (
     <Box
       component="form"
@@ -40,34 +37,34 @@ export default function FInput({
               "& input": {
                 textAlign: textposition,
                 backgroundColor: "#FFFFFF",
-                color: isHexColor,
-                borderColor: isHexColor,
+                color: "var(--mui-palette-primary-main)",
+                borderColor: "var(--mui-palette-primary-main)",
                 borderRadius: "8px",
                 borderWidth: 1,
               },
               "& .MuiOutlinedInput-notchedOutline": {
-                borderColor: isHexColor,
+                borderColor: "var(--mui-palette-primary-main)",
                 borderRadius: "8px",
                 borderWidth: 2,
               },
               "& input::placeholder": {
-                color: isHexColor,
+                color: "var(--mui-palette-primary-main)",
               },
               "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: isHexColor,
+                borderColor: "var(--mui-palette-primary-main)",
                 borderWidth: 3,
               },
               "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: isHexColor,
+                borderColor: "var(--mui-palette-primary-main)",
                 borderWidth: 3,
               },
               "&.Mui-focused:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: isHexColor,
+                borderColor: "var(--mui-palette-primary-main)",
                 borderWidth: 3,
               },
               "&.Mui-focused:not(:hover):not(:focused) .MuiOutlinedInput-notchedOutline":
                 {
-                  borderColor: isHexColor,
+                  borderColor: "var(--mui-palette-primary-main)",
                   borderWidth: 3,
                 },
             },
