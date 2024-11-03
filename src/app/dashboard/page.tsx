@@ -8,6 +8,7 @@ import styles from "./page.module.css";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
 import FInput from "@/components/atoms/Input/FInput";
 import FCard from "@/components/organisms/FCard/FCard";
+import FFormTransaction from "@/components/organisms/FFormTransaction/FFormTransaction";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 
@@ -72,6 +73,7 @@ export default async function Dashboard() {
           />
         </FCard>
         <FInput placeholder="00,00" textposition="center" maxWidth="200px" />
+        <FFormTransaction />
       </main>
       <aside>
         <Typography variant="body1" color="primary">
