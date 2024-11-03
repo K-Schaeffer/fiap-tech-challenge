@@ -5,6 +5,7 @@ import FButton from "@/components/atoms/FButton/FButton";
 import Input from "@/components/atoms/FInput/FInput";
 import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
+import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 
 export default function Home() {
   return (
@@ -31,7 +32,19 @@ export default function Home() {
           borderColor="#004D61"
           maxWidth="200px"
         />
-
+        <FMenuDropdown
+          menuItems={[
+            {
+              label: "Início",
+              path: "/",
+              current: true,
+            },
+            {
+              label: "Dashboard",
+              path: "/dashboard",
+            },
+          ]}
+        />
         <FAdvantageContainer />
       </main>
       <aside>
