@@ -23,7 +23,9 @@ export default function FMenuList({ menuItems }: FMenuListProps) {
             <Link
               href={path}
               style={{
-                color: current ? "var(--mui-palette-tertiary-main)" : "#000",
+                color: current
+                  ? "var(--mui-palette-primary-main)"
+                  : "currentColor",
                 fontWeight: current ? 700 : 400,
                 textDecoration: "none",
               }}
