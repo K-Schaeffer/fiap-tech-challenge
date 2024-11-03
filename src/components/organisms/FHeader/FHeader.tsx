@@ -14,6 +14,7 @@ export default function Header({ children }: HeaderProps) {
       backgroundColor: "var(--mui-palette-bgHeader-main)",
       color: "var(--mui-palette-primary-contrastText)",
       height: "96px",
+      width: "100%",
     },
   };
 
