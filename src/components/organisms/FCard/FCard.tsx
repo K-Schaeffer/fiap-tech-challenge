@@ -1,4 +1,4 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, CardProps, Typography } from "@mui/material";
 
 type FCardVariant = "light" | "dark";
 
@@ -6,6 +6,7 @@ interface FCardProps {
   title?: string;
   children: React.ReactNode;
   variant?: FCardVariant;
+  options?: CardProps;
 }
 
 const bgColor = {
@@ -18,15 +19,22 @@ const textColor = {
   dark: "var(--mui-palette-bgCard-contrastText)",
 };
 
-export default function FCard({ title, children, variant }: FCardProps) {
+export default function FCard({
+  title,
+  children,
+  variant,
+  options,
+}: FCardProps) {
   return (
     <Card
+      {...options}
       elevation={0}
       sx={{
+        ...options?.sx,
         backgroundColor: variant
           ? bgColor[variant]
           : "var(--mui-palette-bgCard-main)",
-        padding: "24px",
+        padding: "32px",
         borderRadius: "8px",
       }}
     >
@@ -35,7 +43,7 @@ export default function FCard({ title, children, variant }: FCardProps) {
           variant="h1"
           fontWeight={600}
           color={variant ? textColor[variant] : "currentColor"}
-          sx={{ marginBottom: "24px" }}
+          sx={{ marginBottom: "32px" }}
         >
           {title}
         </Typography>
