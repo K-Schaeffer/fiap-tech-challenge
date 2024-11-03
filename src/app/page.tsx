@@ -2,8 +2,8 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
 
 import FButton from "@/components/atoms/FButton/FButton";
-import Input from "@/components/atoms/Input/FInput";
-import SelectInput from "@/components/atoms/SelectInput/FSelectInput";
+import Input from "@/components/atoms/FInput/FInput";
+import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
 
 export default function Home() {

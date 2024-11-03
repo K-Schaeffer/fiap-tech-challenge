@@ -1,6 +1,6 @@
 import FButton from "@/components/atoms/FButton/FButton";
-import Input from "@/components/atoms/Input/FInput";
-import SelectInput from "@/components/atoms/SelectInput/FSelectInput";
+import Input from "@/components/atoms/FInput/FInput";
+import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
 import { Box, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 

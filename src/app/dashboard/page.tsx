@@ -6,7 +6,7 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
-import FInput from "@/components/atoms/Input/FInput";
+import FInput from "@/components/atoms/FInput/FInput";
 import FCard from "@/components/organisms/FCard/FCard";
 import FFormTransaction from "@/components/organisms/FFormTransaction/FFormTransaction";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
