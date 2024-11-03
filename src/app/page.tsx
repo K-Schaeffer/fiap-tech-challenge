@@ -1,9 +1,10 @@
 import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
-import FButton from "@/components/atoms/FButton/FButton";
 
+import FButton from "@/components/atoms/FButton/FButton";
 import SelectInput from "@/components/atoms/SelectInput/FSelectInput";
 import Input from "@/components/atoms/Input/FInput";
+import FAdvantageContainer from "@/components/molecules/FAdvantageContainer/FAdvantageContainer";
 
 
 
@@ -16,7 +17,9 @@ export default function Home() {
         <FButton options={{ variant: 'contained', color: 'primary' }} innerText="Oi primario" />
         <FButton options={{ variant: 'outlined', color: 'primary' }} innerText="Oi outlined" />
         <SelectInput />
-        <Input placeholder="00,00" textposition="center" borderColor="#004D61" />
+        <Input placeholder="00,00" textposition="center" borderColor="#004D61" maxWidth="200px"/>
+
+        <FAdvantageContainer/>
       </main>
       <aside>
         <Typography variant="body1" color="primary">Foo</Typography>

@@ -6,7 +6,7 @@ import { Account } from "@/services/Account/Account.model";
 import FTransactionItem from "@/components/molecules/FTransactionItem/FTransactionItem";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
-import Input from "@/components/atoms/Input/FInput";
+import FInput from "@/components/atoms/Input/FInput";
 
 export default async function Dashboard() {
   const account: Account = await getAccountInfo();
@@ -24,7 +24,7 @@ export default async function Dashboard() {
           <FButton options={{ variant: 'contained', color: 'primary'}} innerText="Oi primario"/>
           <FButton options={{ variant: 'contained', color: 'secondary'}} innerText="Oi secondario"/>
           <FTransactionItem date="2021-10-10" type="Foo" value={100}/>
-          <Input placeholder="00,00" textposition="center" />
+          <FInput placeholder="00,00" textposition="center" maxWidth="200px" />
         </main>
         <aside>
           <Typography variant="body1" color="primary">Foo</Typography>

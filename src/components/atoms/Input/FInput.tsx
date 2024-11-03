@@ -5,16 +5,17 @@ interface InputProps {
   placeholder: string;
   textposition: "left" | "center";
   borderColor?: string;
+  maxWidth: string
 }
 
-export default function Input({ placeholder, textposition, borderColor }: InputProps) {
+export default function Input({ placeholder, textposition, borderColor, maxWidth }: InputProps) {
   const isHexColor = borderColor! ?? "#004D61";
 
   return (
     <Box
       component="form"
       sx={{
-        '& > :not(style)': { width: '100%', margin: "auto" },
+        '& > :not(style)': { width: '100%', maxWidth: maxWidth, margin: "auto" },
       }}
       noValidate
       autoComplete="off"
