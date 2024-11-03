@@ -6,7 +6,7 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
-import Input from "@/components/atoms/Input/FInput";
+import FInput from "@/components/atoms/Input/FInput";
 import FCard from "@/components/organisms/FCard/FCard";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
@@ -71,7 +71,7 @@ export default async function Dashboard() {
             ]}
           />
         </FCard>
-        <Input placeholder="00,00" textposition="center" />
+        <FInput placeholder="00,00" textposition="center" maxWidth="200px" />
       </main>
       <aside>
         <Typography variant="body1" color="primary">

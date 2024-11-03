@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Input from './FInput';
 
 const meta: Meta<typeof Input> = {
-  title: 'Components/Input',
+  title: 'Atoms/Input',
   component: Input,
   argTypes: {
     placeholder: {
@@ -18,10 +18,21 @@ const meta: Meta<typeof Input> = {
     },
     borderColor: {
       control: 'color',
-      description: 'Cor da borda do campo',
+      description: 'Cor da borda e do placeholder',
+    },
+    maxWidth: {
+      control: 'text',
+      description: 'Largura do campo',
     },
   },
-};
+  parameters: {
+    layout: 'padded',
+  },
+  tags: ['autodocs'],
+} satisfies Meta<typeof Input>;
+
+
+
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -29,24 +40,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    placeholder: "aaaaa",
+    placeholder: "00,00",
     textposition: "center",
-    borderColor: '#004D61',
+    borderColor: "#000000",
+    maxWidth: "400px"
   },
 };
 
-export const CenteredText: Story = {
-  args: {
-    placeholder: 'Texto centralizado',
-    textposition: 'center',
-    borderColor: '#FF5031',
-  },
-};
 
-export const CustomBorderColor: Story = {
-  args: {
-    placeholder: 'Borda personalizada',
-    textposition: 'left',
-    borderColor: '#3498DB',
-  },
-};
