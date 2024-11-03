@@ -21,7 +21,8 @@ export default function FIconButton(props: FIconButtonProps) {
           justifyContent: 'center',
           alignItems: 'center',
           ...(props.variant === 'fancy' && {
-            backgroundColor: '#004D61',
+            backgroundColor: 'var(--mui-palette-primary-main)',
+            color: 'var(--mui-palette-primary-contrastText)',
             width: 40,
             height: 40,
             borderRadius: '50%',
