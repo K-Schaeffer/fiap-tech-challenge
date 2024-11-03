@@ -19,7 +19,8 @@ export default async function Dashboard() {
 
   return (
     <Grid2 container className={styles.page} spacing={2}>
-      {account.name}
+      {account.fullName}
+      {account.firstName}
       {account.balance}
       {account.currency}
       <main>
