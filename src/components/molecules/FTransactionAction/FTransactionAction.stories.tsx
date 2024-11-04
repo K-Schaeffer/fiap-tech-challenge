@@ -9,11 +9,11 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  args: { onClick: fn() },
+  args: { onEdit: fn(), onDelete: fn() },
   tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionAction>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Action: Story = {};
+export const Default: Story = {};

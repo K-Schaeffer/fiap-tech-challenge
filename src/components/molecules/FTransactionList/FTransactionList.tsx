@@ -1,7 +1,7 @@
 import { List } from "@mui/material";
 import FTransactionItem from "../FTransactionItem/FTransactionItem";
 
-interface FTransactionListProps {
+export interface FTransactionListProps {
   transactionItems: {
     date: string;
     type: string;
