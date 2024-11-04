@@ -1,15 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import FIconButton from './FIconButton';
 import { DeleteTwoTone, EditTwoTone } from "@mui/icons-material";
+import FIconButton from "./FIconButton";
 
 const meta = {
-  title: 'Atoms/IconButton',
+  title: "Atoms/IconButton",
   component: FIconButton,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  args: { onClick: fn() },
+  tags: ["autodocs"],
 } satisfies Meta<typeof FIconButton>;
 
 export default meta;
@@ -17,14 +19,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Plain: Story = {
   args: {
-    variant: 'plain',
-    children: <DeleteTwoTone />
-  }
+    variant: "plain",
+    children: <DeleteTwoTone />,
+  },
 };
 
 export const Fancy: Story = {
   args: {
-    variant: 'fancy',
-    children: <EditTwoTone />
-  }
+    variant: "fancy",
+    children: <EditTwoTone />,
+  },
 };

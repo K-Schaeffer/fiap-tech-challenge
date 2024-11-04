@@ -6,10 +6,11 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./page.module.css";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
-import Input from "@/components/atoms/Input/FInput";
+import FInput from "@/components/atoms/FInput/FInput";
 import FCard from "@/components/organisms/FCard/FCard";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
+import FFormTransaction from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 
 export default async function Dashboard() {
   const account: Account = await getAccountInfo();
@@ -18,7 +19,8 @@ export default async function Dashboard() {
 
   return (
     <Grid2 container className={styles.page} spacing={2}>
-      {account.name}
+      {account.fullName}
+      {account.firstName}
       {account.balance}
       {account.currency}
       <main>
@@ -71,7 +73,8 @@ export default async function Dashboard() {
             ]}
           />
         </FCard>
-        <Input placeholder="00,00" textposition="center" />
+        <FInput placeholder="00,00" textposition="center" maxWidth="200px" />
+        <FFormTransaction />
       </main>
       <aside>
         <Typography variant="body1" color="primary">

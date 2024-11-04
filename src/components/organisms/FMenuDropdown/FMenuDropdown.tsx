@@ -1,6 +1,6 @@
 "use client";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, IconButton, Menu } from "@mui/material";
+import { Box, IconButton, Menu, useTheme } from "@mui/material";
 import { useState } from "react";
 import FMenuList from "../FMenuList/FMenuList";
 
@@ -24,6 +24,8 @@ export default function FMenuDropdown({ menuItems }: FMenuDropdownProps) {
     setAnchorEl(null);
   };
 
+  const isDarkTheme = useTheme().palette.mode === "dark";
+
   return (
     <Box>
       <IconButton
@@ -33,7 +35,7 @@ export default function FMenuDropdown({ menuItems }: FMenuDropdownProps) {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <MenuIcon color="secondary" />
+        <MenuIcon color={isDarkTheme ? "primary" : "secondary"} />
       </IconButton>
       <Menu
         id="basic-menu"
