@@ -33,7 +33,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
           onClick={handleToggle}
           options={{ color: "secondary" }}
         >
-          {isBalanceVisible ? <VisibilityOffTwoTone /> : <VisibilityTwoTone />}
+          {isBalanceVisible ? <VisibilityTwoTone /> : <VisibilityOffTwoTone />}
         </FIconButton>
       </Stack>
       <Divider sx={{ width: 180, bgcolor: "#FF5031" }}></Divider>
