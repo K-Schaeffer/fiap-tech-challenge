@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import FButton from "@/components/atoms/FButton/FButton";
 import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
+import FFooter from "@/components/organisms/FFooter/FFooter";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
           Bar
         </Typography>
       </aside>
+      <FFooter />
     </Grid2>
   );
 }
