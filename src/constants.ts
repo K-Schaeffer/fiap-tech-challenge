@@ -1,6 +1,6 @@
 import { MenuItemType } from "./types";
 
-export const MENU_ITEMS: MenuItemType[] = [
+export const MENU_ITEMS_DASHBOARD: MenuItemType[] = [
   {
     label: "Início",
     path: "/dashboard",
@@ -16,5 +16,16 @@ export const MENU_ITEMS: MenuItemType[] = [
   {
     label: "Outros Serviços",
     path: "/outros-servicos",
+  },
+];
+
+export const MENU_ITEMS_HOME: MenuItemType[] = [
+  {
+    label: "Sobre",
+    path: "/sobre",
+  },
+  {
+    label: "Serviços",
+    path: "/servicos",
   },
 ];

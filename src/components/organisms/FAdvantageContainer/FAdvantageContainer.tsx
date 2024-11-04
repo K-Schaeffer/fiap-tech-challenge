@@ -3,18 +3,14 @@ import { Grid2, Typography } from "@mui/material";
 
 export default function FAdvantageContainer() {
   return (
-    <Grid2
-      spacing={2}
-      container
-      columns={12}
-      style={{ width: "90%", margin: "0 auto" }}
-    >
-      <Grid2 container size={12} component="div" justifyContent="center">
+    <Grid2 spacing={2} container columns={12}>
+      <Grid2 size={12} component="div" justifyContent="center">
         <Typography
           variant="h5"
           align="center"
           fontWeight="bold"
           color="#000000"
+          marginBottom={2}
         >
           Vantagens do nosso banco:
         </Typography>

@@ -1,55 +1,5 @@
-import { Grid2, Typography } from "@mui/material";
-import styles from "./page.module.css";
+import AccountHome from "@/components/pages/AccountHome/AccountHome";
 
-import FButton from "@/components/atoms/FButton/FButton";
-import SelectInput from "@/components/atoms/FSelectInput/FSelectInput";
-import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
-import FFooter from "@/components/organisms/FFooter/FFooter";
-import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
-
-export default function Home() {
-  return (
-    <Grid2 container className={styles.page} spacing={2}>
-      <main>
-        <Typography variant="h1" color="primary">
-          Foo
-        </Typography>
-        <Typography variant="subtitle1" color="secondary">
-          Foo
-        </Typography>
-        <FButton
-          options={{ variant: "contained", color: "primary" }}
-          innerText="Oi primario"
-        />
-        <FButton
-          options={{ variant: "outlined", color: "primary" }}
-          innerText="Oi outlined"
-        />
-        <SelectInput />
-        <FMenuDropdown
-          menuItems={[
-            {
-              label: "Início",
-              path: "/",
-              current: true,
-            },
-            {
-              label: "Dashboard",
-              path: "/dashboard",
-            },
-          ]}
-        />
-        <FAdvantageContainer />
-      </main>
-      <aside>
-        <Typography variant="body1" color="primary">
-          Foo
-        </Typography>
-        <Typography variant="caption" color="primary">
-          Bar
-        </Typography>
-      </aside>
-      <FFooter />
-    </Grid2>
-  );
+export default function HomeView() {
+  return <AccountHome />;
 }
