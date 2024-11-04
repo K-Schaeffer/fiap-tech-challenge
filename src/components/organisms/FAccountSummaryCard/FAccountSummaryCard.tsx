@@ -20,12 +20,9 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
   });
 
   return (
-    <FCard variant="dark">
-      <Typography variant="h1" fontWeight={600}>
-        Olá, {props.firstName} :)
-      </Typography>
-      <Grid2 container height={402} width={690} paddingTop={3}>
-        <Grid2 size={8} paddingTop={1}>
+    <FCard variant="dark" title={`Olá, ${props.firstName} :)`}>
+      <Grid2 container height={402} width={690}>
+        <Grid2 size={8}>
           <Typography variant="caption" textTransform="capitalize">
             {todayFormatted}
           </Typography>
