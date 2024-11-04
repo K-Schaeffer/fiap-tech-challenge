@@ -5,7 +5,7 @@ import { Divider, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import FIconButton from "../../atoms/FIconButton/FIconButton";
 
-interface FAccountSummaryProps {
+export interface FAccountSummaryProps {
   currency: string;
   value: number;
 }
