@@ -1,16 +1,31 @@
 import { MenuItemType } from "@/types";
-import { Box, Divider, MenuItem, MenuList } from "@mui/material";
+import {
+  Box,
+  Divider,
+  MenuItem,
+  MenuList,
+  MenuListProps,
+  useTheme,
+} from "@mui/material";
 import Link from "next/link";
 
+type MenuVariant = "column" | "row";
+
 interface FMenuListProps {
+  options?: MenuListProps;
+  variant?: MenuVariant;
   menuItems: MenuItemType[];
 }
 
-export default function FMenuList({ menuItems }: FMenuListProps) {
-  const isLastItem = (index: number) => index + 1 === menuItems.length;
+export default function FMenuList({
+  options,
+  variant = "column",
+  menuItems,
+}: FMenuListProps) {
+  const isDarkTheme = useTheme().palette.mode === "dark";
 
   return (
-    <MenuList>
+    <MenuList {...options}>
       {menuItems.map(({ label, path, current }, index) => (
         <Box key={`menu-item-${index}`}>
           <MenuItem
@@ -22,8 +37,10 @@ export default function FMenuList({ menuItems }: FMenuListProps) {
               style={{
                 color: current
                   ? "var(--mui-palette-primary-main)"
-                  : "currentColor",
-                fontWeight: current ? 700 : 400,
+                  : isDarkTheme
+                    ? "var(--mui-palette-primary-main)"
+                    : "currentColor",
+                fontWeight: variant === "row" ? 600 : current ? 700 : 400,
                 textDecoration: "none",
               }}
             >
@@ -32,7 +49,8 @@ export default function FMenuList({ menuItems }: FMenuListProps) {
           </MenuItem>
           <Divider
             sx={{
-              display: isLastItem(index) ? "none" : "inherit",
+              display: variant === "row" ? "none" : "inherit",
+              borderColor: current ? "var(--mui-palette-primary-main)" : "auto",
             }}
           />
         </Box>

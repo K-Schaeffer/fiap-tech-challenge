@@ -82,6 +82,9 @@ export const dark = createTheme({
       main: "#FFFFFF",
       contrastText: "#000000",
     },
+    tertiary: {
+      main: "#004D61",
+    },
     bgHeader: {
       main: "#000000",
     },

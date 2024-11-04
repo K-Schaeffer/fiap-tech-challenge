@@ -6,7 +6,7 @@ import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
-import { MENU_ITEMS } from "@/constants";
+import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
@@ -18,7 +18,7 @@ interface AccountDashboardProps {
 export default function AccountDashboard({ account }: AccountDashboardProps) {
   const pathname = usePathname();
 
-  const menuItems = MENU_ITEMS.map((item) => ({
+  const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
     ...item,
     current: item.path === pathname,
   }));
@@ -26,8 +26,8 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
   return (
     <main
       style={{
-        width: "100%",
-        height: "100%",
+        minWidth: "100vw",
+        minHeight: "100vh",
         backgroundColor: "var(--mui-palette-tertiary-light)",
       }}
     >
@@ -48,7 +48,7 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
         }
       />
       <Container maxWidth="xl">
-        <Grid2 container spacing={3} paddingTop={3}>
+        <Grid2 container spacing={3} paddingTop={3} paddingBottom={3}>
           <Grid2 size={{ xs: 0, lg: 2 }}>
             <FCard
               options={{

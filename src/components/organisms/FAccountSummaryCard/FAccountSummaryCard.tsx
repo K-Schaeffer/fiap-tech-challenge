@@ -63,7 +63,7 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
         sx={{
           ...styles.commonImage,
           bottom: 0,
-          left: 0,
+          left: { xs: 0, sm: 150 },
           width: "327px",
           height: "231px",
         }}
