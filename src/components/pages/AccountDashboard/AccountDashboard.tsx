@@ -4,47 +4,31 @@ import FHeader from "@/components/organisms/FHeader/FHeader";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
+import { MENU_ITEMS } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-
-const menuItems = [
-  {
-    label: "Início",
-    path: "/",
-    current: true,
-  },
-  {
-    label: "Transferências",
-    path: "/dashboard",
-  },
-  {
-    label: "Investimentos",
-    path: "/dashboard",
-  },
-  {
-    label: "Outros Serviços",
-    path: "/dashboard",
-  },
-];
-
-const styles: { main: React.CSSProperties } = {
-  main: {
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: "#E4EDE3",
-  },
-};
-
+import { usePathname } from "next/navigation";
 interface AccountDashboardProps {
   account: Account;
 }
 
 export default function AccountDashboard({ account }: AccountDashboardProps) {
-  // const transaction: Transaction = await addTransaction({ amount: 100, currency: 'USD', type: 'withdrawal', date: '30-10-2024' });
+  const pathname = usePathname();
+
+  const menuItems = MENU_ITEMS.map((item) => ({
+    ...item,
+    current: item.path === pathname,
+  }));
 
   return (
-    <main style={styles.main}>
+    <main
+      style={{
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "var(--mui-palette-tertiary-light)",
+      }}
+    >
       <FHeader
         leftContent={
           <Box>
