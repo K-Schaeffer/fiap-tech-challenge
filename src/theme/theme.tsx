@@ -52,6 +52,7 @@ export const light = createTheme({
     },
     tertiary: {
       main: "#47A138",
+      light: "#E4EDE3",
     },
     textLight: {
       main: "#8B8B8B",

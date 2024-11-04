@@ -1,12 +1,9 @@
+import { MenuItemType } from "@/types";
 import { Box, Divider, MenuItem, MenuList } from "@mui/material";
 import Link from "next/link";
 
 interface FMenuListProps {
-  menuItems: {
-    label: string;
-    path: string;
-    current?: boolean;
-  }[];
+  menuItems: MenuItemType[];
 }
 
 export default function FMenuList({ menuItems }: FMenuListProps) {

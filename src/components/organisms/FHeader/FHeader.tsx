@@ -1,10 +1,12 @@
+import { Container } from "@mui/material";
 import { ReactNode } from "react";
 
 interface HeaderProps {
-  children: ReactNode;
+  leftContent: ReactNode;
+  rightContent: ReactNode;
 }
 
-export default function Header({ children }: HeaderProps) {
+export default function Header({ leftContent, rightContent }: HeaderProps) {
   const styles = {
     header: {
       display: "flex",
@@ -14,8 +16,24 @@ export default function Header({ children }: HeaderProps) {
       backgroundColor: "var(--mui-palette-bgHeader-main)",
       color: "var(--mui-palette-primary-contrastText)",
       height: "96px",
+      width: "100%",
     },
   };
 
-  return <header style={styles.header}>{children}</header>;
+  return (
+    <header style={styles.header}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {leftContent}
+        {rightContent}
+      </Container>
+    </header>
+  );
 }
