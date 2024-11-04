@@ -1,6 +1,6 @@
 "use client";
 import { formatCurrency } from "@/utils/formatters";
-import { VisibilityTwoTone } from "@mui/icons-material";
+import { VisibilityOffTwoTone, VisibilityTwoTone } from "@mui/icons-material";
 import { Divider, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 import FIconButton from "../../atoms/FIconButton/FIconButton";
@@ -33,7 +33,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
           onClick={handleToggle}
           options={{ color: "secondary" }}
         >
-          <VisibilityTwoTone />
+          {isBalanceVisible ? <VisibilityOffTwoTone /> : <VisibilityTwoTone />}
         </FIconButton>
       </Stack>
       <Divider sx={{ width: 180, bgcolor: "#FF5031" }}></Divider>
