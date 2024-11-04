@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 // import { Transaction } from "@/services/Transaction/Transaction.model";
 // import { addTransaction } from "@/services/Transaction/Transaction.controller";
 import FInput from "@/components/atoms/FInput/FInput";
+import FAccountSummary from "@/components/molecules/FAccountSummary/FAccountSummary";
 import FCard from "@/components/organisms/FCard/FCard";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
@@ -23,6 +24,7 @@ export default async function Dashboard() {
       {account.firstName}
       {account.balance}
       {account.currency}
+      <FAccountSummary currency="R$" value={2500} />
       <main>
         <Typography variant="h1" color="primary">
           Foo
