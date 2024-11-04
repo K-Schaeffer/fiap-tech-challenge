@@ -3,7 +3,7 @@ import { Transaction } from "../Transaction/Transaction.model";
 export interface AccountData {
   fullName: string;
   firstName: string;
-  balance: string;
+  balance: number;
   currency: string;
   closestTransactions: Transaction[];
 }
@@ -11,7 +11,7 @@ export interface AccountData {
 export class Account {
   readonly fullName: string;
   readonly firstName: string;
-  readonly balance: string;
+  readonly balance: number;
   readonly currency: string;
   readonly closestTransactions: Transaction[];
 

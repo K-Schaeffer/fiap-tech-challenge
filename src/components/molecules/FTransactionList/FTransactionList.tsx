@@ -1,13 +1,10 @@
+"use client";
+import { TransactionData } from "@/services/Transaction/Transaction.model";
 import { List } from "@mui/material";
 import FTransactionItem from "../FTransactionItem/FTransactionItem";
 
 export interface FTransactionListProps {
-  transactionItems: {
-    date: string;
-    type: string;
-    value: number;
-    currency: string;
-  }[];
+  transactionItems: TransactionData[];
 }
 
 export default function FTransactionList({
@@ -15,12 +12,12 @@ export default function FTransactionList({
 }: FTransactionListProps) {
   return (
     <List>
-      {transactionItems.map(({ date, type, value, currency }, index) => (
+      {transactionItems.map(({ date, type, amount, currency }, index) => (
         <FTransactionItem
           key={`transaction-item-${index}`}
           date={date}
           type={type}
-          value={value}
+          value={amount}
           currency={currency}
         />
       ))}

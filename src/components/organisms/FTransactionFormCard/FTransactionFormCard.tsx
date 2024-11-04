@@ -22,7 +22,7 @@ export default function FTransactionFormCard() {
           ...styles.bottomPixelsImage,
         }}
       >
-        <Image src="/assets/card-pixles-3.svg" alt="" layout="fill" />
+        <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
       </Box>
       <Box
         sx={{
