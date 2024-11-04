@@ -5,13 +5,13 @@ import { formatCurrency } from "@/utils/formatters";
 import { VisibilityTwoTone } from "@mui/icons-material";
 import { useState } from "react";
 
-interface FTransactionActionProps {
+interface FAccountSummaryProps {
     currency: string,
     value: number,
     onClick?: () => void
 }
 
-export default function FTransactionAction(props: FTransactionActionProps) {
+export default function FTransactionAction(props: FAccountSummaryProps) {
     const [isBalanceVisible, setIsBalanceVisible] = useState(true);
     const balance = formatCurrency(props.value, props.currency);
     
