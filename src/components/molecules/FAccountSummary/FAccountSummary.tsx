@@ -20,7 +20,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
 
   return (
     <Stack spacing={1.875}>
-      <Stack direction={"row"} justifyContent={"space-between"}>
+      <Stack direction={"row"} gap={3}>
         <Typography
           variant="subtitle1"
           fontWeight={600}
@@ -49,7 +49,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
         fontSize={31}
         color="var(--mui-palette-secondary-contrastText)"
       >
-        {isBalanceVisible ? balance : "R$ ***,**"}
+        {isBalanceVisible ? balance : `${props.currency} ***,**`}
       </Typography>
     </Stack>
   );
