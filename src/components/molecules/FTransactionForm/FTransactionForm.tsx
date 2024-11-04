@@ -6,13 +6,8 @@ import Stack from "@mui/material/Stack";
 
 export default function FTransactionForm() {
   return (
-    <Box sx={{ width: "100%", maxWidth: 500 }}>
-      <Stack
-        spacing={{ md: 4, xs: 3 }}
-        sx={{
-          width: { md: "75%", xs: "100%" },
-        }}
-      >
+    <Box sx={{ width: "100%", maxWidth: 500, zIndex: 1 }}>
+      <Stack spacing={4}>
         <FSelectInput />
         <FInput
           options={{ placeholder: "00,00", label: "Valor", type: "number" }}

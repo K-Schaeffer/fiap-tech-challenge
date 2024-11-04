@@ -11,8 +11,7 @@ export default function FTransactionFormCard() {
       variant="light"
       options={{
         sx: {
-          width: { md: "691px", sm: "600px", xs: "312px" },
-          height: { md: "478px", sm: "478px", xs: "633px" },
+          height: "600px",
           position: "relative",
         },
       }}
@@ -25,9 +24,6 @@ export default function FTransactionFormCard() {
       >
         <Image src="/assets/card-pixles-3.svg" alt="" layout="fill" />
       </Box>
-
-      <FTransactionForm />
-
       <Box
         sx={{
           ...styles.commonImage,
@@ -36,7 +32,6 @@ export default function FTransactionFormCard() {
       >
         <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
       </Box>
-
       <Box
         sx={{
           ...styles.commonImage,
@@ -48,6 +43,8 @@ export default function FTransactionFormCard() {
       >
         <Image src="/assets/card-illustration-2.svg" alt="" layout="fill" />
       </Box>
+
+      <FTransactionForm />
     </FCard>
   );
 }
