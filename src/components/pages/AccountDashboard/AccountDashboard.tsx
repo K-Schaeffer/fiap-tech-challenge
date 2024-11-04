@@ -1,9 +1,11 @@
 "use client";
+import FAccountSummaryCard from "@/components/organisms/FAccountSummaryCard/FAccountSummaryCard";
 import FCard from "@/components/organisms/FCard/FCard";
 import FHeader from "@/components/organisms/FHeader/FHeader";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
+import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
 import { AccountCircle } from "@mui/icons-material";
@@ -24,8 +26,8 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
   return (
     <main
       style={{
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
         backgroundColor: "var(--mui-palette-tertiary-light)",
       }}
     >
@@ -65,16 +67,18 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
             flexDirection="column"
             gap={3}
           >
-            <FCard variant="dark">
-              <Typography variant="h1">Account Dashboard</Typography>
-            </FCard>
+            <FAccountSummaryCard
+              firstName={account.firstName}
+              currency={account.currency}
+              value={account.balance}
+            />
             <FTransactionFormCard />
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
-            <FCard>
-              <Typography variant="h1">Account Dashboard</Typography>
-            </FCard>
+            <FTransactionListCard
+              transactionItems={account.closestTransactions}
+            />
           </Grid2>
         </Grid2>
       </Container>
