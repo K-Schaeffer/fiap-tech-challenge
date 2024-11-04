@@ -1,10 +1,11 @@
 "use client";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Box, IconButton, Menu, useTheme } from "@mui/material";
+import { Box, BoxProps, IconButton, Menu, useTheme } from "@mui/material";
 import { useState } from "react";
 import FMenuList from "../FMenuList/FMenuList";
 
 interface FMenuDropdownProps {
+  options?: BoxProps;
   menuItems: {
     label: string;
     path: string;
@@ -12,7 +13,10 @@ interface FMenuDropdownProps {
   }[];
 }
 
-export default function FMenuDropdown({ menuItems }: FMenuDropdownProps) {
+export default function FMenuDropdown({
+  options,
+  menuItems,
+}: FMenuDropdownProps) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -27,7 +31,7 @@ export default function FMenuDropdown({ menuItems }: FMenuDropdownProps) {
   const isDarkTheme = useTheme().palette.mode === "dark";
 
   return (
-    <Box>
+    <Box {...options}>
       <IconButton
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
