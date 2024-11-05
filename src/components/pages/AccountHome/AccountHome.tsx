@@ -13,7 +13,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface FAccountHomeProps {
-  actions?: FAccountButtonActions;
+  actions: FAccountButtonActions;
 }
 
 export default function AccountHome(props: FAccountHomeProps) {
@@ -86,8 +86,12 @@ export default function AccountHome(props: FAccountHomeProps) {
                   display: { xs: "none", md: "flex" },
                 },
               }}
-              handleNewAccount={props.actions?.handleNewAccount}
-              handleLogin={props.actions?.handleLogin}
+              handleNewAccount={() => {
+                props.actions.handleNewAccount();
+              }}
+              handleLogin={() => {
+                props.actions.handleLogin();
+              }}
             />
             <Box
               sx={{

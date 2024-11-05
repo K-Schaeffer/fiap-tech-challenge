@@ -1,14 +1,17 @@
-"use client";
 import { FAccountButtonActions } from "@/components/molecules/FAccountButtons/FAccountButtons";
 import AccountHome from "@/components/pages/AccountHome/AccountHome";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 
 export default function HomeView() {
-  const router = useRouter();
-
   const actionsHome: FAccountButtonActions = {
-    handleNewAccount: () => router.push("/dashboard"),
-    handleLogin: () => router.push("/dashboard"),
+    handleNewAccount: async () => {
+      "use server";
+      redirect("/dashboard");
+    },
+    handleLogin: async () => {
+      "use server";
+      redirect("/dashboard");
+    },
   };
 
   return <AccountHome actions={actionsHome} />;
