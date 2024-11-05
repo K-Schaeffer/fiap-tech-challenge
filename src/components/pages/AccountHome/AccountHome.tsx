@@ -1,5 +1,7 @@
 "use client";
-import FAccountButtons from "@/components/molecules/FAccountButtons/FAccountButtons";
+import FAccountButtons, {
+  FAccountButtonActions,
+} from "@/components/molecules/FAccountButtons/FAccountButtons";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
 import FFooter from "@/components/organisms/FFooter/FFooter";
 import FHeader from "@/components/organisms/FHeader/FHeader";
@@ -10,7 +12,11 @@ import { Box, Container, Grid2, Typography } from "@mui/material";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-export default function AccountHome() {
+interface FAccountHomeProps {
+  actions?: FAccountButtonActions;
+}
+
+export default function AccountHome(props: FAccountHomeProps) {
   const pathname = usePathname();
 
   const menuItems = MENU_ITEMS_HOME.map((item) => ({
@@ -80,6 +86,8 @@ export default function AccountHome() {
                   display: { xs: "none", md: "flex" },
                 },
               }}
+              handleNewAccount={props.actions?.handleNewAccount}
+              handleLogin={props.actions?.handleLogin}
             />
             <Box
               sx={{
@@ -144,6 +152,8 @@ export default function AccountHome() {
               marginTop: 4,
               marginBottom: 4,
             }}
+            handleNewAccount={props.actions?.handleNewAccount}
+            handleLogin={props.actions?.handleLogin}
           />
           <FAdvantageContainer />
         </Box>
