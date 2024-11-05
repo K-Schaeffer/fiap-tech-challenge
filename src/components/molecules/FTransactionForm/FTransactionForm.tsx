@@ -32,7 +32,7 @@ export default function FTransactionForm({
     currentTransaction?.type || ""
   );
   const [transactionValue, setTransactionValue] = useState<number>(
-    currentTransaction?.amount || 0
+    currentTransaction?.value || 0
   );
 
   const handleSelectTransactionType = (event: SelectChangeEvent) => {
@@ -53,7 +53,7 @@ export default function FTransactionForm({
     editTransaction({
       ...currentTransaction,
       type: transactionType,
-      amount: transactionValue,
+      value: transactionValue,
       date: new Date().toISOString(),
     });
 
@@ -71,7 +71,7 @@ export default function FTransactionForm({
 
     addTransaction({
       type: transactionType,
-      amount: transactionValue,
+      value: transactionValue,
       date: new Date().toISOString(),
       currency: "R$",
     });

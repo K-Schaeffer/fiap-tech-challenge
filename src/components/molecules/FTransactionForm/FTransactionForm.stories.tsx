@@ -8,9 +8,11 @@ const meta = {
   component: FTransactionForm,
   parameters: {
     layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
   args: {},
-  tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionForm>;
 
 export default meta;

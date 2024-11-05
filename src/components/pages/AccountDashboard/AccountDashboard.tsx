@@ -18,9 +18,9 @@ import { Box, Container, Grid2, Typography } from "@mui/material";
 interface AccountDashboardProps {
   account: Account;
   transactionList: Transaction[];
-  handleAddTransaction: (transaction: TransactionInput) => void;
-  handleEditTransaction: (transaction: TransactionData) => void;
-  handleDeleteTransaction: (transactionId: string) => void;
+  handleAddTransaction?: (transaction: TransactionInput) => void;
+  handleEditTransaction?: (transaction: TransactionData) => void;
+  handleDeleteTransaction?: (transactionId: string) => void;
 }
 export default function AccountDashboard({
   account,

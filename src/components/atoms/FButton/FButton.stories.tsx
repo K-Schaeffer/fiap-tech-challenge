@@ -10,7 +10,6 @@ const meta = {
     layout: "centered",
   },
   args: { onClick: fn() },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FButton>;
 
 export default meta;

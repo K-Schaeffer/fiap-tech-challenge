@@ -7,8 +7,10 @@ const meta = {
   component: FTransactionList,
   parameters: {
     layout: "padded",
+    nextjs: {
+      appDirectory: true,
+    },
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionList>;
 
 export default meta;

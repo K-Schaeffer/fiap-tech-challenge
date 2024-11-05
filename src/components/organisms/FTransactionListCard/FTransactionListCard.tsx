@@ -4,7 +4,7 @@ import FTransactionList, {
 import FCard from "@/components/organisms/FCard/FCard";
 import { Stack, Typography } from "@mui/material";
 
-export default async function FTransactionListCard({
+export default function FTransactionListCard({
   transactionItems,
   editTransaction,
   deleteTransaction,

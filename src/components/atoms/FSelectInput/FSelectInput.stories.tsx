@@ -21,7 +21,6 @@ const meta: Meta<typeof SelectInput> = {
     },
   },
   args: { onChange: fn() },
-  tags: ["autodocs"],
 };
 
 export default meta;

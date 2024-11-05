@@ -10,8 +10,8 @@ import FTransactionItem from "../FTransactionItem/FTransactionItem";
 
 export interface FTransactionListProps {
   transactionItems: TransactionData[];
-  deleteTransaction: (transactionId: string) => void;
-  editTransaction: (transaction: TransactionData) => void;
+  deleteTransaction?: (transactionId: string) => void;
+  editTransaction?: (transaction: TransactionData) => void;
 }
 
 export default function FTransactionList({
@@ -31,6 +31,10 @@ export default function FTransactionList({
   };
 
   const handleDelete = (transactionId: string) => {
+    if (!deleteTransaction) {
+      return;
+    }
+
     deleteTransaction(transactionId);
     router.refresh();
   };
@@ -38,12 +42,12 @@ export default function FTransactionList({
   return (
     <>
       <List>
-        {transactionItems.map(({ id, date, type, amount, currency }) => (
+        {transactionItems.map(({ id, date, type, value, currency }) => (
           <FTransactionItem
             key={`transaction-item-${id}`}
             date={date}
             type={type}
-            value={amount}
+            value={value}
             currency={currency}
             onDelete={() => handleDelete(id)}
             onEdit={() => handleEdit(id)}

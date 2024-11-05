@@ -9,7 +9,6 @@ const meta = {
     layout: "centered",
     isDark: false,
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FMenuDropdown>;
 
 export default meta;

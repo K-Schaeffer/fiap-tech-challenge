@@ -10,7 +10,6 @@ const meta = {
     layout: "centered",
   },
   args: { onEdit: fn(), onDelete: fn() },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionAction>;
 
 export default meta;
