@@ -1,19 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta, StoryFn } from "@storybook/react";
 
+import { Box } from "@mui/material";
 import FFormTransactionCard from "./FTransactionFormCard";
 
 const meta = {
   title: "Organisms/TransactionFormCard",
   component: FFormTransactionCard,
   parameters: {
-    layout: "centered",
+    nextjs: {
+      appDirectory: true,
+    },
   },
-  args: { onClick: fn() },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FFormTransactionCard>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: StoryFn = () => {
+  return (
+    <Box maxWidth={650}>
+      <FFormTransactionCard />
+    </Box>
+  );
+};

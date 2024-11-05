@@ -26,7 +26,6 @@ const meta: Meta<typeof Input> = {
   parameters: {
     layout: "padded",
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof Input>;
 
 export default meta;

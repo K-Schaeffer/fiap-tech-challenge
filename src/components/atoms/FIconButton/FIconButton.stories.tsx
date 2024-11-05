@@ -11,7 +11,6 @@ const meta = {
     layout: "centered",
   },
   args: { onClick: fn() },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FIconButton>;
 
 export default meta;

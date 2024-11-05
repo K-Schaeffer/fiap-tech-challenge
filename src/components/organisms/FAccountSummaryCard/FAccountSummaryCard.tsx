@@ -8,7 +8,7 @@ import { Box, Grid2, Typography } from "@mui/material";
 import Image from "next/image";
 import styles from "./FAccountSummaryCard.styles";
 
-interface FAccountSummaryCardProps extends FAccountSummaryProps {
+export interface FAccountSummaryCardProps extends FAccountSummaryProps {
   firstName: string;
 }
 

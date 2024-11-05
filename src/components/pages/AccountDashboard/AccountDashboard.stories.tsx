@@ -7,8 +7,10 @@ const meta = {
   component: AccountDashboard,
   parameters: {
     layout: "fullscreen",
+    nextjs: {
+      appDirectory: true,
+    },
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof AccountDashboard>;
 
 export default meta;
@@ -21,22 +23,22 @@ export const Default: Story = {
       firstName: "John",
       currency: "USD",
       balance: 1000,
-      closestTransactions: [
-        {
-          id: 1,
-          type: "transferência",
-          date: "10-25-2024",
-          amount: 200,
-          currency: "R$",
-        },
-        {
-          id: 2,
-          type: "depósito",
-          date: "10-11-2024",
-          amount: 250,
-          currency: "R$",
-        },
-      ],
     },
+    transactionList: [
+      {
+        id: "1",
+        type: "Transferência",
+        date: "10-25-2024",
+        value: 200,
+        currency: "R$",
+      },
+      {
+        id: "2",
+        type: "Depósito",
+        date: "10-11-2024",
+        value: 250,
+        currency: "R$",
+      },
+    ],
   },
 };

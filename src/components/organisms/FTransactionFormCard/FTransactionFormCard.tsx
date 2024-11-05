@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import styles from "./FTransactionFormCard.styles";
 
-export default async function FTransactionFormCard({
+export default function FTransactionFormCard({
   addTransaction,
 }: FTransactionFormProps) {
   return (

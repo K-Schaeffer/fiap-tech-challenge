@@ -13,7 +13,6 @@ const meta = {
     currency: "R$",
     value: 2500,
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FAccountSummary>;
 
 export default meta;

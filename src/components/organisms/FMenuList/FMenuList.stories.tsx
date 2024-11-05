@@ -8,7 +8,6 @@ const meta = {
   parameters: {
     layout: "padded",
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FMenuList>;
 
 export default meta;

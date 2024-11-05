@@ -1,23 +1,26 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
-import FAccountSummaryCard from "./FAccountSummaryCard";
+import { Box } from "@mui/material";
+import FAccountSummaryCard, {
+  FAccountSummaryCardProps,
+} from "./FAccountSummaryCard";
 
 const meta = {
   title: "Organisms/AccountSummaryCard",
   component: FAccountSummaryCard,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
-} satisfies Meta<typeof FAccountSummaryCard>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
-
-export const Default: Story = {
   args: {
     firstName: "Marilene",
     value: 50,
     currency: "$",
   },
+} satisfies Meta<typeof FAccountSummaryCard>;
+
+export default meta;
+
+export const Default: StoryFn<FAccountSummaryCardProps> = (args) => {
+  return (
+    <Box maxWidth={650}>
+      <FAccountSummaryCard {...args} />
+    </Box>
+  );
 };

@@ -10,7 +10,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+
   args: {
     title: "Título do Modal",
     children: <Typography>Conteúdo do modal</Typography>,

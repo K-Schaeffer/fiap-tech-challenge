@@ -12,7 +12,6 @@ const meta = {
       values: [{ name: "Gray", value: "#D3D3D3" }],
     },
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FCard>;
 
 export default meta;

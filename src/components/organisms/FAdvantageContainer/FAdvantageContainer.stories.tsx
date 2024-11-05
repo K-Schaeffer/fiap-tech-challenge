@@ -8,7 +8,6 @@ const meta = {
   parameters: {
     layout: "padded",
   },
-  tags: ["autodocs"],
 } satisfies Meta<typeof FAdvantageContainer>;
 
 export default meta;
