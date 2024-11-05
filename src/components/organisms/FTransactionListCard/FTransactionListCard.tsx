@@ -1,14 +1,29 @@
-"use client";
-import FTransactionList, {
-  FTransactionListProps,
-} from "@/components/molecules/FTransactionList/FTransactionList";
+import FTransactionList from "@/components/molecules/FTransactionList/FTransactionList";
 import FCard from "@/components/organisms/FCard/FCard";
+import {
+  deleteTransaction,
+  editTransaction,
+  getTransactions,
+} from "@/services/Transaction/Transaction.controller";
+import { Transaction } from "@/services/Transaction/Transaction.model";
 import { Stack, Typography } from "@mui/material";
 
-export interface FTransactionListCardProps
-  extends FTransactionListProps {}
+export default async function FTransactionListCard() {
+  const transactions: Transaction[] = await getTransactions();
+  const transactionList = transactions.map((transaction) => ({
+    ...transaction,
+  }));
 
-export default function FTransactionListCard(props: FTransactionListCardProps) {
+  async function hanldeEditTransaction(transaction: Transaction) {
+    "use server";
+    await editTransaction(transaction);
+  }
+
+  async function handleDeleteTransaction(transactionId: string) {
+    "use server";
+    await deleteTransaction(transactionId);
+  }
+
   return (
     <FCard>
       <Stack
@@ -21,7 +36,11 @@ export default function FTransactionListCard(props: FTransactionListCardProps) {
           Extrato
         </Typography>
       </Stack>
-      <FTransactionList transactionItems={props.transactionItems} />
+      <FTransactionList
+        transactionItems={[...transactionList]}
+        deleteTransaction={handleDeleteTransaction}
+        editTransaction={hanldeEditTransaction}
+      />
     </FCard>
   );
 }

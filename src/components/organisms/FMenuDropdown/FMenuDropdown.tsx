@@ -1,6 +1,7 @@
 "use client";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Box, BoxProps, IconButton, Menu, useTheme } from "@mui/material";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import FMenuList from "../FMenuList/FMenuList";
 
@@ -17,6 +18,13 @@ export default function FMenuDropdown({
   options,
   menuItems,
 }: FMenuDropdownProps) {
+  const pathname = usePathname();
+
+  const items = menuItems.map((item) => ({
+    ...item,
+    current: item.path === pathname,
+  }));
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -51,7 +59,7 @@ export default function FMenuDropdown({
           sx: { minWidth: "172px" },
         }}
       >
-        <FMenuList menuItems={menuItems} />
+        <FMenuList menuItems={items} />
       </Menu>
     </Box>
   );

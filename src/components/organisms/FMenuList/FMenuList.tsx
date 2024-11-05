@@ -1,3 +1,4 @@
+"use client";
 import { MenuItemType } from "@/types";
 import {
   Box,
@@ -8,6 +9,7 @@ import {
   useTheme,
 } from "@mui/material";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type MenuVariant = "column" | "row";
 
@@ -24,9 +26,16 @@ export default function FMenuList({
 }: FMenuListProps) {
   const isDarkTheme = useTheme().palette.mode === "dark";
 
+  const pathname = usePathname();
+
+  const items = menuItems.map((item) => ({
+    ...item,
+    current: item.path === pathname,
+  }));
+
   return (
     <MenuList {...options}>
-      {menuItems.map(({ label, path, current }, index) => (
+      {items.map(({ label, path, current }, index) => (
         <Box key={`menu-item-${index}`}>
           <MenuItem
             key={`menu-item-${index}`}

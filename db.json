@@ -7,39 +7,25 @@
   },
   "transactions": [
     {
-      "id": "868c",
-      "amount": 566,
+      "id": "0b0f",
       "type": "Câmbio de moeda",
-      "currency": "R$",
-      "date": "2024-11-05T05:41:14.093Z"
+      "date": "2024-11-05T15:03:58.485Z",
+      "amount": 4599,
+      "currency": "R$"
     },
     {
-      "id": "079e",
-      "amount": 5663,
+      "id": "7a18",
+      "type": "Câmbio de moeda",
+      "date": "2024-11-05T15:07:01.182Z",
+      "amount": 780,
+      "currency": "R$"
+    },
+    {
+      "id": "b351",
       "type": "doc-ted",
-      "currency": "R$",
-      "date": "2024-11-05T05:42:19.512Z"
-    },
-    {
-      "id": "0ea3",
-      "amount": 999,
-      "type": "emprestimo-financiamento",
-      "currency": "R$",
-      "date": "2024-11-05T05:42:25.331Z"
-    },
-    {
-      "id": "f1c8",
-      "amount": 56565,
-      "type": "doc-ted",
-      "currency": "R$",
-      "date": "2024-11-05T05:42:31.132Z"
-    },
-    {
-      "id": "df0e",
-      "amount": 56,
-      "type": "emprestimo-financiamento",
-      "currency": "R$",
-      "date": "2024-11-05T05:44:23.546Z"
+      "amount": 567,
+      "date": "2024-11-05T15:06:55.656Z",
+      "currency": "R$"
     }
   ]
 }

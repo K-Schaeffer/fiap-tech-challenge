@@ -1,7 +1,9 @@
-import { formatCurrency, formatDate, formatMonth } from "@/utils/formatters";
+import { formatCurrency, formatDate } from "@/utils/formatters";
 import { Grid2, Typography } from "@mui/material";
+import FTransactionAction, {
+  FTransactionActionProps,
+} from "../FTransactionAction/FTransactionAction";
 import styles from "./FTransactionItem.styles";
-import FTransactionAction, { FTransactionActionProps } from "../FTransactionAction/FTransactionAction";
 
 interface FTransactionItemProps extends FTransactionActionProps {
   date: string;
@@ -28,7 +30,11 @@ export default function FTransactionItem(props: FTransactionItemProps) {
         alignItems="center"
         justifyContent="center"
       >
-        <FTransactionAction onEdit={props.onEdit} onDelete={props.onDelete}></FTransactionAction>
+        <FTransactionAction
+          onEdit={props.onEdit}
+          onDelete={props.onDelete}
+          transactionId={props.transactionId}
+        ></FTransactionAction>
       </Grid2>
     </Grid2>
   );
