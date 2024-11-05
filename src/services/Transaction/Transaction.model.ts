@@ -6,7 +6,7 @@ export interface TransactionInput {
 }
 
 export interface TransactionData {
-  id: number;
+  id?: number;
   type: string;
   date: string;
   amount: number;
@@ -14,7 +14,7 @@ export interface TransactionData {
 }
 
 export class Transaction {
-  readonly id: number;
+  readonly id?: number;
   readonly type: string;
   readonly date: string;
   readonly amount: number;

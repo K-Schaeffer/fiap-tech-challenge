@@ -8,6 +8,7 @@ import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FT
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
+import { Transaction } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import {
   Box,
@@ -17,16 +18,21 @@ import {
   Typography,
 } from "@mui/material";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface AccountDashboardProps {
   account: Account;
+  fetchTransactions: () => Transaction[];
   addTransaction: ({ value, type }: any) => void;
 }
 export default function AccountDashboard({
   account,
+  fetchTransactions,
   addTransaction,
 }: AccountDashboardProps) {
+  const [isModified, setIsModified] = useState<boolean>(true);
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+
   const pathname = usePathname();
 
   const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
@@ -49,7 +55,27 @@ export default function AccountDashboard({
 
   const handleConfirmTransaction = () => {
     addTransaction({ value: transactionValue, type: transactionType });
+    setIsModified(true);
+    setTransactionValue("");
+    setTransactionType("");
   };
+
+  useEffect(() => {
+    if (isModified) {
+      const transactions2 = async () => fetchTransactions();
+      const transactions3 = transactions2().then((transactionsObj) => {
+        return transactionsObj.map((transaction: Transaction) => ({
+          ...transaction,
+        }));
+      });
+      console.log("transactions2", transactions3);
+
+      // setTransactions(
+      //   transactionsObj.map((transaction: Transaction) => ({ ...transaction }))
+      // );
+      setIsModified(false);
+    }
+  }, [isModified]);
 
   return (
     <main
@@ -110,9 +136,7 @@ export default function AccountDashboard({
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
-            <FTransactionListCard
-              transactionItems={account.closestTransactions}
-            />
+            <FTransactionListCard transactionItems={transactions} />
           </Grid2>
         </Grid2>
       </Container>

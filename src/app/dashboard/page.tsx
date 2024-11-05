@@ -2,19 +2,26 @@ import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboa
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
 
-import { addTransaction } from "@/services/Transaction/Transaction.controller";
+import {
+  addTransaction,
+  getTransactions,
+} from "@/services/Transaction/Transaction.controller";
+import { Transaction } from "@/services/Transaction/Transaction.model";
 
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
 
-  // const transaction: Transaction = async () => {
-  //   await addTransaction({
-  //     amount: 100,
-  //     currency: "USD",
-  //     type: "withdrawal",
-  //     date: "30-10-2024",
-  //   });
-  // };
+  async function fetchTransactions() {
+    "use server";
+
+    const transactionsObj: Transaction[] = await getTransactions();
+    const transactions = transactionsObj.map((transaction) => ({
+      ...transaction,
+    }));
+    console.log("transactions", transactions);
+
+    return transactions;
+  }
 
   async function createNewTransaction({ value, type }: any) {
     "use server";
@@ -23,8 +30,8 @@ export default async function DashboardView() {
       await addTransaction({
         amount: value,
         type,
-        currency: "USD",
-        date: "30-10-2024",
+        currency: "R$",
+        date: new Date().toISOString(),
       });
     } catch (err: unknown) {
       console.warn(err);
@@ -33,6 +40,7 @@ export default async function DashboardView() {
 
   return (
     <AccountDashboard
+      fetchTransactions={fetchTransactions}
       account={{ ...account }}
       addTransaction={createNewTransaction}
     />

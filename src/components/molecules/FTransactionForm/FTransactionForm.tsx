@@ -8,7 +8,7 @@ export interface FTransactionFormProps {
   currentTransactionType: string;
   onSelectTransactionType: (e: SelectChangeEvent) => void;
   onInputTransactionValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  currentTransactionValue: number;
+  currentTransactionValue: number | string;
   onConfirmTransaction: () => void;
 }
 
