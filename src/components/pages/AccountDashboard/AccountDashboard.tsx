@@ -18,21 +18,18 @@ import {
   Typography,
 } from "@mui/material";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface AccountDashboardProps {
   account: Account;
-  fetchTransactions: () => Transaction[];
+  transactions: Transaction[];
   addTransaction: ({ value, type }: any) => void;
 }
 export default function AccountDashboard({
   account,
-  fetchTransactions,
+  transactions,
   addTransaction,
 }: AccountDashboardProps) {
-  const [isModified, setIsModified] = useState<boolean>(true);
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-
   const pathname = usePathname();
 
   const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
@@ -55,27 +52,9 @@ export default function AccountDashboard({
 
   const handleConfirmTransaction = () => {
     addTransaction({ value: transactionValue, type: transactionType });
-    setIsModified(true);
     setTransactionValue("");
     setTransactionType("");
   };
-
-  useEffect(() => {
-    if (isModified) {
-      const transactions2 = async () => fetchTransactions();
-      const transactions3 = transactions2().then((transactionsObj) => {
-        return transactionsObj.map((transaction: Transaction) => ({
-          ...transaction,
-        }));
-      });
-      console.log("transactions2", transactions3);
-
-      // setTransactions(
-      //   transactionsObj.map((transaction: Transaction) => ({ ...transaction }))
-      // );
-      setIsModified(false);
-    }
-  }, [isModified]);
 
   return (
     <main

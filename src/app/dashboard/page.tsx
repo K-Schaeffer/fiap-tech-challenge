@@ -10,18 +10,10 @@ import { Transaction } from "@/services/Transaction/Transaction.model";
 
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
-
-  async function fetchTransactions() {
-    "use server";
-
-    const transactionsObj: Transaction[] = await getTransactions();
-    const transactions = transactionsObj.map((transaction) => ({
-      ...transaction,
-    }));
-    console.log("transactions", transactions);
-
-    return transactions;
-  }
+  const transactionsObj: Transaction[] = await getTransactions();
+  const transactions = transactionsObj.map((transaction) => ({
+    ...transaction,
+  }));
 
   async function createNewTransaction({ value, type }: any) {
     "use server";
@@ -40,7 +32,7 @@ export default async function DashboardView() {
 
   return (
     <AccountDashboard
-      fetchTransactions={fetchTransactions}
+      transactions={[...transactions]}
       account={{ ...account }}
       addTransaction={createNewTransaction}
     />
