@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import FCard from "./FCard";
 
 const meta = {
-  title: "Organisms/Card",
+  title: "Molecules/Card",
   component: FCard,
   parameters: {
     layout: "padded",

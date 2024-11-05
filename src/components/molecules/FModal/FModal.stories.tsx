@@ -5,7 +5,7 @@ import React from "react";
 import FModal, { FModalProps } from "./FModal";
 
 const meta = {
-  title: "Organisms/Modal",
+  title: "Molecules/Modal",
   component: FModal,
   parameters: {
     layout: "centered",

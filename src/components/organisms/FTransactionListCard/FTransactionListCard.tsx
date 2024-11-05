@@ -1,7 +1,7 @@
+import FCard from "@/components/molecules/FCard/FCard";
 import FTransactionList, {
   FTransactionListProps,
 } from "@/components/molecules/FTransactionList/FTransactionList";
-import FCard from "@/components/organisms/FCard/FCard";
 import { Stack, Typography } from "@mui/material";
 
 export default function FTransactionListCard({

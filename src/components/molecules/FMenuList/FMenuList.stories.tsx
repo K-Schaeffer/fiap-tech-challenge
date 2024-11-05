@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import FMenuList from "./FMenuList";
 
 const meta = {
-  title: "Organisms/MenuList",
+  title: "Molecules/MenuList",
   component: FMenuList,
   parameters: {
     layout: "padded",

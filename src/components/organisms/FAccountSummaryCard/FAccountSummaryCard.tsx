@@ -2,7 +2,7 @@
 import FAccountSummary, {
   FAccountSummaryProps,
 } from "@/components/molecules/FAccountSummary/FAccountSummary";
-import FCard from "@/components/organisms/FCard/FCard";
+import FCard from "@/components/molecules/FCard/FCard";
 import { getFormattedDateNow } from "@/utils/formatters";
 import { Box, Grid2, Typography } from "@mui/material";
 import Image from "next/image";
