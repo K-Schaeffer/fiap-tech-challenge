@@ -4,7 +4,7 @@ interface InputProps {
   options?: TextFieldProps;
   textposition: "left" | "center";
   maxWidth?: string;
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function FInput({

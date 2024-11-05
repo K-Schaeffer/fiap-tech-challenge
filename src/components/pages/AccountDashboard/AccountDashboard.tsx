@@ -9,19 +9,47 @@ import FTransactionListCard from "@/components/organisms/FTransactionListCard/FT
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
 import { AccountCircle } from "@mui/icons-material";
-import { Box, Container, Grid2, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid2,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
 interface AccountDashboardProps {
   account: Account;
+  addTransaction: ({ value, type }: any) => void;
 }
-
-export default function AccountDashboard({ account }: AccountDashboardProps) {
+export default function AccountDashboard({
+  account,
+  addTransaction,
+}: AccountDashboardProps) {
   const pathname = usePathname();
 
   const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
     ...item,
     current: item.path === pathname,
   }));
+
+  const [transactionType, setTransactionType] = useState<string>("");
+  const [transactionValue, setTransactionValue] = useState<number | string>("");
+
+  const handleSelectTransactionType = (event: SelectChangeEvent) => {
+    setTransactionType(event.target.value);
+  };
+
+  const handleInputTransactionValue = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setTransactionValue(Number(event.target.value));
+  };
+
+  const handleConfirmTransaction = () => {
+    addTransaction({ value: transactionValue, type: transactionType });
+  };
 
   return (
     <main
@@ -72,7 +100,13 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
               currency={account.currency}
               value={account.balance}
             />
-            <FTransactionFormCard />
+            <FTransactionFormCard
+              currentTransactionType={transactionType}
+              onSelectTransactionType={handleSelectTransactionType}
+              onInputTransactionValue={handleInputTransactionValue}
+              currentTransactionValue={transactionValue}
+              onConfirmTransaction={handleConfirmTransaction}
+            />
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>

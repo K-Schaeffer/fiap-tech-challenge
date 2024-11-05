@@ -5,13 +5,14 @@ import {
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   SelectProps,
 } from "@mui/material";
 
 interface SelectInputProps {
   formControlOptions?: FormControlProps;
   options?: SelectProps<string>;
-  onChange?: () => {};
+  onChange?: (e: SelectChangeEvent) => void;
 }
 
 export default function SelectInput({
