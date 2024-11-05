@@ -61,7 +61,7 @@ export default function SelectInput({
           ...options?.sx,
         }}
       >
-        <MenuItem value="cambio">Câmbio de Moeda</MenuItem>
+        <MenuItem value="Câmbio de moeda">Câmbio de Moeda</MenuItem>
         <MenuItem value="doc-ted">DOC/TED</MenuItem>
         <MenuItem value="emprestimo-financiamento">
           Empréstimo e Financiamento

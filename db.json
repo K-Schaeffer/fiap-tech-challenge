@@ -3,79 +3,92 @@
     "fullName": "Joana da Silva Oliveira",
     "firstName": "Joana",
     "balance": 2500,
-    "currency": "R$",
-    "closestTransactions": [
-      {
-        "id": "1",
-        "type": "transfer",
-        "date": "10-25-2024",
-        "amount": 200,
-        "currency": "R$"
-      },
-      {
-        "id": "2",
-        "type": "deposit",
-        "date": "10-11-2024",
-        "amount": 250,
-        "currency": "R$"
-      },
-      {
-        "id": "3",
-        "type": "deposit",
-        "date": "10-15-2024",
-        "amount": 500,
-        "currency": "R$"
-      },
-      {
-        "id": "4",
-        "type": "payment",
-        "date": "10-19-2024",
-        "amount": 100,
-        "currency": "R$"
-      },
-      {
-        "id": "5",
-        "type": "transfer",
-        "date": "10-12-2024",
-        "amount": 200,
-        "currency": "R$"
-      },
-      {
-        "id": "6",
-        "type": "withdrawal",
-        "date": "10-16-2024",
-        "amount": 200,
-        "currency": "R$"
-      },
-      {
-        "id": "7",
-        "type": "deposit",
-        "date": "10-03-2024",
-        "amount": 1250,
-        "currency": "R$"
-      },
-      {
-        "id": "8",
-        "type": "transfer",
-        "date": "10-21-2024",
-        "amount": 600,
-        "currency": "R$"
-      },
-      {
-        "id": "9",
-        "type": "transfer",
-        "date": "10-13-2024",
-        "amount": 250,
-        "currency": "R$"
-      },
-      {
-        "id": "10",
-        "type": "transfer",
-        "date": "10-14-2024",
-        "amount": 20,
-        "currency": "R$"
-      }
-    ]
+    "currency": "R$"
   },
-  "transactions": []
+  "transactions": [
+    {
+      "id": "9db3",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "1fc9",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "229f",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "fcba",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "c400",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "177e",
+      "amount": 888,
+      "type": "doc-ted",
+      "currency": "USD",
+      "date": "30-10-2024"
+    },
+    {
+      "id": "012b",
+      "amount": 600000,
+      "type": "doc-ted",
+      "currency": "R$",
+      "date": "2024-11-05T03:51:08.029Z"
+    },
+    {
+      "id": "ca0c",
+      "amount": 454,
+      "type": "cambio",
+      "currency": "R$",
+      "date": "2024-11-05T03:52:55.926Z"
+    },
+    {
+      "id": "8842",
+      "amount": 666,
+      "type": "Câmbio de moeda",
+      "currency": "R$",
+      "date": "2024-11-05T03:55:50.545Z"
+    },
+    {
+      "id": "701b",
+      "amount": 66.9,
+      "type": "",
+      "currency": "R$",
+      "date": "2024-11-05T03:56:06.532Z"
+    },
+    {
+      "id": "a7d0",
+      "amount": 566,
+      "type": "doc-ted",
+      "currency": "R$",
+      "date": "2024-11-05T04:01:13.110Z"
+    },
+    {
+      "id": "56ee",
+      "amount": 566,
+      "type": "doc-ted",
+      "currency": "R$",
+      "date": "2024-11-05T04:01:50.282Z"
+    }
+  ]
 }

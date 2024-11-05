@@ -8,6 +8,7 @@ import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FT
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
+import { Transaction } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import {
   Box,
@@ -21,10 +22,12 @@ import { useState } from "react";
 
 interface AccountDashboardProps {
   account: Account;
+  transactions: Transaction[];
   addTransaction: ({ value, type }: any) => void;
 }
 export default function AccountDashboard({
   account,
+  transactions,
   addTransaction,
 }: AccountDashboardProps) {
   const pathname = usePathname();
@@ -49,6 +52,8 @@ export default function AccountDashboard({
 
   const handleConfirmTransaction = () => {
     addTransaction({ value: transactionValue, type: transactionType });
+    setTransactionValue("");
+    setTransactionType("");
   };
 
   return (
@@ -110,9 +115,7 @@ export default function AccountDashboard({
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
-            <FTransactionListCard
-              transactionItems={account.closestTransactions}
-            />
+            <FTransactionListCard transactionItems={transactions} />
           </Grid2>
         </Grid2>
       </Container>

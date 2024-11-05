@@ -11,10 +11,10 @@ export interface FTransactionActionProps {
 export default function FTransactionAction(props: FTransactionActionProps) {
   return (
     <Stack direction="row" spacing={1.875}>
-      <FIconButton variant="fancy" onClick={props.onEdit}>
+      <FIconButton variant="plain" onClick={props.onEdit} options={{ color: "primary" }}>
         <EditTwoTone />
       </FIconButton>
-      <FIconButton variant="fancy" onClick={props.onDelete}>
+      <FIconButton variant="plain" onClick={props.onDelete} options={{ color: "primary" }}>
         <DeleteTwoTone />
       </FIconButton>
     </Stack>
