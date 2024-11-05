@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import type { Meta, StoryFn } from "@storybook/react";
-import { fn } from "@storybook/test";
 
 import FTransactionForm from "./FTransactionForm";
 
@@ -10,13 +9,13 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  args: { onClick: fn() },
+  args: {},
   tags: ["autodocs"],
 } satisfies Meta<typeof FTransactionForm>;
 
 export default meta;
 
-export const Default: StoryFn = (args) => {
+export const Default: StoryFn = () => {
   return (
     <Box width={500}>
       <FTransactionForm />
