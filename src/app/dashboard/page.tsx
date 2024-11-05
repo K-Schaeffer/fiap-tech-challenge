@@ -7,11 +7,10 @@ import {
   getTransactions,
 } from "@/services/Transaction/Transaction.controller";
 import { Transaction } from "@/services/Transaction/Transaction.model";
-import { redirect } from "next/navigation";
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
-  const transactionList: Transaction[] = await getTransactions();
-  const transactions = transactionList.map((transaction) => ({
+  const transactionModelList: Transaction[] = await getTransactions();
+  const transactionList = transactionModelList.map((transaction) => ({
     ...transaction,
   }));
 
@@ -24,13 +23,12 @@ export default async function DashboardView() {
       currency: "R$",
       date: new Date().toISOString(),
     });
-
-    redirect("/dashboard");
+    // redirect("/dashboard", "replace");
   }
 
   return (
     <AccountDashboard
-      transactions={[...transactions]}
+      transactionList={[...transactionList]}
       account={{ ...account }}
       addTransaction={createNewTransaction}
     />

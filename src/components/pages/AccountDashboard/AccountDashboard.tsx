@@ -1,9 +1,12 @@
 "use client";
+import FButton from "@/components/atoms/FButton/FButton";
+import FTransactionForm from "@/components/molecules/FTransactionForm/FTransactionForm";
 import FAccountSummaryCard from "@/components/organisms/FAccountSummaryCard/FAccountSummaryCard";
 import FCard from "@/components/organisms/FCard/FCard";
 import FHeader from "@/components/organisms/FHeader/FHeader";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FMenuList from "@/components/organisms/FMenuList/FMenuList";
+import FModal from "@/components/organisms/FModal/FModal";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
@@ -22,14 +25,17 @@ import { useState } from "react";
 
 interface AccountDashboardProps {
   account: Account;
-  transactions: Transaction[];
+  transactionList: Transaction[];
   addTransaction: ({ value, type }: any) => void;
 }
 export default function AccountDashboard({
   account,
-  transactions,
+  transactionList,
   addTransaction,
 }: AccountDashboardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [transactions, setTransactions] =
+    useState<Transaction[]>(transactionList);
   const pathname = usePathname();
 
   const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
@@ -52,6 +58,15 @@ export default function AccountDashboard({
 
   const handleConfirmTransaction = () => {
     addTransaction({ value: transactionValue, type: transactionType });
+    setTransactions(
+      transactions.concat({
+        id: transactions.length + 1,
+        amount: transactionValue as number,
+        type: transactionType,
+        currency: account.currency,
+        date: new Date().toISOString(),
+      })
+    );
     setTransactionValue("");
     setTransactionType("");
   };
@@ -115,7 +130,21 @@ export default function AccountDashboard({
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
+            <FButton onClick={() => setIsModalOpen(true)} innerText="Editar" />
             <FTransactionListCard transactionItems={transactions} />
+            <FModal
+              title="Editar transação"
+              isOpen={isModalOpen}
+              handleClose={() => setIsModalOpen(false)}
+            >
+              <FTransactionForm
+                currentTransactionType={transactionType}
+                onSelectTransactionType={handleSelectTransactionType}
+                onInputTransactionValue={handleInputTransactionValue}
+                currentTransactionValue={transactionValue}
+                onConfirmTransaction={handleConfirmTransaction}
+              />
+            </FModal>
           </Grid2>
         </Grid2>
       </Container>

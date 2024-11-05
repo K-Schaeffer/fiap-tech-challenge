@@ -7,88 +7,39 @@
   },
   "transactions": [
     {
-      "id": "9db3",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "1fc9",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "229f",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "fcba",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "c400",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "177e",
-      "amount": 888,
-      "type": "doc-ted",
-      "currency": "USD",
-      "date": "30-10-2024"
-    },
-    {
-      "id": "012b",
-      "amount": 600000,
-      "type": "doc-ted",
-      "currency": "R$",
-      "date": "2024-11-05T03:51:08.029Z"
-    },
-    {
-      "id": "ca0c",
-      "amount": 454,
-      "type": "cambio",
-      "currency": "R$",
-      "date": "2024-11-05T03:52:55.926Z"
-    },
-    {
-      "id": "8842",
-      "amount": 666,
+      "id": "868c",
+      "amount": 566,
       "type": "Câmbio de moeda",
       "currency": "R$",
-      "date": "2024-11-05T03:55:50.545Z"
+      "date": "2024-11-05T05:41:14.093Z"
     },
     {
-      "id": "701b",
-      "amount": 66.9,
-      "type": "",
-      "currency": "R$",
-      "date": "2024-11-05T03:56:06.532Z"
-    },
-    {
-      "id": "a7d0",
-      "amount": 566,
+      "id": "079e",
+      "amount": 5663,
       "type": "doc-ted",
       "currency": "R$",
-      "date": "2024-11-05T04:01:13.110Z"
+      "date": "2024-11-05T05:42:19.512Z"
     },
     {
-      "id": "56ee",
-      "amount": 566,
+      "id": "0ea3",
+      "amount": 999,
+      "type": "emprestimo-financiamento",
+      "currency": "R$",
+      "date": "2024-11-05T05:42:25.331Z"
+    },
+    {
+      "id": "f1c8",
+      "amount": 56565,
       "type": "doc-ted",
       "currency": "R$",
-      "date": "2024-11-05T04:01:50.282Z"
+      "date": "2024-11-05T05:42:31.132Z"
+    },
+    {
+      "id": "df0e",
+      "amount": 56,
+      "type": "emprestimo-financiamento",
+      "currency": "R$",
+      "date": "2024-11-05T05:44:23.546Z"
     }
   ]
 }
