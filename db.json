@@ -9,15 +9,8 @@
     {
       "id": "0b0f",
       "type": "Câmbio de moeda",
-      "date": "2024-11-05T15:03:58.485Z",
-      "amount": 4599,
-      "currency": "R$"
-    },
-    {
-      "id": "7a18",
-      "type": "Câmbio de moeda",
-      "date": "2024-11-05T15:07:01.182Z",
-      "amount": 780,
+      "date": "2024-11-05T15:33:16.168Z",
+      "amount": 459966,
       "currency": "R$"
     },
     {
@@ -25,6 +18,13 @@
       "type": "doc-ted",
       "amount": 567,
       "date": "2024-11-05T15:06:55.656Z",
+      "currency": "R$"
+    },
+    {
+      "id": "59b2",
+      "type": "doc-ted",
+      "amount": 67,
+      "date": "2024-11-05T15:32:37.617Z",
       "currency": "R$"
     }
   ]

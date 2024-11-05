@@ -7,13 +7,28 @@ import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FT
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
+import {
+  Transaction,
+  TransactionData,
+  TransactionInput,
+} from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
 
 interface AccountDashboardProps {
   account: Account;
+  transactionList: Transaction[];
+  handleAddTransaction: (transaction: TransactionInput) => void;
+  handleEditTransaction: (transaction: TransactionData) => void;
+  handleDeleteTransaction: (transactionId: string) => void;
 }
-export default function AccountDashboard({ account }: AccountDashboardProps) {
+export default function AccountDashboard({
+  account,
+  transactionList,
+  handleAddTransaction,
+  handleEditTransaction,
+  handleDeleteTransaction,
+}: AccountDashboardProps) {
   return (
     <main
       style={{
@@ -63,11 +78,15 @@ export default function AccountDashboard({ account }: AccountDashboardProps) {
               currency={account.currency}
               value={account.balance}
             />
-            <FTransactionFormCard />
+            <FTransactionFormCard addTransaction={handleAddTransaction} />
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
-            <FTransactionListCard />
+            <FTransactionListCard
+              transactionItems={transactionList}
+              editTransaction={handleEditTransaction}
+              deleteTransaction={handleDeleteTransaction}
+            />
           </Grid2>
         </Grid2>
       </Container>

@@ -34,7 +34,7 @@ export const addTransaction = async (transaction: TransactionInput) => {
 
 export const editTransaction = async (transaction: TransactionData) => {
   const res = await fetch(
-    `http://localhost:3004/transactions/${transaction.id}`,
+    `http://localhost:3006/transactions/${transaction.id}`,
     {
       method: "PUT",
       headers: {
@@ -51,7 +51,7 @@ export const editTransaction = async (transaction: TransactionData) => {
 
 export const deleteTransaction = async (transactionId: string) => {
   const res = await fetch(
-    `http://localhost:3004/transactions/${transactionId}`,
+    `http://localhost:3006/transactions/${transactionId}`,
     {
       method: "DELETE",
       headers: {
