@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Typography, Box } from "@mui/material";
+import { Box, Button, ButtonProps, Typography } from "@mui/material";
 
 interface FButtonProps {
   innerText?: string;
@@ -15,6 +15,7 @@ export default function FButton(props: FButtonProps) {
         padding: 0,
         borderRadius: 8,
         maxHeight: 48,
+        borderWidth: 2,
       }}
       onClick={props.onClick}
     >

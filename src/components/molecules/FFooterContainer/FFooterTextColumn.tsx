@@ -18,8 +18,9 @@ export default function FFooterTextColumn(props: FFooterTextColumnProps) {
       >
         {props.textHeader}
       </Typography>
-      {props?.listItems?.map((item) => (
+      {props?.listItems?.map((item, index) => (
         <Typography
+          key={`item-${index}`}
           fontWeight={400}
           lineHeight={"19.2px"}
           color="ligth"
