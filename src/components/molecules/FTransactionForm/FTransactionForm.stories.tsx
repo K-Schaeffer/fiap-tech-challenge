@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import type { Meta, StoryFn } from "@storybook/react";
 
-import FTransactionForm from "./FTransactionForm";
+import FTransactionForm, { FTransactionFormProps } from "./FTransactionForm";
 
 const meta = {
   title: "Molecules/TransactionForm",
@@ -12,15 +12,17 @@ const meta = {
       appDirectory: true,
     },
   },
-  args: {},
+  args: {
+    buttonText: "Concluir",
+  },
 } satisfies Meta<typeof FTransactionForm>;
 
 export default meta;
 
-export const Default: StoryFn = () => {
+export const Default: StoryFn<FTransactionFormProps> = (args) => {
   return (
     <Box width={500}>
-      <FTransactionForm />
+      <FTransactionForm {...args} />
     </Box>
   );
 };

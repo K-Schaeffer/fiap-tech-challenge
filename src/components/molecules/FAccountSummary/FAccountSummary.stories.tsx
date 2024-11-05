@@ -7,7 +7,7 @@ const meta = {
   title: "Molecules/AccountSummary",
   component: FAccountSummary,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
   args: {
     currency: "R$",

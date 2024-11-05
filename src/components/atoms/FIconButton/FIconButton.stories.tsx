@@ -20,6 +20,7 @@ export const Plain: Story = {
   args: {
     variant: "plain",
     children: <DeleteTwoTone />,
+    options: { color: "primary" },
   },
 };
 
@@ -27,5 +28,6 @@ export const Fancy: Story = {
   args: {
     variant: "fancy",
     children: <EditTwoTone />,
+    options: { color: "primary" },
   },
 };

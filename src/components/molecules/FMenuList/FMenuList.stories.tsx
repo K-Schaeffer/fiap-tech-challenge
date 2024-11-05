@@ -1,17 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
+import { Box } from "@mui/material";
 import FMenuList from "./FMenuList";
 
 const meta = {
   title: "Molecules/MenuList",
   component: FMenuList,
   parameters: {
-    layout: "padded",
+    layout: "centered",
+    backgrounds: {
+      values: [{ name: "Gray", value: "#D3D3D3" }],
+      default: "Gray",
+    },
   },
 } satisfies Meta<typeof FMenuList>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 const menuItems = [
   {
@@ -25,8 +29,10 @@ const menuItems = [
   },
 ];
 
-export const Default: Story = {
-  args: {
-    menuItems,
-  },
+export const Default: StoryFn = () => {
+  return (
+    <Box width={200} padding={4} sx={{ backgroundColor: "#fff" }}>
+      <FMenuList menuItems={menuItems} />
+    </Box>
+  );
 };

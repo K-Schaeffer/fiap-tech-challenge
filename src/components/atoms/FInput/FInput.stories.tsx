@@ -5,33 +5,16 @@ import Input from "./FInput";
 const meta: Meta<typeof Input> = {
   title: "Atoms/Input",
   component: Input,
-  argTypes: {
-    placeholder: {
-      control: "text",
-      description: "Texto que aparece quando o campo está vazio",
-    },
-    textposition: {
-      control: {
-        type: "select",
-        options: ["left", "center"],
-      },
-      description: "Alinhamento do texto dentro do campo",
-    },
-    maxWidth: {
-      control: "text",
-      description: "Largura do campo",
-    },
-  },
   args: { onChange: fn() },
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
 } satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NumberInput: Story = {
+export const Number: Story = {
   args: {
     options: {
       type: "number",

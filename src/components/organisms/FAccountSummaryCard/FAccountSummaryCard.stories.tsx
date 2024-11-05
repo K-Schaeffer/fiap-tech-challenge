@@ -8,6 +8,9 @@ import FAccountSummaryCard, {
 const meta = {
   title: "Organisms/AccountSummaryCard",
   component: FAccountSummaryCard,
+  parameters: {
+    layout: "centered",
+  },
   args: {
     firstName: "Marilene",
     value: 50,
@@ -19,7 +22,7 @@ export default meta;
 
 export const Default: StoryFn<FAccountSummaryCardProps> = (args) => {
   return (
-    <Box maxWidth={650}>
+    <Box width={800}>
       <FAccountSummaryCard {...args} />
     </Box>
   );
