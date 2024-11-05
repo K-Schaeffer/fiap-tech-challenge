@@ -77,13 +77,5 @@
       }
     ]
   },
-  "transactions": [
-    {
-      "id": "f60d",
-      "amount": 100,
-      "currency": "USD",
-      "type": "withdrawal",
-      "date": "10-30-2024"
-    }
-  ]
+  "transactions": []
 }
