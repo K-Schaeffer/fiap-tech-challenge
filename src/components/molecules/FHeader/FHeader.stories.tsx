@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import FHeader from "./FHeader";
 
 const meta = {
-  title: "Organisms/Header",
+  title: "Molecules/Header",
   component: FHeader,
   parameters: {
     layout: "padded",

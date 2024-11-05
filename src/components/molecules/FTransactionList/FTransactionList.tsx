@@ -1,5 +1,5 @@
 "use client";
-import FModal from "@/components/organisms/FModal/FModal";
+import FModal from "@/components/molecules/FModal/FModal";
 import { editTransaction } from "@/services/Transaction/Transaction.controller";
 import { TransactionData } from "@/services/Transaction/Transaction.model";
 import { List, Typography } from "@mui/material";

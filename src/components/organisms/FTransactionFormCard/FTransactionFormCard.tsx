@@ -1,7 +1,7 @@
+import FCard from "@/components/molecules/FCard/FCard";
 import FTransactionForm, {
   FTransactionFormProps,
 } from "@/components/molecules/FTransactionForm/FTransactionForm";
-import FCard from "@/components/organisms/FCard/FCard";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import styles from "./FTransactionFormCard.styles";

@@ -3,7 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Box, BoxProps, IconButton, Menu, useTheme } from "@mui/material";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import FMenuList from "../FMenuList/FMenuList";
+import FMenuList from "../../molecules/FMenuList/FMenuList";
 
 interface FMenuDropdownProps {
   options?: BoxProps;
