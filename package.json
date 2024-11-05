@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:storybook": "storybook dev -p 6006",
-    "dev:server": "json-server db.json --port 3004",
+    "dev:server": "json-server db.json --port 3006",
     "build": "next build",
     "build:storybook": "storybook build",
     "start": "next start",

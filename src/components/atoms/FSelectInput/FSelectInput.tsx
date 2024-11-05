@@ -1,17 +1,19 @@
 "use client";
+import { TRANSACTION_TYPES } from "@/constants";
 import {
   FormControl,
   FormControlProps,
   InputLabel,
   MenuItem,
   Select,
+  SelectChangeEvent,
   SelectProps,
 } from "@mui/material";
 
 interface SelectInputProps {
   formControlOptions?: FormControlProps;
   options?: SelectProps<string>;
-  onChange?: () => {};
+  onChange?: (e: SelectChangeEvent) => void;
 }
 
 export default function SelectInput({
@@ -60,11 +62,11 @@ export default function SelectInput({
           ...options?.sx,
         }}
       >
-        <MenuItem value="cambio">Câmbio de Moeda</MenuItem>
-        <MenuItem value="doc-ted">DOC/TED</MenuItem>
-        <MenuItem value="emprestimo-financiamento">
-          Empréstimo e Financiamento
-        </MenuItem>
+        {TRANSACTION_TYPES.map((type, index) => (
+          <MenuItem value={type} key={`type-${index}`}>
+            {type}
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );

@@ -1,14 +1,16 @@
-"use client";
 import FTransactionList, {
   FTransactionListProps,
 } from "@/components/molecules/FTransactionList/FTransactionList";
 import FCard from "@/components/organisms/FCard/FCard";
 import { Stack, Typography } from "@mui/material";
 
-export interface FTransactionListCardProps
-  extends FTransactionListProps {}
+export interface FTransactionListCardProps extends FTransactionListProps {}
 
-export default function FTransactionListCard(props: FTransactionListCardProps) {
+export default async function FTransactionListCard({
+  transactionItems,
+  editTransaction,
+  deleteTransaction,
+}: FTransactionListCardProps) {
   return (
     <FCard>
       <Stack
@@ -21,7 +23,11 @@ export default function FTransactionListCard(props: FTransactionListCardProps) {
           Extrato
         </Typography>
       </Stack>
-      <FTransactionList transactionItems={props.transactionItems} />
+      <FTransactionList
+        transactionItems={transactionItems}
+        editTransaction={editTransaction}
+        deleteTransaction={deleteTransaction}
+      />
     </FCard>
   );
 }

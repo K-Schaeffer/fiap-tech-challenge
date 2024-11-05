@@ -15,7 +15,7 @@ const bgColor = {
 };
 
 const textColor = {
-  light: "currentColor",
+  light: "var(--mui-palette-bgCard-dark)",
   dark: "var(--mui-palette-bgCard-contrastText)",
 };
 

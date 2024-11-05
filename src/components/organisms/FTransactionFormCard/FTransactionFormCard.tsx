@@ -1,10 +1,16 @@
-import FTransactionForm from "@/components/molecules/FTransactionForm/FTransactionForm";
+import FTransactionForm, {
+  FTransactionFormProps,
+} from "@/components/molecules/FTransactionForm/FTransactionForm";
 import FCard from "@/components/organisms/FCard/FCard";
 import { Box } from "@mui/material";
 import Image from "next/image";
 import styles from "./FTransactionFormCard.styles";
 
-export default function FTransactionFormCard() {
+interface FTransactionFormCardProps extends FTransactionFormProps {}
+
+export default async function FTransactionFormCard({
+  addTransaction,
+}: FTransactionFormCardProps) {
   return (
     <FCard
       title="Nova transação"
@@ -44,7 +50,12 @@ export default function FTransactionFormCard() {
         <Image src="/assets/card-illustration-2.svg" alt="" layout="fill" />
       </Box>
 
-      <FTransactionForm />
+      <Box width={{ xs: "100%", sm: "70%" }}>
+        <FTransactionForm
+          addTransaction={addTransaction}
+          buttonText="Concluir transação"
+        />
+      </Box>
     </FCard>
   );
 }

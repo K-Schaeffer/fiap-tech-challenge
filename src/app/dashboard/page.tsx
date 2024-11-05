@@ -1,13 +1,48 @@
+import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
-// import { Transaction } from "@/services/Transaction/Transaction.model";
-// import { addTransaction } from "@/services/Transaction/Transaction.controller";
-import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
+import {
+  addTransaction,
+  deleteTransaction,
+  editTransaction,
+  getTransactions,
+} from "@/services/Transaction/Transaction.controller";
+import {
+  Transaction,
+  TransactionData,
+  TransactionInput,
+} from "@/services/Transaction/Transaction.model";
 
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
 
-  // const transaction: Transaction = await addTransaction({ amount: 100, currency: 'USD', type: 'withdrawal', date: '30-10-2024' });
+  const transactions: Transaction[] = await getTransactions();
+  const transactionList = transactions.map((transaction) => ({
+    ...transaction,
+  }));
 
-  return <AccountDashboard account={{ ...account }} />;
+  async function handleAddTransaction(transaction: TransactionInput) {
+    "use server";
+    await addTransaction(transaction);
+  }
+
+  async function hanldeEditTransaction(transaction: TransactionData) {
+    "use server";
+    await editTransaction(transaction);
+  }
+
+  async function handleDeleteTransaction(transactionId: string) {
+    "use server";
+    await deleteTransaction(transactionId);
+  }
+
+  return (
+    <AccountDashboard
+      account={{ ...account }}
+      transactionList={[...transactionList]}
+      handleAddTransaction={handleAddTransaction}
+      handleEditTransaction={hanldeEditTransaction}
+      handleDeleteTransaction={handleDeleteTransaction}
+    />
+  );
 }
