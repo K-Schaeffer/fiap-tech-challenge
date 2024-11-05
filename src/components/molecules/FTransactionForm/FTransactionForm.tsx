@@ -45,29 +45,39 @@ export default function FTransactionForm({
     setTransactionValue(Number(event.target.value));
   };
 
-  const handleEditTransaction = () => {
-    currentTransaction &&
-      editTransaction &&
-      editTransaction({
-        ...currentTransaction,
-        type: transactionType,
-        amount: transactionValue,
-        date: new Date().toISOString(),
-      });
-    closeEditModal && closeEditModal();
+  const handleEditTransaction = (): void => {
+    if (!currentTransaction || !editTransaction) {
+      return;
+    }
+
+    editTransaction({
+      ...currentTransaction,
+      type: transactionType,
+      amount: transactionValue,
+      date: new Date().toISOString(),
+    });
+
+    if (!closeEditModal) {
+      return;
+    }
+
+    closeEditModal();
   };
 
-  const handleAddTransaction = () => {
-    addTransaction &&
-      addTransaction({
-        type: transactionType,
-        amount: transactionValue,
-        date: new Date().toISOString(),
-        currency: "R$",
-      });
+  const handleAddTransaction = (): void => {
+    if (!addTransaction) {
+      return;
+    }
+
+    addTransaction({
+      type: transactionType,
+      amount: transactionValue,
+      date: new Date().toISOString(),
+      currency: "R$",
+    });
   };
 
-  const handleConfirmTransaction = () => {
+  const handleConfirmTransaction = (): void => {
     if (currentTransaction) {
       handleEditTransaction();
     } else {

@@ -4,13 +4,11 @@ import FTransactionList, {
 import FCard from "@/components/organisms/FCard/FCard";
 import { Stack, Typography } from "@mui/material";
 
-export interface FTransactionListCardProps extends FTransactionListProps {}
-
 export default async function FTransactionListCard({
   transactionItems,
   editTransaction,
   deleteTransaction,
-}: FTransactionListCardProps) {
+}: FTransactionListProps) {
   return (
     <FCard>
       <Stack
