@@ -4,8 +4,8 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 export interface FAccountButtonActions {
-  handleNewAccount?: () => void;
-  handleLogin?: () => void;
+  handleNewAccount: () => void;
+  handleLogin: () => void;
 }
 
 interface FAccountButtonsProps extends FAccountButtonActions {
