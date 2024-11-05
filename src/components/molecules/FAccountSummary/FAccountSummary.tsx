@@ -29,7 +29,6 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
           Saldo
         </Typography>
         <FIconButton
-          variant="plain"
           onClick={handleToggle}
           options={{ color: "secondary" }}
         >
