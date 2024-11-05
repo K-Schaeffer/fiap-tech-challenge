@@ -45,25 +45,38 @@ export default function FTransactionForm({
     setTransactionValue(Number(event.target.value));
   };
 
+  const handleEditTransaction = () => {
+    currentTransaction &&
+      editTransaction &&
+      editTransaction({
+        ...currentTransaction,
+        type: transactionType,
+        amount: transactionValue,
+        date: new Date().toISOString(),
+      });
+    closeEditModal && closeEditModal();
+  };
+
+  const handleAddTransaction = () => {
+    addTransaction &&
+      addTransaction({
+        type: transactionType,
+        amount: transactionValue,
+        date: new Date().toISOString(),
+        currency: "R$",
+      });
+  };
+
   const handleConfirmTransaction = () => {
     if (currentTransaction) {
-      editTransaction &&
-        editTransaction({
-          ...currentTransaction,
-          type: transactionType,
-          amount: transactionValue,
-          date: new Date().toISOString(),
-        });
-      closeEditModal && closeEditModal();
+      handleEditTransaction();
     } else {
-      addTransaction &&
-        addTransaction({
-          type: transactionType,
-          amount: transactionValue,
-          date: new Date().toISOString(),
-          currency: "R$",
-        });
+      handleAddTransaction();
     }
+    cleanTransactionForm();
+  };
+
+  const cleanTransactionForm = () => {
     setTransactionValue(0);
     setTransactionType("");
     router.refresh();

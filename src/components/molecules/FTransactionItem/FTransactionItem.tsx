@@ -19,7 +19,6 @@ export default function FTransactionItem({
   currency,
   onEdit,
   onDelete,
-  transactionId,
 }: FTransactionItemProps) {
   return (
     <Grid2 container>
@@ -41,7 +40,6 @@ export default function FTransactionItem({
         <FTransactionAction
           onEdit={onEdit}
           onDelete={onDelete}
-          transactionId={transactionId}
         ></FTransactionAction>
       </Grid2>
     </Grid2>

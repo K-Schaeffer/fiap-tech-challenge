@@ -62,8 +62,10 @@ export default function SelectInput({
           ...options?.sx,
         }}
       >
-        {TRANSACTION_TYPES.map((type) => (
-          <MenuItem value={type}>{type}</MenuItem>
+        {TRANSACTION_TYPES.map((type, index) => (
+          <MenuItem value={type} key={`type-${index}`}>
+            {type}
+          </MenuItem>
         ))}
       </Select>
     </FormControl>

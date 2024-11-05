@@ -5,27 +5,5 @@
     "balance": 2500,
     "currency": "R$"
   },
-  "transactions": [
-    {
-      "id": "23ac",
-      "type": "Câmbio de moeda",
-      "amount": 333,
-      "date": "2024-11-05T18:24:37.712Z",
-      "currency": "R$"
-    },
-    {
-      "id": "96d6",
-      "type": "Pagamento",
-      "amount": 566,
-      "date": "2024-11-05T18:33:40.889Z",
-      "currency": "R$"
-    },
-    {
-      "id": "e6cf",
-      "type": "Transferência",
-      "date": "2024-11-05T18:34:39.749Z",
-      "amount": 26,
-      "currency": "R$"
-    }
-  ]
+  "transactions": []
 }

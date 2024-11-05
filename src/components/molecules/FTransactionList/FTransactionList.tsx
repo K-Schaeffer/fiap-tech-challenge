@@ -41,13 +41,12 @@ export default function FTransactionList({
         {transactionItems.map(({ id, date, type, amount, currency }) => (
           <FTransactionItem
             key={`transaction-item-${id}`}
-            transactionId={id}
             date={date}
             type={type}
             value={amount}
             currency={currency}
-            onDelete={handleDelete}
-            onEdit={handleEdit}
+            onDelete={() => handleDelete(id)}
+            onEdit={() => handleEdit(id)}
           />
         ))}
       </List>
