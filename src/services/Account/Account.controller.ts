@@ -1,7 +1,7 @@
 import { Account } from "./Account.model";
 
 export const getAccountInfo = async () => {
-  const res = await fetch("http://localhost:3004/account", {
+  const res = await fetch("http://localhost:3006/account", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -5,7 +5,7 @@ import {
 } from "./Transaction.model";
 
 export const getTransactions = async () => {
-  const res = await fetch("http://localhost:3004/transactions", {
+  const res = await fetch("http://localhost:3006/transactions", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (transaction: TransactionInput) => {
-  const res = await fetch("http://localhost:3004/transactions", {
+  const res = await fetch("http://localhost:3006/transactions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
