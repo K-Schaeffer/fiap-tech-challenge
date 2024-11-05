@@ -1,5 +1,5 @@
 "use client";
-import FButton from "@/components/atoms/FButton/FButton";
+import FAccountButtons from "@/components/molecules/FAccountButtons/FAccountButtons";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
 import FFooter from "@/components/organisms/FFooter/FFooter";
 import FHeader from "@/components/organisms/FHeader/FHeader";
@@ -73,23 +73,14 @@ export default function AccountHome() {
         }
         rightContent={
           <Box>
-            <Box
-              display="flex"
-              alignItems="center"
-              gap={3}
-              sx={{
-                display: { xs: "none", md: "flex" },
+            <FAccountButtons
+              color="primary"
+              options={{
+                sx: {
+                  display: { xs: "none", md: "flex" },
+                },
               }}
-            >
-              <FButton
-                options={{ variant: "contained", color: "primary" }}
-                innerText="Abrir minha conta"
-              />
-              <FButton
-                options={{ variant: "outlined", color: "primary" }}
-                innerText="Ja tenho conta"
-              />
-            </Box>
+            />
             <Box
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -146,6 +137,14 @@ export default function AccountHome() {
               />
             </Grid2>
           </Grid2>
+          <FAccountButtons
+            color="secondary"
+            options={{
+              display: { xs: "flex", md: "none" },
+              marginTop: 4,
+              marginBottom: 4,
+            }}
+          />
           <FAdvantageContainer />
         </Box>
       </Container>
