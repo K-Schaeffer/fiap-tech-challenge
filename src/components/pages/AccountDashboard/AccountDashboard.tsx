@@ -14,6 +14,7 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+import Link from "next/link";
 
 interface AccountDashboardProps {
   account: Account;
@@ -49,7 +50,9 @@ export default function AccountDashboard({
         rightContent={
           <Box display="flex" alignItems="center" gap={8}>
             <Typography variant="body1">{account.fullName}</Typography>
-            <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
+            <Link href={"/"}>
+              <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
+            </Link>
           </Box>
         }
       />
