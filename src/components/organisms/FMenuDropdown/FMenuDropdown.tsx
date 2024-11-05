@@ -56,7 +56,7 @@ export default function FMenuDropdown({
         onClose={handleClose}
         MenuListProps={{
           "aria-labelledby": "basic-button",
-          sx: { minWidth: "172px" },
+          sx: { minWidth: "172px", padding: 2 },
         }}
       >
         <FMenuList menuItems={items} />

@@ -45,7 +45,7 @@ export default function FMenuList({
               href={path}
               style={{
                 color: current
-                  ? "var(--mui-palette-primary-main)"
+                  ? "var(--mui-palette-tertiary-main)"
                   : isDarkTheme
                     ? "var(--mui-palette-primary-main)"
                     : "currentColor",
@@ -59,7 +59,9 @@ export default function FMenuList({
           <Divider
             sx={{
               display: variant === "row" ? "none" : "inherit",
-              borderColor: current ? "var(--mui-palette-primary-main)" : "auto",
+              borderColor: current
+                ? "var(--mui-palette-tertiary-main)"
+                : "auto",
             }}
           />
         </Box>

@@ -17,16 +17,16 @@ export default function FTransactionAction({
   return (
     <Stack direction="row" spacing={1.875}>
       <FIconButton
-        variant="plain"
+        variant="fancy"
         onClick={() => onEdit(transactionId)}
         options={{ color: "primary" }}
       >
         <EditTwoTone />
       </FIconButton>
       <FIconButton
-        variant="plain"
+        variant="fancy"
         onClick={() => onDelete(transactionId)}
-        options={{ color: "primary" }}
+        options={{ color: "secondary" }}
       >
         <DeleteTwoTone />
       </FIconButton>

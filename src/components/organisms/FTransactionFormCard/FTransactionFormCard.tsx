@@ -50,7 +50,12 @@ export default async function FTransactionFormCard({
         <Image src="/assets/card-illustration-2.svg" alt="" layout="fill" />
       </Box>
 
-      <FTransactionForm addTransaction={addTransaction} />
+      <Box width={{ xs: "100%", sm: "70%" }}>
+        <FTransactionForm
+          addTransaction={addTransaction}
+          buttonText="Concluir transação"
+        />
+      </Box>
     </FCard>
   );
 }

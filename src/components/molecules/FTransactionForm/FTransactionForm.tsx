@@ -16,6 +16,7 @@ export interface FTransactionFormProps {
   addTransaction?: (transaction: TransactionInput) => void;
   editTransaction?: (transaction: TransactionData) => void;
   closeEditModal?: () => void;
+  buttonText?: string;
 }
 
 export default function FTransactionForm({
@@ -23,6 +24,7 @@ export default function FTransactionForm({
   addTransaction,
   editTransaction,
   closeEditModal,
+  buttonText,
 }: FTransactionFormProps) {
   const router = useRouter();
 
@@ -68,7 +70,7 @@ export default function FTransactionForm({
   };
 
   return (
-    <Box sx={{ width: "100%", maxWidth: 500, zIndex: 1 }}>
+    <Box sx={{ width: "100%", zIndex: 1 }}>
       <Stack spacing={4}>
         <FSelectInput
           onChange={handleSelectTransactionType}
@@ -85,7 +87,7 @@ export default function FTransactionForm({
           onChange={handleInputTransactionValue}
         />
         <FButton
-          innerText="Concluir Transação"
+          innerText={buttonText}
           options={{
             variant: "contained",
             disabled: !transactionType || !transactionValue,

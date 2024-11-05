@@ -3,6 +3,7 @@ import FAccountSummary, {
   FAccountSummaryProps,
 } from "@/components/molecules/FAccountSummary/FAccountSummary";
 import FCard from "@/components/organisms/FCard/FCard";
+import { getFormattedDateNow } from "@/utils/formatters";
 import { Box, Grid2, Typography } from "@mui/material";
 import Image from "next/image";
 import styles from "./FAccountSummaryCard.styles";
@@ -12,15 +13,6 @@ interface FAccountSummaryCardProps extends FAccountSummaryProps {
 }
 
 export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
-  const now = new Date();
-
-  const todayFormatted = now.toLocaleDateString("pt-BR", {
-    weekday: "long",
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
-
   return (
     <FCard
       variant="dark"
@@ -35,7 +27,7 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
       <Grid2 container spacing={4}>
         <Grid2 size={{ md: 6, xs: 12 }}>
           <Typography variant="caption" textTransform="capitalize">
-            {todayFormatted}
+            {getFormattedDateNow()}
           </Typography>
         </Grid2>
         <Grid2 size={{ md: 6, xs: 12 }}>

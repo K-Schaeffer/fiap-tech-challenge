@@ -7,24 +7,24 @@
   },
   "transactions": [
     {
-      "id": "0b0f",
+      "id": "23ac",
       "type": "Câmbio de moeda",
-      "date": "2024-11-05T15:33:16.168Z",
-      "amount": 459966,
+      "amount": 333,
+      "date": "2024-11-05T18:24:37.712Z",
       "currency": "R$"
     },
     {
-      "id": "b351",
-      "type": "doc-ted",
-      "amount": 567,
-      "date": "2024-11-05T15:06:55.656Z",
+      "id": "96d6",
+      "type": "Pagamento",
+      "amount": 566,
+      "date": "2024-11-05T18:33:40.889Z",
       "currency": "R$"
     },
     {
-      "id": "59b2",
-      "type": "doc-ted",
-      "amount": 67,
-      "date": "2024-11-05T15:32:37.617Z",
+      "id": "e6cf",
+      "type": "Transferência",
+      "date": "2024-11-05T18:34:39.749Z",
+      "amount": 26,
       "currency": "R$"
     }
   ]

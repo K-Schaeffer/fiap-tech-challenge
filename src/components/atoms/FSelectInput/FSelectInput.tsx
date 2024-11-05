@@ -1,4 +1,5 @@
 "use client";
+import { TRANSACTION_TYPES } from "@/constants";
 import {
   FormControl,
   FormControlProps,
@@ -61,11 +62,9 @@ export default function SelectInput({
           ...options?.sx,
         }}
       >
-        <MenuItem value="Câmbio de moeda">Câmbio de Moeda</MenuItem>
-        <MenuItem value="doc-ted">DOC/TED</MenuItem>
-        <MenuItem value="emprestimo-financiamento">
-          Empréstimo e Financiamento
-        </MenuItem>
+        {TRANSACTION_TYPES.map((type) => (
+          <MenuItem value={type}>{type}</MenuItem>
+        ))}
       </Select>
     </FormControl>
   );

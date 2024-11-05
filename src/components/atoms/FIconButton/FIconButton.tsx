@@ -8,27 +8,29 @@ interface FIconButtonProps {
   children: React.ReactNode;
 }
 
-export default function FIconButton({variant, options, onClick, children}: FIconButtonProps) {
+export default function FIconButton({
+  variant,
+  options,
+  onClick,
+  children,
+}: FIconButtonProps) {
   return (
-    <IconButton 
-    {...options}
-    style={{ padding: 0 }}
-    onClick={onClick}
-    >
+    <IconButton {...options} style={{ padding: 0 }} onClick={onClick}>
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          ...(variant === 'fancy' && {
-            backgroundColor: 'var(--mui-palette-primary-main)',
-            color: 'var(--mui-palette-primary-contrastText)',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          ...(variant === "fancy" && {
+            backgroundColor: `var(--mui-palette-${options?.color}-main)`,
+            color: `var(--mui-palette-${options?.color}-contrastText)`,
             width: 40,
             height: 40,
             borderRadius: "50%",
           }),
-        }}>
-        { children }
+        }}
+      >
+        {children}
       </Box>
     </IconButton>
   );

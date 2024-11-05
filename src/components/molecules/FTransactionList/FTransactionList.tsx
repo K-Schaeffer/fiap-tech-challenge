@@ -52,7 +52,9 @@ export default function FTransactionList({
         ))}
       </List>
       {transactionItems.length === 0 && (
-        <Typography variant="body1">Nenhuma transação encontrada.</Typography>
+        <Typography variant="body1" color="textLight">
+          Nenhuma transação encontrada.
+        </Typography>
       )}
       <FModal
         title="Editar transação"
@@ -63,6 +65,7 @@ export default function FTransactionList({
           currentTransaction={currentTransaction}
           editTransaction={editTransaction}
           closeEditModal={() => setIsModalOpen(false)}
+          buttonText="Concluir edição"
         />
       </FModal>
     </>
