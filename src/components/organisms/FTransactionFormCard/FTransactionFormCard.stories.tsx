@@ -10,6 +10,7 @@ const meta = {
     nextjs: {
       appDirectory: true,
     },
+    layout: "centered",
   },
 } satisfies Meta<typeof FFormTransactionCard>;
 
@@ -17,7 +18,7 @@ export default meta;
 
 export const Default: StoryFn = () => {
   return (
-    <Box maxWidth={650}>
+    <Box width={800}>
       <FFormTransactionCard />
     </Box>
   );

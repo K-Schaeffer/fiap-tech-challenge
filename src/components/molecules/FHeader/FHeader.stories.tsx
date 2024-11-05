@@ -16,7 +16,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: (
+    leftContent: (
+      <Typography variant="h1" fontWeight={400}>
+        Foo bar
+      </Typography>
+    ),
+    rightContent: (
       <Typography variant="h1" fontWeight={400}>
         Foo bar
       </Typography>
@@ -26,7 +31,12 @@ export const Default: Story = {
 
 export const Dark: Story = {
   args: {
-    children: (
+    leftContent: (
+      <Typography variant="h1" fontWeight={400}>
+        Foo bar
+      </Typography>
+    ),
+    rightContent: (
       <Typography variant="h1" fontWeight={400}>
         Foo bar
       </Typography>

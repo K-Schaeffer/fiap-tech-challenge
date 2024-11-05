@@ -5,7 +5,7 @@ import FTransactionAction, {
 } from "../FTransactionAction/FTransactionAction";
 import styles from "./FTransactionItem.styles";
 
-interface FTransactionItemProps extends FTransactionActionProps {
+export interface FTransactionItemProps extends FTransactionActionProps {
   date: string;
   type: string;
   value: number;

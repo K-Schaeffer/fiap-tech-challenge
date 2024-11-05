@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { fn } from "@storybook/test";
 import AccountDashboard from "./AccountDashboard";
 
 const meta = {
@@ -40,5 +41,8 @@ export const Default: Story = {
         currency: "R$",
       },
     ],
+    handleAddTransaction: fn(),
+    handleEditTransaction: fn(),
+    handleDeleteTransaction: fn(),
   },
 };
