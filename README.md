@@ -24,9 +24,7 @@ Para o desenvolvimento do projeto nós seguimos o style guide proposto, porém c
 
 ### Demo
 
-Video de demonstração do projeto:
-
-TBD
+Video de demonstração do projeto no [Youtube](https://www.youtube.com/watch?v=bpOF9o-NCp4).
 
 ## Rodando o projeto
 
