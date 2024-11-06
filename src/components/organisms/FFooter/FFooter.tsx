@@ -1,5 +1,5 @@
-import FFoterIconsColumn from "@/components/molecules/FFooterContainer/FFooterIconsColumn";
-import FFooterColumn from "@/components/molecules/FFooterContainer/FFooterTextColumn";
+import FFoterIconsColumn from "@/components/molecules/FFooterIconsColumn/FFooterIconsColumn";
+import FFooterColumn from "@/components/molecules/FFooterTextColumn/FFooterTextColumn";
 import { Box, Container, Grid2 } from "@mui/material";
 
 const listService: string[] = [

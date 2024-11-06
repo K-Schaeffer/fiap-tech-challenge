@@ -48,9 +48,9 @@ export default function AccountDashboard({
           </Box>
         }
         rightContent={
-          <Box display="flex" alignItems="center" gap={8}>
+          <Box display="flex" alignItems="center" gap={2}>
             <Typography variant="body1">{account.fullName}</Typography>
-            <Link href={"/"}>
+            <Link href={"/"} style={{ display: "flex" }}>
               <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
             </Link>
           </Box>

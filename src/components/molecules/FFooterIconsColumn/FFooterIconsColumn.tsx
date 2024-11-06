@@ -4,7 +4,7 @@ import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Image from "next/image";
 
-interface FFoterIconsColumnProps {
+export interface FFoterIconsColumnProps {
   textHeader?: string;
 }
 
