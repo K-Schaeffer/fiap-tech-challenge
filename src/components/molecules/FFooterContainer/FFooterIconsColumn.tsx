@@ -18,7 +18,7 @@ export default function FFoterIconsColumn(props: FFoterIconsColumnProps) {
       <Typography
         fontWeight={700}
         lineHeight={"19.2px"}
-        color="ligth"
+        color="light"
         height={"31px"}
         fontSize={16}
         minWidth={185}
