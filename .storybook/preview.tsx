@@ -1,9 +1,8 @@
 import React from "react";
 
-import type { Preview } from "@storybook/react";
 import { ThemeProvider } from "@mui/material/styles";
-import { light, dark } from "../src/theme/theme";
-import { font } from "../src/app/layout";
+import type { Preview } from "@storybook/react";
+import { dark, font, light } from "../src/theme/theme";
 
 const preview: Preview = {
   parameters: {

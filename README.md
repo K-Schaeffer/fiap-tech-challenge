@@ -11,6 +11,10 @@ O protótipo das telas desenvolvidas pode ser encontrado no [Figma](https://www.
 
 ![Archictecture preview](.github/architecture.png)
 
+O projeto está usando SSG para algumas views estáticas e SSR para a view de dashboard. Além disso, toda a estrutura de componentes (UI) que a view consome está usando CSR.
+
+![Bundle preview](.github/bundle-preview.png)
+
 ### Styleguide
 
 Para o desenvolvimento do projeto nós seguimos o style guide proposto, porém com adaptações para seguir o [Material Design](https://m3.material.io/) e outras práticas que o grupo achou pertinente mudar.

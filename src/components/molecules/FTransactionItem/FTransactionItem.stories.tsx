@@ -1,4 +1,4 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
 import { fn } from "@storybook/test";
@@ -25,7 +25,6 @@ const meta = {
 } satisfies Meta<typeof FTransactionItem>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
 export const Default: StoryFn<FTransactionItemProps> = (args) => {
   return (
