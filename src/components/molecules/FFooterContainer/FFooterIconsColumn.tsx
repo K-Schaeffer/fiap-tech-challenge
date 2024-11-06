@@ -28,13 +28,13 @@ export default function FFoterIconsColumn(props: FFoterIconsColumnProps) {
 
       <Image src="/assets/logo-white.svg" alt="" width={145} height={32} />
       <Stack spacing={3} direction="row">
-        <FIconButton variant="plain">
+        <FIconButton>
           <Instagram sx={{ width: "29px", height: "29.6px" }} />
         </FIconButton>
-        <FIconButton variant="plain">
+        <FIconButton>
           <WhatsApp sx={{ width: "29px", height: "29.6px" }} />
         </FIconButton>
-        <FIconButton variant="plain">
+        <FIconButton>
           <YouTube sx={{ width: "29px", height: "29.6px" }} />
         </FIconButton>
       </Stack>

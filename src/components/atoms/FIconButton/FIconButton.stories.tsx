@@ -16,17 +16,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Plain: Story = {
+export const Primary: Story = {
   args: {
-    variant: "plain",
+    options: { color: "primary" },
     children: <DeleteTwoTone />,
     options: { color: "primary" },
   },
 };
 
-export const Fancy: Story = {
+export const Secondary: Story = {
   args: {
-    variant: "fancy",
+    options: { color: "secondary" },
     children: <EditTwoTone />,
     options: { color: "primary" },
   },
