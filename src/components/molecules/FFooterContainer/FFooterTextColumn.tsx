@@ -12,7 +12,7 @@ export default function FFooterTextColumn(props: FFooterTextColumnProps) {
       <Typography
         fontWeight={700}
         lineHeight={"19.2px"}
-        color="ligth"
+        color="light"
         height={"31px"}
         fontSize={16}
       >
@@ -23,7 +23,7 @@ export default function FFooterTextColumn(props: FFooterTextColumnProps) {
           key={`item-${index}`}
           fontWeight={400}
           lineHeight={"19.2px"}
-          color="ligth"
+          color="light"
           height={"31px"}
           fontSize={16}
         >
