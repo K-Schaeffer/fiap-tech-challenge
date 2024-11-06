@@ -33,8 +33,8 @@ export default function AccountDashboard({
   return (
     <main
       style={{
-        minWidth: "100vw",
-        minHeight: "100vh",
+        minWidth: "100%",
+        minHeight: "100%",
         backgroundColor: "var(--mui-palette-tertiary-light)",
       }}
     >
