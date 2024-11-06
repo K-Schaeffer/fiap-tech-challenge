@@ -20,13 +20,13 @@ export default function FAccountButtons({
   handleLogin,
 }: FAccountButtonsProps) {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("md"));
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box {...options} alignItems="center" justifyContent="center" gap={3}>
       <FButton
         options={{ variant: "contained", color }}
-        innerText={matches ? "Abrir minha conta" : "Abrir Conta"}
+        innerText={matches ? "Abrir Conta" : "Abrir minha conta"}
         onClick={handleNewAccount}
       />
       <FButton

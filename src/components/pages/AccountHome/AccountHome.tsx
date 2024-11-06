@@ -29,8 +29,8 @@ export default function AccountHome(props: FAccountHomeProps) {
       style={{
         display: "flex",
         flexDirection: "column",
-        minWidth: "100vw",
-        minHeight: "100vh",
+        minWidth: "100%",
+        minHeight: "100%",
         background: "linear-gradient(var(--mui-palette-tertiary-main), #fff)",
       }}
     >
