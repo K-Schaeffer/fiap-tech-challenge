@@ -22,7 +22,7 @@ export default function FTransactionAction({
       </FIconButton>
       <FIconButton
         onClick={onDelete}
-        options={{ color: "primary" }}
+        options={{ color: "secondary" }}
       >
         <DeleteTwoTone />
       </FIconButton>
