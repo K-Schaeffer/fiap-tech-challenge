@@ -6,7 +6,7 @@ const meta = {
   title: "Molecules/AdvantageColumn",
   component: FAdvantageColumn,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
 } satisfies Meta<typeof FAdvantageColumn>;
 

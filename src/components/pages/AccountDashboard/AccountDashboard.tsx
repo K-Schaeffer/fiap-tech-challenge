@@ -1,8 +1,8 @@
+import FCard from "@/components/molecules/FCard/FCard";
+import FHeader from "@/components/molecules/FHeader/FHeader";
+import FMenuList from "@/components/molecules/FMenuList/FMenuList";
 import FAccountSummaryCard from "@/components/organisms/FAccountSummaryCard/FAccountSummaryCard";
-import FCard from "@/components/organisms/FCard/FCard";
-import FHeader from "@/components/organisms/FHeader/FHeader";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
-import FMenuList from "@/components/organisms/FMenuList/FMenuList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants";
@@ -14,6 +14,7 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+import Link from "next/link";
 
 interface AccountDashboardProps {
   account: Account;
@@ -49,7 +50,9 @@ export default function AccountDashboard({
         rightContent={
           <Box display="flex" alignItems="center" gap={8}>
             <Typography variant="body1">{account.fullName}</Typography>
-            <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
+            <Link href={"/"}>
+              <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
+            </Link>
           </Box>
         }
       />

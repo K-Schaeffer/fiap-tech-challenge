@@ -1,23 +1,36 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 
-import FTransactionItem from "./FTransactionItem";
+import { Box } from "@mui/material";
+import { fn } from "@storybook/test";
+import FTransactionItem, { FTransactionItemProps } from "./FTransactionItem";
 
 const meta = {
   title: "Molecules/TransactionItem",
   component: FTransactionItem,
   parameters: {
-    layout: "padded",
+    layout: "centered",
+    backgrounds: {
+      values: [{ name: "Gray", value: "#D3D3D3" }],
+      default: "Gray",
+    },
+  },
+  args: {
+    onDelete: fn(),
+    onEdit: fn(),
+    date: "2021-10-10",
+    type: "income",
+    value: 100,
+    currency: "R$",
   },
 } satisfies Meta<typeof FTransactionItem>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  args: {
-    date: "2024-10-31",
-    type: "Depósito",
-    value: 100,
-    currency: "R$",
-  },
+export const Default: StoryFn<FTransactionItemProps> = (args) => {
+  return (
+    <Box width={400} padding={4} sx={{ backgroundColor: "#fff" }}>
+      <FTransactionItem {...args} />
+    </Box>
+  );
 };
