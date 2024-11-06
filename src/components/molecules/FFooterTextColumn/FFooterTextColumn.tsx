@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
-interface FFooterTextColumnProps {
+export interface FFooterTextColumnProps {
   textHeader?: string;
   listItems?: string[];
 }
