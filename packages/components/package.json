@@ -9,6 +9,7 @@
   ],
   "type": "module",
   "scripts": {
+    "lint": "eslint",
     "build": "tsc -p ./tsconfig.json && vite build"
   },
   "peerDependencies": {
