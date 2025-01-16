@@ -6,15 +6,25 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  plugins: [react(), dts({ include: ["src"] })],
+  plugins: [
+    react(),
+    dts({ include: ["src"], exclude: ["src/**/*.stories.tsx"] }),
+  ],
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
-      fileName: "teste",
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"],
+      external: [
+        "react",
+        "react/jsx-runtime",
+        "@emotion/cache",
+        "@emotion/styled",
+        "@mui/icons-material",
+        "@mui/material",
+        "@mui/material-nextjs",
+      ],
       input: Object.fromEntries(
         glob
           .sync("src/**/*.{ts,tsx}", {
