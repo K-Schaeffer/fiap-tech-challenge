@@ -12,9 +12,10 @@
   ],
   "type": "module",
   "scripts": {
+    "dev": "tsc -p ./tsconfig.json && vite build --watch",
+    "build": "tsc -p ./tsconfig.json && vite build",
     "lint": "eslint",
-    "format": "prettier --write .",
-    "build": "tsc -p ./tsconfig.json && vite build"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
