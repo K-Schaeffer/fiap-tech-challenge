@@ -14,7 +14,6 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import { HelloWorld } from "components";
 import Link from "next/link";
 
 interface AccountDashboardProps {
@@ -39,7 +38,6 @@ export default function AccountDashboard({
         backgroundColor: "var(--mui-palette-tertiary-light)",
       }}
     >
-      <HelloWorld />
       <FHeader
         leftContent={
           <Box>

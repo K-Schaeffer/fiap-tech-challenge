@@ -1,7 +1,7 @@
-import FIconButton from "@/components/atoms/FIconButton/FIconButton";
 import { Instagram, WhatsApp, YouTube } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { FIconButton } from "components";
 import Image from "next/image";
 
 export interface FFoterIconsColumnProps {
