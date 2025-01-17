@@ -15,7 +15,7 @@
   "scripts": {
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "dev": "tsc -p ./tsconfig.json && vite build --watch",
+    "dev": "concurrently --names \"storybook,vite\" \"npm run dev:storybook\" \"vite build --watch\"",
     "build": "tsc -p ./tsconfig.json && vite build",
     "lint": "eslint",
     "format": "prettier --write ."
@@ -46,6 +46,7 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
