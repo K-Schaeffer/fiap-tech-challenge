@@ -6,11 +6,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
-    "declaration": true,
-    "declarationDir": "./dist/types",
-    "emitDeclarationOnly": true,
     "outDir": "./dist",
-    "noEmit": false
+    "noEmit": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
