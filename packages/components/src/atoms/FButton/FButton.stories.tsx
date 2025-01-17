@@ -1,62 +1,62 @@
-// import type { Meta, StoryObj } from "@storybook/react";
-// import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-// import FButton from "./FButton";
+import { FButton } from "./FButton";
 
-// const meta = {
-//   title: "Atoms/Button",
-//   component: FButton,
-//   parameters: {
-//     layout: "centered",
-//   },
-//   args: { onClick: fn() },
-// } satisfies Meta<typeof FButton>;
+const meta = {
+  title: "Atoms/Button",
+  component: FButton,
+  parameters: {
+    layout: "centered",
+  },
+  args: { onClick: fn() },
+} satisfies Meta<typeof FButton>;
 
-// export default meta;
-// type Story = StoryObj<typeof meta>;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-// export const Primary: Story = {
-//   args: {
-//     innerText: "Hello world!",
-//     options: {
-//       variant: "contained",
-//       color: "primary",
-//     },
-//   },
-// };
+export const Primary: Story = {
+  args: {
+    innerText: "Hello world!",
+    options: {
+      variant: "contained",
+      color: "primary",
+    },
+  },
+};
 
-// export const Secondary: Story = {
-//   args: {
-//     innerText: "Hello world!",
-//     options: {
-//       variant: "contained",
-//       color: "secondary",
-//     },
-//   },
-// };
+export const Secondary: Story = {
+  args: {
+    innerText: "Hello world!",
+    options: {
+      variant: "contained",
+      color: "secondary",
+    },
+  },
+};
 
-// export const PrimaryDark: Story = {
-//   parameters: {
-//     isDark: true,
-//   },
-//   args: {
-//     innerText: "Hello world!",
-//     options: {
-//       variant: "contained",
-//       color: "primary",
-//     },
-//   },
-// };
+export const PrimaryDark: Story = {
+  parameters: {
+    isDark: true,
+  },
+  args: {
+    innerText: "Hello world!",
+    options: {
+      variant: "contained",
+      color: "primary",
+    },
+  },
+};
 
-// export const OutlinedDark: Story = {
-//   parameters: {
-//     isDark: true,
-//   },
-//   args: {
-//     innerText: "Hello world!",
-//     options: {
-//       variant: "outlined",
-//       color: "primary",
-//     },
-//   },
-// };
+export const OutlinedDark: Story = {
+  parameters: {
+    isDark: true,
+  },
+  args: {
+    innerText: "Hello world!",
+    options: {
+      variant: "outlined",
+      color: "primary",
+    },
+  },
+};
