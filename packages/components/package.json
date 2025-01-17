@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./theme": "./dist/theme/index.js"
   },
   "types": "dist/index.d.ts",
   "files": [
