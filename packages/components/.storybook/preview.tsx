@@ -1,8 +1,8 @@
 import React from "react";
 
-// import { ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import type { Preview } from "@storybook/react";
-// import { dark, font, light } from "../src/theme/theme";
+import { dark, light } from "../src/theme/";
 
 const preview: Preview = {
   parameters: {
@@ -15,11 +15,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story, { parameters }) => (
-      // className={font.variable}
-      <div>
-        {/* <ThemeProvider theme={parameters.isDark ? dark : light}> */}
+      <ThemeProvider theme={parameters.isDark ? dark : light}>
         <Story />
-      </div>
+      </ThemeProvider>
     ),
   ],
 };
