@@ -1,0 +1,46 @@
+{
+  "node": {
+    "45b6f936da014193eed259d6b3d67c74d0efda54": {
+      "workers": {
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CGustavoMartins%5C%5CDocuments%5C%5CProjetos%5C%5CTech%20Challenge%20-%202%20fase%5C%5Cfiap-tech-challenge-main-FE%5C%5Cfiap-tech-challenge%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%5B%22%24%24ACTION_1%22%2C%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/page": "rsc"
+      }
+    },
+    "c7d8c312b87e51fad47394c46b7c3ac369fb07a0": {
+      "workers": {
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CGustavoMartins%5C%5CDocuments%5C%5CProjetos%5C%5CTech%20Challenge%20-%202%20fase%5C%5Cfiap-tech-challenge-main-FE%5C%5Cfiap-tech-challenge%5C%5Csrc%5C%5Capp%5C%5Cpage.tsx%22%2C%5B%22%24%24ACTION_1%22%2C%22%24%24ACTION_0%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/page": "rsc"
+      }
+    },
+    "32c82be2f249c9b0583ed1094a136c125f04ae09": {
+      "workers": {
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CGustavoMartins%5C%5CDocuments%5C%5CProjetos%5C%5CTech%20Challenge%20-%202%20fase%5C%5Cfiap-tech-challenge-main-FE%5C%5Cfiap-tech-challenge%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%2C%5B%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22%24%24ACTION_2%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/dashboard/page": "rsc"
+      }
+    },
+    "b793fe4efd10b56d18c4bba660d1c8da5936570a": {
+      "workers": {
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CGustavoMartins%5C%5CDocuments%5C%5CProjetos%5C%5CTech%20Challenge%20-%202%20fase%5C%5Cfiap-tech-challenge-main-FE%5C%5Cfiap-tech-challenge%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%2C%5B%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22%24%24ACTION_2%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/dashboard/page": "rsc"
+      }
+    },
+    "e9128aba7080eea74ee64a6c761aa9decca58975": {
+      "workers": {
+        "app/dashboard/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CGustavoMartins%5C%5CDocuments%5C%5CProjetos%5C%5CTech%20Challenge%20-%202%20fase%5C%5Cfiap-tech-challenge-main-FE%5C%5Cfiap-tech-challenge%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%2C%5B%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22%24%24ACTION_2%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/dashboard/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "aFMa+s2Se8y8JnViA5IsDGTcK966UwS0aTwCNOd+8N0="
+}

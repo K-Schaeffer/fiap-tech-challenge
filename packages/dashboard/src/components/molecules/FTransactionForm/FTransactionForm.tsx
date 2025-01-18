@@ -67,7 +67,7 @@ export default function FTransactionForm({
   const handleInputTransactionValue = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    let newValue: number = Math.abs(Number(event.target.value));
+    const newValue: number = Math.abs(Number(event.target.value));
 
     if (newValue > account?.balance && !isAddValueAccount) {
       setAlert({ severity: "warning", text: "Saldo insuficiente!" });
@@ -102,7 +102,7 @@ export default function FTransactionForm({
       return;
     }
 
-    let newValue = ["Depósito", "Empréstimo"].includes(transactionType)
+    const newValue = ["Depósito", "Empréstimo"].includes(transactionType)
       ? Math.abs(transactionValue)
       : -Math.abs(transactionValue);
 
@@ -138,7 +138,7 @@ export default function FTransactionForm({
   };
 
   const handleValueClick = (valueAdded: number) => {
-    let newValue: number = transactionValue + valueAdded;
+    const newValue: number = transactionValue + valueAdded;
 
     if (newValue > account?.balance && !isAddValueAccount) {
       setAlert({ severity: "warning", text: "Saldo insuficiente!" });
@@ -185,7 +185,7 @@ export default function FTransactionForm({
             <FChip valueAdd={50} handleValueClick={handleValueClick} />
             <FChip valueAdd={100} handleValueClick={handleValueClick} />
             <FChip
-              valueAdd={isAddValueAccount ? 500 : account?.balance!}
+              valueAdd={isAddValueAccount ? 500 : (account?.balance ?? 0)}
               handleValueClick={handleValueClick}
             />
           </Stack>
