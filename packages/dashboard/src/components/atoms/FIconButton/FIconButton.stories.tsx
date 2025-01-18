@@ -20,7 +20,6 @@ export const Primary: Story = {
   args: {
     options: { color: "primary" },
     children: <DeleteTwoTone />,
-    options: { color: "primary" },
   },
 };
 
@@ -28,6 +27,5 @@ export const Secondary: Story = {
   args: {
     options: { color: "secondary" },
     children: <EditTwoTone />,
-    options: { color: "primary" },
   },
 };

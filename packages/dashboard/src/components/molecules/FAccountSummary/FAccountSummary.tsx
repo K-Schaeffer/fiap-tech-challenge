@@ -28,10 +28,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
         >
           Saldo
         </Typography>
-        <FIconButton
-          onClick={handleToggle}
-          options={{ color: "secondary" }}
-        >
+        <FIconButton onClick={handleToggle} options={{ color: "secondary" }}>
           {isBalanceVisible ? <VisibilityTwoTone /> : <VisibilityOffTwoTone />}
         </FIconButton>
       </Stack>
