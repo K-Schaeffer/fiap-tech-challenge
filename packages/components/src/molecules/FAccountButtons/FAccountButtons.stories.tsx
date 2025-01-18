@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import FAccountButtons from "./FAccountButtons";
+import { FAccountButtons } from "./FAccountButtons";
 
 const meta = {
   title: "Molecules/AccountButtons",

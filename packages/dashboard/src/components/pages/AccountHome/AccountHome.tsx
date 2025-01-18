@@ -1,7 +1,4 @@
 "use client";
-import FAccountButtons, {
-  FAccountButtonActions,
-} from "@/components/molecules/FAccountButtons/FAccountButtons";
 import FHeader from "@/components/molecules/FHeader/FHeader";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
 import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
@@ -9,6 +6,7 @@ import FFooter from "@/components/organisms/FFooter/FFooter";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import { MENU_ITEMS_HOME } from "@/constants";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+import { FAccountButtonActions, FAccountButtons } from "components";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
