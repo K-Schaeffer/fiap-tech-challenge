@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Typography } from "@mui/material";
-import FCard from "./FCard";
+import React from "react";
+import { FCard } from "./FCard";
 
 const meta = {
   title: "Molecules/Card",

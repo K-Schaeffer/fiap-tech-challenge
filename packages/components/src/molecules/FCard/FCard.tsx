@@ -1,4 +1,5 @@
 import { Box, Card, CardProps, Typography } from "@mui/material";
+import React from "react";
 
 type FCardVariant = "light" | "dark";
 
@@ -19,12 +20,7 @@ const textColor = {
   dark: "var(--mui-palette-bgCard-contrastText)",
 };
 
-export default function FCard({
-  title,
-  children,
-  variant,
-  options,
-}: FCardProps) {
+export function FCard({ title, children, variant, options }: FCardProps) {
   return (
     <Card
       {...options}

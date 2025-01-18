@@ -9,3 +9,4 @@ export { FSelectInput } from "./atoms/FSelectInput/FSelectInput.tsx";
 
 export { FAccountButtons } from "./molecules/FAccountButtons/FAccountButtons.tsx";
 export type { FAccountButtonActions } from "./molecules/FAccountButtons/FAccountButtons.tsx";
+export { FCard } from "./molecules/FCard/FCard.tsx";

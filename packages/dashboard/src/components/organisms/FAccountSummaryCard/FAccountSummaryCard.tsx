@@ -2,9 +2,9 @@
 import FAccountSummary, {
   FAccountSummaryProps,
 } from "@/components/molecules/FAccountSummary/FAccountSummary";
-import FCard from "@/components/molecules/FCard/FCard";
 import { getFormattedDateNow } from "@/utils/formatters";
 import { Box, Grid2, Typography } from "@mui/material";
+import { FCard } from "components";
 import Image from "next/image";
 import styles from "./FAccountSummaryCard.styles";
 

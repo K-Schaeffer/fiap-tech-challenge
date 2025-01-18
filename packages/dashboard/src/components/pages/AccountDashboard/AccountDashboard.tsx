@@ -1,4 +1,3 @@
-import FCard from "@/components/molecules/FCard/FCard";
 import FHeader from "@/components/molecules/FHeader/FHeader";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
 import FAccountSummaryCard from "@/components/organisms/FAccountSummaryCard/FAccountSummaryCard";
@@ -14,6 +13,7 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+import { FCard } from "components";
 import Link from "next/link";
 
 interface AccountDashboardProps {
