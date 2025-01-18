@@ -87,23 +87,9 @@ export default function AccountDashboard({
               balance={formattedBalance}
               date={formattedDate}
             >
-              {{
-                bottomPixels: (
-                  <>
-                    <Image src="/assets/card-pixels-2.svg" alt="" fill />
-                  </>
-                ),
-                topPixels: (
-                  <>
-                    <Image src="/assets/card-pixels-1.svg" alt="" fill />
-                  </>
-                ),
-                illustration: (
-                  <>
-                    <Image src="/assets/card-illustration-1.svg" alt="" fill />
-                  </>
-                ),
-              }}
+              <Image src="/assets/card-pixels-2.svg" alt="" fill />
+              <Image src="/assets/card-pixels-1.svg" alt="" fill />
+              <Image src="/assets/card-illustration-1.svg" alt="" fill />
             </FAccountSummaryCard>
             <FTransactionFormCard addTransaction={handleAddTransaction} />
           </Grid2>

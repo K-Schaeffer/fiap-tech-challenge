@@ -4,19 +4,12 @@ import {
 } from "@molecules/FAccountSummary/FAccountSummary";
 import { FCard } from "@molecules/FCard/FCard";
 import { Box, Grid2, Typography } from "@mui/material";
-import { ReactNode } from "react";
 import styles from "./FAccountSummaryCard.styles";
-
-interface FAccountSummaryImages {
-  bottomPixels: ReactNode;
-  topPixels: ReactNode;
-  illustration: ReactNode;
-}
 
 export interface FAccountSummaryCardProps extends FAccountSummaryProps {
   firstName: string;
   date: string;
-  children?: FAccountSummaryImages;
+  children?: React.ReactNode[];
 }
 
 export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
@@ -48,7 +41,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.bottomPixelsImage,
         }}
       >
-        {props.children ? props.children.bottomPixels : "IMAGE HERE"}
+        {props.children && props.children[0]}
       </Box>
       <Box
         sx={{
@@ -56,7 +49,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.topPixelsImage,
         }}
       >
-        {props.children ? props.children.topPixels : "IMAGE HERE"}
+        {props.children && props.children[1]}
       </Box>
       <Box
         sx={{
@@ -67,7 +60,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           height: "231px",
         }}
       >
-        {props.children ? props.children.illustration : "IMAGE HERE"}
+        {props.children && props.children[2]}
       </Box>
     </FCard>
   );

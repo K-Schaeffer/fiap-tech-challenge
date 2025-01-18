@@ -24,7 +24,11 @@ export default meta;
 export const Default: StoryFn<FAccountSummaryCardProps> = (args) => {
   return (
     <Box width={800}>
-      <FAccountSummaryCard {...args} />
+      <FAccountSummaryCard {...args}>
+        <img src="" alt="Bottom Pixels" />
+        <img src="" alt="Top Pixels" />
+        <img src="" alt="Illustration" />
+      </FAccountSummaryCard>
     </Box>
   );
 };
