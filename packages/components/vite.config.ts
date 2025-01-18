@@ -17,7 +17,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
     },
-    sourcemap: true,
+    sourcemap: false, // Debugging only, generate maps to check dependencies on bundle
     rollupOptions: {
       external: [
         "react",

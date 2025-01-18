@@ -1,5 +1,5 @@
-import { FAccountButtonActions } from "@/components/molecules/FAccountButtons/FAccountButtons";
 import AccountHome from "@/components/pages/AccountHome/AccountHome";
+import { FAccountButtonActions } from "components";
 import { redirect } from "next/navigation";
 
 export default function HomeView() {

@@ -8,7 +8,6 @@
     "allowImportingTsExtensions": true,
     "outDir": "./dist",
     "noEmit": true,
-    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
       "@atoms/*": ["src/atoms/*"],
