@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
-import FModal, { FModalProps } from "./FModal";
+import { FModal, FModalProps } from "./FModal";
 
 const meta = {
   title: "Molecules/Modal",

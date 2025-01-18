@@ -1,4 +1,3 @@
-"use client";
 import { Box, Modal, Typography } from "@mui/material";
 import styles from "./FModal.styles";
 
@@ -9,12 +8,7 @@ export interface FModalProps {
   handleClose: () => void;
 }
 
-export default function FModal({
-  title,
-  children,
-  isOpen,
-  handleClose,
-}: FModalProps) {
+export function FModal({ title, children, isOpen, handleClose }: FModalProps) {
   return (
     <Modal
       open={isOpen}

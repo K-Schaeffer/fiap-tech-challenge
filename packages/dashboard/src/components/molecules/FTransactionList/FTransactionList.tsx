@@ -1,8 +1,8 @@
 "use client";
-import FModal from "@/components/molecules/FModal/FModal";
 import { editTransaction } from "@/services/Transaction/Transaction.controller";
 import { TransactionData } from "@/services/Transaction/Transaction.model";
 import { List, Typography } from "@mui/material";
+import { FModal } from "components";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import FTransactionForm from "../FTransactionForm/FTransactionForm";

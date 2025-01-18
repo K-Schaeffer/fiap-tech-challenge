@@ -17,6 +17,7 @@ export { FAdvantageColumn } from "@molecules/FAdvantageColumn/FAdvantageColumn.t
 export { FCard } from "@molecules/FCard/FCard.tsx";
 export { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn.tsx";
 export { FHeader } from "@molecules/FHeader/FHeader.tsx";
+export { FModal } from "@molecules/FModal/FModal.tsx";
 
 export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSummaryCard.tsx";
 export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";
