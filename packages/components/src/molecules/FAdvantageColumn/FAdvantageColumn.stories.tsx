@@ -1,23 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import FAdvantageContainer from "./FAdvantageContainer";
+import { FAdvantageColumn } from "./FAdvantageColumn";
 
 const meta = {
-  title: "Organisms/AdvantageContainer",
-  component: FAdvantageContainer,
+  title: "Molecules/AdvantageColumn",
+  component: FAdvantageColumn,
   parameters: {
-    layout: "padded",
+    layout: "centered",
   },
-} satisfies Meta<typeof FAdvantageContainer>;
+} satisfies Meta<typeof FAdvantageColumn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    imgPathName: "/assets/Devices.svg",
     title: "Foo",
     description: "Lorem ipsum dolor sit amet, consectet",
-    alt: "Beautiful device image",
+    children: (
+      <>
+        <img src="" alt="Image here" />
+      </>
+    ),
   },
 };

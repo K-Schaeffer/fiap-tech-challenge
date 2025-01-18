@@ -1,18 +1,15 @@
 import { Grid2, Typography } from "@mui/material";
-import Image from "next/image";
 
 interface AdvantageColumnProps {
-  imgPathName: string;
   title: string;
   description: string;
-  alt: string;
+  children: React.ReactNode;
 }
 
-export default function FAdvantageColumn({
-  imgPathName,
+export function FAdvantageColumn({
   title,
   description,
-  alt,
+  children,
 }: AdvantageColumnProps) {
   return (
     <Grid2
@@ -22,7 +19,7 @@ export default function FAdvantageColumn({
       alignItems="center"
       direction="column"
     >
-      <Image src={imgPathName} alt={alt} width="64" height="64" />
+      {children}
       <Typography variant="h6" align="center" fontWeight="bold" color="#47A138">
         {title}
       </Typography>

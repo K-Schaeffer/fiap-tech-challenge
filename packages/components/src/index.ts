@@ -13,6 +13,9 @@ export { FAccountButtons } from "@molecules/FAccountButtons/FAccountButtons.tsx"
 export type { FAccountButtonActions } from "@molecules/FAccountButtons/FAccountButtons.tsx";
 export { FAccountSummary } from "@molecules/FAccountSummary/FAccountSummary.tsx";
 export type { FAccountSummaryProps } from "@molecules/FAccountSummary/FAccountSummary.tsx";
-export { FAccountSummaryCard } from "@molecules/FAccountSummaryCard/FAccountSummaryCard.tsx";
+export { FAdvantageColumn } from "@molecules/FAdvantageColumn/FAdvantageColumn.tsx";
 export { FCard } from "@molecules/FCard/FCard.tsx";
 export { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn.tsx";
+
+export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSummaryCard.tsx";
+export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";

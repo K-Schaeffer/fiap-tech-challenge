@@ -1,12 +1,16 @@
 "use client";
 import FHeader from "@/components/molecules/FHeader/FHeader";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
 import FFooter from "@/components/organisms/FFooter/FFooter";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import { MENU_ITEMS_HOME } from "@/constants";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import { FAccountButtonActions, FAccountButtons } from "components";
+import {
+  FAccountButtonActions,
+  FAccountButtons,
+  FAdvantageColumn,
+  FAdvantageContainer,
+} from "components";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -157,7 +161,52 @@ export default function AccountHome(props: FAccountHomeProps) {
             handleNewAccount={props.actions?.handleNewAccount}
             handleLogin={props.actions?.handleLogin}
           />
-          <FAdvantageContainer />
+          <FAdvantageContainer>
+            <FAdvantageColumn
+              title="Conta e cartão gratuitos"
+              description="Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção."
+            >
+              <Image
+                src="/assets/GiftBox.svg"
+                alt="Ícone de caixa de presente"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Saques sem custo"
+              description="Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h."
+            >
+              <Image
+                src="/assets/Exchange.svg"
+                alt="Ícone de mão entregando dinheiro"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Programa de pontos"
+              description="Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!"
+            >
+              <Image
+                src="/assets/Star.svg"
+                alt="Ícone de estrela"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Seguro dispositivos"
+              description="Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica."
+            >
+              <Image
+                src="/assets/Devices.svg"
+                alt="Ícone de diversas telas de diferentes dispositivos"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+          </FAdvantageContainer>
         </Box>
       </Container>
 
