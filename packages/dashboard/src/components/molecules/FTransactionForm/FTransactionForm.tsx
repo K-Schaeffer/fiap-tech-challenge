@@ -1,5 +1,4 @@
 "use client";
-import FChip from "@/components/atoms/FChip/FChip";
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
 import {
@@ -9,7 +8,7 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { FAlert, FButton, FInput, FSelectInput } from "components";
+import { FAlert, FButton, FChip, FInput, FSelectInput } from "components";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 

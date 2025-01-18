@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import FChip from "./FChip";
+import { fn } from "@storybook/test";
+import { FChip } from "./FChip";
 
 const meta = {
   title: "Atoms/Chip",
@@ -8,7 +9,7 @@ const meta = {
     layout: "centered",
   },
   args: {
-    handleValueClick: (value: number) => alert(`Value clicked: ${value}`),
+    handleValueClick: fn(),
   },
 } satisfies Meta<typeof FChip>;
 
