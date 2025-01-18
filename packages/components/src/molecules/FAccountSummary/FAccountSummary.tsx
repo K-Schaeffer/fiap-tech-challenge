@@ -1,18 +1,15 @@
-"use client";
-import { formatCurrency } from "@/utils/formatters";
+import { FIconButton } from "@atoms/FIconButton/FIconButton";
 import { VisibilityOffTwoTone, VisibilityTwoTone } from "@mui/icons-material";
 import { Divider, Stack, Typography } from "@mui/material";
-import { FIconButton } from "components";
 import { useState } from "react";
 
 export interface FAccountSummaryProps {
+  balance: string;
   currency: string;
-  value: number;
 }
 
-export default function FAccountSummary(props: FAccountSummaryProps) {
+export function FAccountSummary(props: FAccountSummaryProps) {
   const [isBalanceVisible, setIsBalanceVisible] = useState(true);
-  const balance = formatCurrency(props.value, props.currency);
 
   const handleToggle = () => {
     setIsBalanceVisible((prev) => !prev);
@@ -45,7 +42,7 @@ export default function FAccountSummary(props: FAccountSummaryProps) {
         fontSize={31}
         color="var(--mui-palette-secondary-contrastText)"
       >
-        {isBalanceVisible ? balance : `${props.currency} ***,**`}
+        {isBalanceVisible ? props.balance : `${props.currency} ***,**`}
       </Typography>
     </Stack>
   );

@@ -1,7 +1,8 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
-import FAccountSummaryCard, {
+import {
+  FAccountSummaryCard,
   FAccountSummaryCardProps,
 } from "./FAccountSummaryCard";
 
@@ -13,7 +14,7 @@ const meta = {
   },
   args: {
     firstName: "Marilene",
-    value: 50,
+    balance: "2500",
     currency: "$",
   },
 } satisfies Meta<typeof FAccountSummaryCard>;

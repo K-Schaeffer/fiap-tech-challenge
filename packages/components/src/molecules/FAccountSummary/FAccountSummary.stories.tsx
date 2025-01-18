@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
-import FAccountSummary, { FAccountSummaryProps } from "./FAccountSummary";
+import { FAccountSummary, FAccountSummaryProps } from "./FAccountSummary";
 
 const meta = {
   title: "Molecules/AccountSummary",
@@ -11,7 +11,7 @@ const meta = {
   },
   args: {
     currency: "R$",
-    value: 2500,
+    balance: "R$ 2500",
   },
 } satisfies Meta<typeof FAccountSummary>;
 

@@ -1,18 +1,25 @@
-"use client";
-import FAccountSummary, {
+import {
+  FAccountSummary,
   FAccountSummaryProps,
-} from "@/components/molecules/FAccountSummary/FAccountSummary";
-import { getFormattedDateNow } from "@/utils/formatters";
+} from "@molecules/FAccountSummary/FAccountSummary";
+import { FCard } from "@molecules/FCard/FCard";
 import { Box, Grid2, Typography } from "@mui/material";
-import { FCard } from "components";
-import Image from "next/image";
+import { ReactNode } from "react";
 import styles from "./FAccountSummaryCard.styles";
+
+interface FAccountSummaryImages {
+  bottomPixels: ReactNode;
+  topPixels: ReactNode;
+  illustration: ReactNode;
+}
 
 export interface FAccountSummaryCardProps extends FAccountSummaryProps {
   firstName: string;
+  date: string;
+  children?: FAccountSummaryImages;
 }
 
-export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
+export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
   return (
     <FCard
       variant="dark"
@@ -27,11 +34,11 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
       <Grid2 container spacing={4}>
         <Grid2 size={{ md: 6, xs: 12 }}>
           <Typography variant="caption" textTransform="capitalize">
-            {getFormattedDateNow()}
+            {props.date}
           </Typography>
         </Grid2>
         <Grid2 size={{ md: 6, xs: 12 }}>
-          <FAccountSummary value={props.value} currency={props.currency} />
+          <FAccountSummary balance={props.balance} currency={props.currency} />
         </Grid2>
       </Grid2>
 
@@ -41,7 +48,7 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.bottomPixelsImage,
         }}
       >
-        <Image src="/assets/card-pixels-2.svg" alt="" layout="fill" />
+        {props.children.bottomPixels}
       </Box>
       <Box
         sx={{
@@ -49,7 +56,7 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.topPixelsImage,
         }}
       >
-        <Image src="/assets/card-pixels-1.svg" alt="" layout="fill" />
+        {props.children.topPixels}
       </Box>
       <Box
         sx={{
@@ -60,7 +67,7 @@ export default function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           height: "231px",
         }}
       >
-        <Image src="/assets/card-illustration-1.svg" alt="" layout="fill" />
+        {props.children.illustration}
       </Box>
     </FCard>
   );

@@ -1,6 +1,6 @@
+"use client";
 import FHeader from "@/components/molecules/FHeader/FHeader";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FAccountSummaryCard from "@/components/organisms/FAccountSummaryCard/FAccountSummaryCard";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
@@ -11,9 +11,11 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
+import { formatCurrency, getFormattedDateNow } from "@/utils/formatters";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import { FCard } from "components";
+import { FAccountSummaryCard, FCard } from "components";
+import Image from "next/image";
 import Link from "next/link";
 
 interface AccountDashboardProps {
@@ -30,6 +32,9 @@ export default function AccountDashboard({
   handleEditTransaction,
   handleDeleteTransaction,
 }: AccountDashboardProps) {
+  const formattedBalance = formatCurrency(account.balance, account.currency);
+  const formattedDate = getFormattedDateNow();
+
   return (
     <main
       style={{
@@ -79,8 +84,27 @@ export default function AccountDashboard({
             <FAccountSummaryCard
               firstName={account.firstName}
               currency={account.currency}
-              value={account.balance}
-            />
+              balance={formattedBalance}
+              date={formattedDate}
+            >
+              {{
+                bottomPixels: (
+                  <>
+                    <Image src="/assets/card-pixels-2.svg" alt="" fill />
+                  </>
+                ),
+                topPixels: (
+                  <>
+                    <Image src="/assets/card-pixels-1.svg" alt="" fill />
+                  </>
+                ),
+                illustration: (
+                  <>
+                    <Image src="/assets/card-illustration-1.svg" alt="" fill />
+                  </>
+                ),
+              }}
+            </FAccountSummaryCard>
             <FTransactionFormCard addTransaction={handleAddTransaction} />
           </Grid2>
 
