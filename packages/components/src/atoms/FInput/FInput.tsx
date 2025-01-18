@@ -1,4 +1,5 @@
 import { Box, TextField, TextFieldProps } from "@mui/material";
+import React from "react";
 
 interface InputProps {
   options?: TextFieldProps;
@@ -7,7 +8,7 @@ interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function FInput({
+export function FInput({
   options,
   textposition,
   maxWidth,

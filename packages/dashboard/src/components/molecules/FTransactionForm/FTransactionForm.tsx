@@ -1,7 +1,4 @@
 "use client";
-import FButton from "@/components/atoms/FButton/FButton";
-import FInput from "@/components/atoms/FInput/FInput";
-import FSelectInput from "@/components/atoms/FSelectInput/FSelectInput";
 import {
   Transaction,
   TransactionData,
@@ -9,6 +6,7 @@ import {
 } from "@/services/Transaction/Transaction.model";
 import { Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { FButton, FInput, FSelectInput } from "components";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 export interface FTransactionFormProps {

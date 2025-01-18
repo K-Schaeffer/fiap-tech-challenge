@@ -1,5 +1,3 @@
-"use client";
-import { TRANSACTION_TYPES } from "@/constants";
 import {
   FormControl,
   FormControlProps,
@@ -9,6 +7,8 @@ import {
   SelectChangeEvent,
   SelectProps,
 } from "@mui/material";
+import React from "react";
+import { TRANSACTION_TYPES } from "./FSelectInput.constants";
 
 interface SelectInputProps {
   formControlOptions?: FormControlProps;
@@ -16,7 +16,7 @@ interface SelectInputProps {
   onChange?: (e: SelectChangeEvent) => void;
 }
 
-export default function SelectInput({
+export function FSelectInput({
   formControlOptions,
   options,
   onChange,

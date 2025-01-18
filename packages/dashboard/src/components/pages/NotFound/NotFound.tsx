@@ -1,6 +1,6 @@
 "use client";
-import FButton from "@/components/atoms/FButton/FButton";
 import { Box, Container, Typography } from "@mui/material";
+import { FButton } from "components";
 import { useRouter } from "next/navigation";
 
 export default function NotFound() {
