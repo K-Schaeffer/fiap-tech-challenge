@@ -1,4 +1,5 @@
 "use client";
+import FAlert from "@/components/atoms/FAlert/FAlert";
 import FButton from "@/components/atoms/FButton/FButton";
 import FChip from "@/components/atoms/FChip/FChip";
 import FInput from "@/components/atoms/FInput/FInput";
@@ -10,8 +11,7 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
-import showAlert from "@/utils/toastedAlert";
-import { Box, SelectChangeEvent } from "@mui/material";
+import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -43,6 +43,11 @@ export default function FTransactionForm({
   const isAddValueAccount = ["Depósito", "Empréstimo"].includes(
     transactionType
   );
+  const [alert, setAlert] = useState<{
+    severity: AlertColor;
+    text: string;
+  } | null>(null);
+  const [alertOpen, setAlertOpen] = useState(false);
 
   useEffect(() => {
     loadBalanceAccount();
@@ -65,7 +70,8 @@ export default function FTransactionForm({
     let newValue: number = Math.abs(Number(event.target.value));
 
     if (newValue > account?.balance && !isAddValueAccount) {
-      showAlert("warning", "Saldo insuficiente!");
+      setAlert({ severity: "warning", text: "Saldo insuficiente!" });
+      setAlertOpen(true);
       return;
     }
 
@@ -117,8 +123,8 @@ export default function FTransactionForm({
     cleanTransactionForm();
 
     loadBalanceAccount();
-
-    showAlert("success", "Transação realizada com sucesso!");
+    setAlert({ severity: "success", text: "Transação realizada com sucesso!" });
+    setAlertOpen(true);
   };
 
   const cleanTransactionForm = () => {
@@ -135,7 +141,8 @@ export default function FTransactionForm({
     let newValue: number = transactionValue + valueAdded;
 
     if (newValue > account?.balance && !isAddValueAccount) {
-      showAlert("warning", "Saldo insuficiente!");
+      setAlert({ severity: "warning", text: "Saldo insuficiente!" });
+      setAlertOpen(true);
       return;
     }
 
@@ -143,41 +150,55 @@ export default function FTransactionForm({
     onChangeNewValue(newValue);
   };
 
+  const handleCloseAlert = () => {
+    setAlertOpen(false);
+  };
+
   return (
-    <Box sx={{ width: "100%", zIndex: 1 }}>
-      <Stack spacing={4}>
-        <FSelectInput
-          onChange={handleSelectTransactionType}
-          options={{ value: transactionType }}
+    <>
+      {alert && (
+        <FAlert
+          severity={alert.severity}
+          text={alert.text}
+          open={alertOpen}
+          onClose={handleCloseAlert}
         />
-        <FInput
-          options={{
-            placeholder: "00,00",
-            label: "Valor",
-            type: "number",
-            value: transactionValue || "",
-          }}
-          textposition="center"
-          onChange={handleInputTransactionValue}
-        />
-        <Stack spacing={2} direction="row">
-          <FChip valueAdd={20} handleValueClick={handleValueClick} />
-          <FChip valueAdd={50} handleValueClick={handleValueClick} />
-          <FChip valueAdd={100} handleValueClick={handleValueClick} />
-          <FChip
-            valueAdd={isAddValueAccount ? 500 : account?.balance!}
-            handleValueClick={handleValueClick}
+      )}
+      <Box sx={{ width: "100%", zIndex: 1 }}>
+        <Stack spacing={4}>
+          <FSelectInput
+            onChange={handleSelectTransactionType}
+            options={{ value: transactionType }}
+          />
+          <FInput
+            options={{
+              placeholder: "00,00",
+              label: "Valor",
+              type: "number",
+              value: transactionValue || "",
+            }}
+            textposition="center"
+            onChange={handleInputTransactionValue}
+          />
+          <Stack spacing={2} direction="row">
+            <FChip valueAdd={20} handleValueClick={handleValueClick} />
+            <FChip valueAdd={50} handleValueClick={handleValueClick} />
+            <FChip valueAdd={100} handleValueClick={handleValueClick} />
+            <FChip
+              valueAdd={isAddValueAccount ? 500 : account?.balance!}
+              handleValueClick={handleValueClick}
+            />
+          </Stack>
+          <FButton
+            innerText={buttonText}
+            options={{
+              variant: "contained",
+              disabled: !transactionType || !transactionValue,
+            }}
+            onClick={handleConfirmTransaction}
           />
         </Stack>
-        <FButton
-          innerText={buttonText}
-          options={{
-            variant: "contained",
-            disabled: !transactionType || !transactionValue,
-          }}
-          onClick={handleConfirmTransaction}
-        />
-      </Stack>
-    </Box>
+      </Box>
+    </>
   );
 }

@@ -21,8 +21,7 @@
     "json-server": "^1.0.0-beta.3",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18",
-    "sweetalert2": "^11.15.10"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
