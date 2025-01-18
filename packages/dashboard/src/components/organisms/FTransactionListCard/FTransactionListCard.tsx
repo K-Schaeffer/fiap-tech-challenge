@@ -1,7 +1,7 @@
 import FTransactionList, {
   FTransactionListProps,
 } from "@/components/molecules/FTransactionList/FTransactionList";
-import { Stack, Typography } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 import { FCard } from "components";
 
 export default function FTransactionListCard({
@@ -21,11 +21,19 @@ export default function FTransactionListCard({
           Extrato
         </Typography>
       </Stack>
-      <FTransactionList
-        transactionItems={transactionItems}
-        editTransaction={editTransaction}
-        deleteTransaction={deleteTransaction}
-      />
+      <Container
+        sx={{
+          height: "600px",
+          overflowY: "visible",
+          overflowX: "hidden",
+        }}
+      >
+        <FTransactionList
+          transactionItems={transactionItems}
+          editTransaction={editTransaction}
+          deleteTransaction={deleteTransaction}
+        />
+      </Container>
     </FCard>
   );
 }
