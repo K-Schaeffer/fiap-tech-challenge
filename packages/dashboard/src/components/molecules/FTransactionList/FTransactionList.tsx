@@ -41,7 +41,7 @@ export default function FTransactionList({
 
   return (
     <>
-      <List>
+      <List sx={{ height: "600px", overflowY: "scroll" }}>
         {transactionItems.map(({ id, date, type, value, currency }) => (
           <FTransactionItem
             key={`transaction-item-${id}`}
