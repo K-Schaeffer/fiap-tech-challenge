@@ -7,11 +7,7 @@ interface FIconButtonProps {
   children: React.ReactNode;
 }
 
-export default function FIconButton({
-  options,
-  onClick,
-  children,
-}: FIconButtonProps) {
+export function FIconButton({ options, onClick, children }: FIconButtonProps) {
   return (
     <IconButton {...options} style={{ padding: 0 }} onClick={onClick}>
       <Box

@@ -1,7 +1,7 @@
 "use client";
 import { DeleteTwoTone, EditTwoTone } from "@mui/icons-material";
 import { Stack } from "@mui/material";
-import FIconButton from "../../atoms/FIconButton/FIconButton";
+import { FIconButton } from "components";
 
 export interface FTransactionActionProps {
   onEdit: () => void;

@@ -2,8 +2,8 @@
 import { formatCurrency } from "@/utils/formatters";
 import { VisibilityOffTwoTone, VisibilityTwoTone } from "@mui/icons-material";
 import { Divider, Stack, Typography } from "@mui/material";
+import { FIconButton } from "components";
 import { useState } from "react";
-import FIconButton from "../../atoms/FIconButton/FIconButton";
 
 export interface FAccountSummaryProps {
   currency: string;

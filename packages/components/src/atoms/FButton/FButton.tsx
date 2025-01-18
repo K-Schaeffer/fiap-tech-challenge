@@ -1,4 +1,5 @@
 import { Box, Button, ButtonProps, Typography } from "@mui/material";
+import React from "react";
 
 interface FButtonProps {
   innerText?: string;
@@ -6,7 +7,7 @@ interface FButtonProps {
   onClick?: () => void;
 }
 
-export default function FButton(props: FButtonProps) {
+export function FButton(props: FButtonProps) {
   return (
     <Button
       {...props.options}

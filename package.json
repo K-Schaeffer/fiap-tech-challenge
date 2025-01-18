@@ -5,9 +5,11 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "lerna run dev"
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream",
+    "lint": "lerna run lint",
+    "format": "lerna run format"
   },
-  "dependencies": {},
   "devDependencies": {
     "lerna": "^8.1.9"
   }

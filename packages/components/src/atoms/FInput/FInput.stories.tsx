@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import Input from "./FInput";
+import { FInput } from "./FInput";
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof FInput> = {
   title: "Atoms/Input",
-  component: Input,
+  component: FInput,
   args: { onChange: fn() },
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof FInput>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
