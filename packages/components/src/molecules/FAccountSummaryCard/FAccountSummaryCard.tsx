@@ -48,7 +48,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.bottomPixelsImage,
         }}
       >
-        {props.children.bottomPixels}
+        {props.children ? props.children.bottomPixels : "IMAGE HERE"}
       </Box>
       <Box
         sx={{
@@ -56,7 +56,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           ...styles.topPixelsImage,
         }}
       >
-        {props.children.topPixels}
+        {props.children ? props.children.topPixels : "IMAGE HERE"}
       </Box>
       <Box
         sx={{
@@ -67,7 +67,7 @@ export function FAccountSummaryCard(props: FAccountSummaryCardProps) {
           height: "231px",
         }}
       >
-        {props.children.illustration}
+        {props.children ? props.children.illustration : "IMAGE HERE"}
       </Box>
     </FCard>
   );
