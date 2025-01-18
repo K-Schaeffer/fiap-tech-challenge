@@ -7,7 +7,14 @@
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
     "outDir": "./dist",
-    "noEmit": true
+    "noEmit": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@atoms/*": ["src/atoms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@organisms/*": ["src/organisms/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

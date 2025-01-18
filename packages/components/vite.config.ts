@@ -4,26 +4,27 @@ import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
     react(),
     dts({ include: ["src"], exclude: ["src/**/*.stories.tsx"] }),
+    tsconfigPaths(),
   ],
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
     },
+    sourcemap: true,
     rollupOptions: {
       external: [
         "react",
+        "react-dom",
         "react/jsx-runtime",
-        "@emotion/cache",
-        "@emotion/styled",
-        "@mui/icons-material",
-        "@mui/material",
-        "@mui/material-nextjs",
+        /^@mui\/.*/,
+        /^@emotion\/.*/,
       ],
       input: Object.fromEntries(
         glob
