@@ -1,5 +1,4 @@
 import { Box, Card, CardProps, Typography } from "@mui/material";
-import React from "react";
 
 type FCardVariant = "light" | "dark";
 

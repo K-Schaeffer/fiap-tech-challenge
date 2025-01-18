@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Typography } from "@mui/material";
-import React from "react";
 import { FCard } from "./FCard";
 
 const meta = {

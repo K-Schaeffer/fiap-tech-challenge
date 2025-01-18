@@ -2,7 +2,6 @@ import { Box, BoxProps, ButtonProps } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { FButton } from "components";
-import React from "react";
 
 export interface FAccountButtonActions {
   handleNewAccount: () => void;

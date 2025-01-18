@@ -7,7 +7,6 @@ import {
   SelectChangeEvent,
   SelectProps,
 } from "@mui/material";
-import React from "react";
 import { TRANSACTION_TYPES } from "./FSelectInput.constants";
 
 interface SelectInputProps {
