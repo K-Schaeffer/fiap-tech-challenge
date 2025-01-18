@@ -13,7 +13,7 @@ export interface FAlertProps {
   onClose: () => void;
 }
 
-const FAlert: React.FC<FAlertProps> = ({ severity, text, open, onClose }) => {
+export function FAlert({ severity, text, open, onClose }: FAlertProps) {
   useEffect(() => {
     if (open) {
       const timer = setTimeout(() => {
@@ -52,6 +52,4 @@ const FAlert: React.FC<FAlertProps> = ({ severity, text, open, onClose }) => {
       </Alert>
     </Snackbar>
   );
-};
-
-export default FAlert;
+}

@@ -1,9 +1,9 @@
-import { Meta, StoryFn } from "@storybook/react";
-import { useState } from "react";
-import FButton from "../FButton/FButton";
-import FAlert, { FAlertProps } from "./FAlert";
+import { StoryFn } from "@storybook/react";
+import React, { useState } from "react";
+import { FButton } from "../FButton/FButton";
+import { FAlert, FAlertProps } from "./FAlert";
 
-const meta: Meta<typeof FAlert> = {
+const meta = {
   title: "Atoms/Alert",
   component: FAlert,
   parameters: {
