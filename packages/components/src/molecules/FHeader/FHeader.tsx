@@ -1,13 +1,12 @@
 import { Container, ContainerProps } from "@mui/material";
-import { ReactNode } from "react";
 
 interface HeaderProps {
   maxWidth?: ContainerProps["maxWidth"];
-  leftContent: ReactNode;
-  rightContent: ReactNode;
+  leftContent: React.ReactNode;
+  rightContent: React.ReactNode;
 }
 
-export default function Header({
+export function FHeader({
   leftContent,
   rightContent,
   maxWidth = "xl",

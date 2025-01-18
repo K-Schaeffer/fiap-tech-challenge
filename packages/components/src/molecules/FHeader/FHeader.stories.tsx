@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Typography } from "@mui/material";
-import FHeader from "./FHeader";
+import { FHeader } from "./FHeader";
 
 const meta = {
   title: "Molecules/Header",

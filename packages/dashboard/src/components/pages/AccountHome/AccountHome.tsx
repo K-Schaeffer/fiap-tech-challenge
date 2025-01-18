@@ -1,5 +1,4 @@
 "use client";
-import FHeader from "@/components/molecules/FHeader/FHeader";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
 import FFooter from "@/components/organisms/FFooter/FFooter";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
@@ -10,6 +9,7 @@ import {
   FAccountButtons,
   FAdvantageColumn,
   FAdvantageContainer,
+  FHeader,
 } from "components";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

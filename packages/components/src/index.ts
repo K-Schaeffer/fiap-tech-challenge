@@ -16,6 +16,7 @@ export type { FAccountSummaryProps } from "@molecules/FAccountSummary/FAccountSu
 export { FAdvantageColumn } from "@molecules/FAdvantageColumn/FAdvantageColumn.tsx";
 export { FCard } from "@molecules/FCard/FCard.tsx";
 export { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn.tsx";
+export { FHeader } from "@molecules/FHeader/FHeader.tsx";
 
 export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSummaryCard.tsx";
 export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";
