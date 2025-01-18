@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import FTransactionAction from "./FTransactionAction";
+import { FTransactionAction } from "./FTransactionAction";
 
 const meta = {
   title: "Molecules/TransactionAction",

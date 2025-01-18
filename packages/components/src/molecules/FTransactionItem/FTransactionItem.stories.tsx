@@ -2,7 +2,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
 import { fn } from "@storybook/test";
-import FTransactionItem, { FTransactionItemProps } from "./FTransactionItem";
+import { FTransactionItem, FTransactionItemProps } from "./FTransactionItem";
 
 const meta = {
   title: "Molecules/TransactionItem",
@@ -19,8 +19,7 @@ const meta = {
     onEdit: fn(),
     date: "2021-10-10",
     type: "income",
-    value: 100,
-    currency: "R$",
+    value: "R$ 100",
   },
 } satisfies Meta<typeof FTransactionItem>;
 

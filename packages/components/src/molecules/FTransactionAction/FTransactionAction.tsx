@@ -1,14 +1,13 @@
-"use client";
+import { FIconButton } from "@atoms/FIconButton/FIconButton";
 import { DeleteTwoTone, EditTwoTone } from "@mui/icons-material";
 import { Stack } from "@mui/material";
-import { FIconButton } from "components";
 
 export interface FTransactionActionProps {
   onEdit: () => void;
   onDelete: () => void;
 }
 
-export default function FTransactionAction({
+export function FTransactionAction({
   onEdit,
   onDelete,
 }: FTransactionActionProps) {

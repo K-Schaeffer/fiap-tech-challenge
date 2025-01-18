@@ -1,12 +1,12 @@
 "use client";
 import { editTransaction } from "@/services/Transaction/Transaction.controller";
 import { TransactionData } from "@/services/Transaction/Transaction.model";
+import { formatCurrency, formatDate } from "@/utils/formatters";
 import { List, Typography } from "@mui/material";
-import { FModal } from "components";
+import { FModal, FTransactionItem } from "components";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import FTransactionForm from "../FTransactionForm/FTransactionForm";
-import FTransactionItem from "../FTransactionItem/FTransactionItem";
 
 export interface FTransactionListProps {
   transactionItems: TransactionData[];
@@ -45,10 +45,9 @@ export default function FTransactionList({
         {transactionItems.map(({ id, date, type, value, currency }) => (
           <FTransactionItem
             key={`transaction-item-${id}`}
-            date={date}
+            date={formatDate(date)}
             type={type}
-            value={value}
-            currency={currency}
+            balance={formatCurrency(value, currency)}
             onDelete={() => handleDelete(id)}
             onEdit={() => handleEdit(id)}
           />

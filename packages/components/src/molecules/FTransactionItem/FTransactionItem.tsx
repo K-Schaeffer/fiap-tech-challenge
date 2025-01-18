@@ -1,22 +1,20 @@
-import { formatCurrency, formatDate } from "@/utils/formatters";
-import { Grid2, Typography } from "@mui/material";
-import FTransactionAction, {
+import {
+  FTransactionAction,
   FTransactionActionProps,
-} from "../FTransactionAction/FTransactionAction";
+} from "@molecules/FTransactionAction/FTransactionAction";
+import { Grid2, Typography } from "@mui/material";
 import styles from "./FTransactionItem.styles";
 
 export interface FTransactionItemProps extends FTransactionActionProps {
   date: string;
   type: string;
-  value: number;
-  currency: string;
+  value: string;
 }
 
-export default function FTransactionItem({
+export function FTransactionItem({
   date,
   type,
   value,
-  currency,
   onEdit,
   onDelete,
 }: FTransactionItemProps) {
@@ -24,11 +22,11 @@ export default function FTransactionItem({
     <Grid2 container>
       <Grid2 size={10} gap={8} sx={styles.gridLeft}>
         <Typography variant="caption" fontWeight={600} color="tertiary">
-          {formatDate(date)}
+          {date}
         </Typography>
         <Typography variant="body1">{type}</Typography>
         <Typography variant="body1" fontWeight={600}>
-          {formatCurrency(value, currency)}
+          {value}
         </Typography>
       </Grid2>
       <Grid2
