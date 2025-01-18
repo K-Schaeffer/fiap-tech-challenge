@@ -6,7 +6,7 @@ export interface FFooterTextColumnProps {
   listItems?: string[];
 }
 
-export default function FFooterTextColumn(props: FFooterTextColumnProps) {
+export function FFooterTextColumn(props: FFooterTextColumnProps) {
   return (
     <Stack spacing={1} sx={{ wordWrap: "break-word" }}>
       <Typography

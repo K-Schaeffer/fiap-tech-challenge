@@ -1,6 +1,6 @@
 import FFoterIconsColumn from "@/components/molecules/FFooterIconsColumn/FFooterIconsColumn";
-import FFooterColumn from "@/components/molecules/FFooterTextColumn/FFooterTextColumn";
 import { Box, Container, Grid2 } from "@mui/material";
+import { FFooterTextColumn } from "components";
 
 const listService: string[] = [
   "Conta corrente",
@@ -26,10 +26,10 @@ export default function FFooter() {
       <Container maxWidth="lg">
         <Grid2 container spacing={2}>
           <Grid2 size={{ xs: 12, sm: 4 }}>
-            <FFooterColumn textHeader="Serviços" listItems={listService} />
+            <FFooterTextColumn textHeader="Serviços" listItems={listService} />
           </Grid2>
           <Grid2 size={{ xs: 12, sm: 4 }}>
-            <FFooterColumn textHeader="Contato" listItems={listContact} />
+            <FFooterTextColumn textHeader="Contato" listItems={listContact} />
           </Grid2>
           <Grid2 size={{ xs: 12, sm: 4 }}>
             <FFoterIconsColumn textHeader="Desenvolvido por Alura" />

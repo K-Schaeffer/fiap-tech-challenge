@@ -1,10 +1,10 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
-import FFooterTextColumn, { FFooterTextColumnProps } from "./FFooterTextColumn";
+import { FFooterTextColumn, FFooterTextColumnProps } from "./FFooterTextColumn";
 
 const meta = {
-  title: "Molecules/FFooterTextColumn",
+  title: "Molecules/FooterTextColumn",
   component: FFooterTextColumn,
   parameters: {
     layout: "centered",
