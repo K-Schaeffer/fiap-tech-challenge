@@ -47,7 +47,7 @@ export default function FTransactionList({
             key={`transaction-item-${id}`}
             date={formatDate(date)}
             type={type}
-            balance={formatCurrency(value, currency)}
+            value={formatCurrency(value, currency)}
             onDelete={() => handleDelete(id)}
             onEdit={() => handleEdit(id)}
           />
