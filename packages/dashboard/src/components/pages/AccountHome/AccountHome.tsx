@@ -1,5 +1,6 @@
 "use client";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+
 import {
   FAccountButtonActions,
   FAccountButtons,
@@ -9,23 +10,18 @@ import {
   FHeader,
   FMenuDropdown,
   FMenuList,
+  FMenuListItem,
 } from "components";
+
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { MENU_ITEMS_HOME } from "./AccountHome.constants";
+
 interface FAccountHomeProps {
   actions: FAccountButtonActions;
+  currentPath?: string;
+  menuItems: FMenuListItem[];
 }
-
-export default function AccountHome(props: FAccountHomeProps) {
-  const pathname = usePathname();
-
-  const menuItems = MENU_ITEMS_HOME.map((item) => ({
-    ...item,
-    current: item.path === pathname,
-  }));
-
+export function AccountHome(props: FAccountHomeProps) {
   return (
     <main
       style={{
@@ -67,13 +63,13 @@ export default function AccountHome(props: FAccountHomeProps) {
               />
             </Box>
             <FMenuDropdown
-              menuItems={menuItems}
+              menuItems={props.menuItems}
               options={{ sx: { display: { xs: "flex", md: "none" } } }}
             >
               <Link href="" />
             </FMenuDropdown>
             <FMenuList
-              menuItems={menuItems}
+              menuItems={props.menuItems}
               variant="row"
               options={{
                 sx: { display: { xs: "none", md: "flex" }, fontWeight: 600 },
