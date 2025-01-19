@@ -19,6 +19,7 @@ export { FFooterIconsColumn } from "@molecules/FFooterIconsColumn/FFooterIconsCo
 export { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn.tsx";
 export { FHeader } from "@molecules/FHeader/FHeader.tsx";
 export { FMenuList } from "@molecules/FMenuList/FMenuList.tsx";
+export type { FMenuListItem } from "@molecules/FMenuList/FMenuList.tsx";
 export { FModal } from "@molecules/FModal/FModal.tsx";
 export { FTransactionAction } from "@molecules/FTransactionAction/FTransactionAction.tsx";
 export type { FTransactionActionProps } from "@molecules/FTransactionAction/FTransactionAction.tsx";

@@ -1,6 +1,6 @@
-import { MenuItemType } from "@/components/molecules/FMenuList/FMenuList";
+import { FMenuListItem } from "components";
 
-export const MENU_ITEMS_DASHBOARD: MenuItemType[] = [
+export const MENU_ITEMS_DASHBOARD: FMenuListItem[] = [
   {
     label: "Início",
     path: "/dashboard",

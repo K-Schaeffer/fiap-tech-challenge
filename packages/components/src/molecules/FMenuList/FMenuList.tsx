@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 
-export type MenuItemType = {
+export type FMenuListItem = {
   label: string;
   path: string;
   current?: boolean;
@@ -19,7 +19,7 @@ type MenuVariant = "column" | "row";
 interface FMenuListProps {
   options?: MenuListProps;
   variant?: MenuVariant;
-  menuItems: MenuItemType[];
+  menuItems: FMenuListItem[];
   children: React.ReactElement;
 }
 
