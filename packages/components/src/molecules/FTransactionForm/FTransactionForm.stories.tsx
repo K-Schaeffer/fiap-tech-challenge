@@ -1,18 +1,19 @@
 import { Box } from "@mui/material";
 import type { Meta, StoryFn } from "@storybook/react";
+import { fn } from "@storybook/test";
 
-import FTransactionForm, { FTransactionFormProps } from "./FTransactionForm";
+import { FTransactionForm, FTransactionFormProps } from "./FTransactionForm";
 
 const meta = {
   title: "Molecules/TransactionForm",
   component: FTransactionForm,
   parameters: {
     layout: "centered",
-    nextjs: {
-      appDirectory: true,
-    },
   },
   args: {
+    addTransaction: fn(),
+    closeEditModal: fn(),
+    accountBalance: 2500,
     buttonText: "Concluir",
   },
 } satisfies Meta<typeof FTransactionForm>;

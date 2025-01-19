@@ -17,9 +17,9 @@ const meta = {
   args: {
     onDelete: fn(),
     onEdit: fn(),
-    date: "2021-10-10",
+    formattedDate: "2021-10-10",
     type: "income",
-    value: "R$ 100",
+    formattedValue: "R$ 100",
   },
 } satisfies Meta<typeof FTransactionItem>;
 

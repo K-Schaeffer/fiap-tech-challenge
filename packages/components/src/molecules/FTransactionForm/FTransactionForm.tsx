@@ -1,7 +1,10 @@
-"use client";
+import { FAlert } from "@atoms/FAlert/FAlert";
+import { FButton } from "@atoms/FButton/FButton";
+import { FChip } from "@atoms/FChip/FChip";
+import { FInput } from "@atoms/FInput/FInput";
+import { FSelectInput } from "@atoms/FSelectInput/FSelectInput";
 import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { FAlert, FButton, FChip, FInput, FSelectInput } from "components";
 import { useState } from "react";
 
 export interface FTransactionFormItemInput {
@@ -22,7 +25,7 @@ export interface FTransactionFormProps {
   buttonText?: string;
 }
 
-export default function FTransactionForm({
+export function FTransactionForm({
   accountBalance,
   currentTransaction,
   addTransaction,

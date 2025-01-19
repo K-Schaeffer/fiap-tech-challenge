@@ -23,6 +23,12 @@ export type { FMenuListItem } from "@molecules/FMenuList/FMenuList.tsx";
 export { FModal } from "@molecules/FModal/FModal.tsx";
 export { FTransactionAction } from "@molecules/FTransactionAction/FTransactionAction.tsx";
 export type { FTransactionActionProps } from "@molecules/FTransactionAction/FTransactionAction.tsx";
+export { FTransactionForm } from "@molecules/FTransactionForm/FTransactionForm.tsx";
+export type {
+  FTransactionFormItem,
+  FTransactionFormItemInput,
+  FTransactionFormProps,
+} from "@molecules/FTransactionForm/FTransactionForm.tsx";
 export { FTransactionItem } from "@molecules/FTransactionItem/FTransactionItem.tsx";
 export type { TransactionItem } from "@molecules/FTransactionItem/FTransactionItem.tsx";
 export { FTransactionList } from "@molecules/FTransactionList/FTransactionList.tsx";
