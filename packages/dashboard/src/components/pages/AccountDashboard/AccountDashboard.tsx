@@ -1,5 +1,4 @@
 "use client";
-import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { Account } from "@/services/Account/Account.model";
 import {
   Transaction,
@@ -24,6 +23,7 @@ import {
   FTransactionFormCard,
   FTransactionFormItem,
   FTransactionFormItemInput,
+  FTransactionListCard,
   TransactionItem,
 } from "components";
 import Image from "next/image";

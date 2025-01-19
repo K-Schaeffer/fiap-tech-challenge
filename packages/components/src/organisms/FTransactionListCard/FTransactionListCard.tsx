@@ -1,7 +1,11 @@
+import { FCard } from "@molecules/FCard/FCard";
+import {
+  FTransactionList,
+  FTransactionListProps,
+} from "@molecules/FTransactionList/FTransactionList";
 import { Container, Stack, Typography } from "@mui/material";
-import { FCard, FTransactionList, FTransactionListProps } from "components";
 
-export default function FTransactionListCard({
+export function FTransactionListCard({
   transactionItems,
   editTransaction,
   deleteTransaction,

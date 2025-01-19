@@ -1,8 +1,9 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
+import { FTransactionListProps } from "@molecules/FTransactionList/FTransactionList";
 import { Box } from "@mui/material";
-import { FTransactionListProps } from "components";
-import FTransactionListCard from "./FTransactionListCard";
+import { fn } from "@storybook/test";
+import { FTransactionListCard } from "./FTransactionListCard";
 
 const meta = {
   title: "Organisms/TransactionListCard",
@@ -33,7 +34,9 @@ const meta = {
         type: "Depósito",
         formattedValue: "R$ 2000",
       },
-    ];
+    ],
+    editTransaction: fn(),
+    deleteTransaction: fn(),
   },
 } satisfies Meta<typeof FTransactionListCard>;
 
