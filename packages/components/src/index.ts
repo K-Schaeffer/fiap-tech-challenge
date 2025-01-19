@@ -15,6 +15,7 @@ export { FAccountSummary } from "@molecules/FAccountSummary/FAccountSummary.tsx"
 export type { FAccountSummaryProps } from "@molecules/FAccountSummary/FAccountSummary.tsx";
 export { FAdvantageColumn } from "@molecules/FAdvantageColumn/FAdvantageColumn.tsx";
 export { FCard } from "@molecules/FCard/FCard.tsx";
+export { FFooterIconsColumn } from "@molecules/FFooterIconsColumn/FFooterIconsColumn.tsx";
 export { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn.tsx";
 export { FHeader } from "@molecules/FHeader/FHeader.tsx";
 export { FModal } from "@molecules/FModal/FModal.tsx";
@@ -24,3 +25,4 @@ export { FTransactionItem } from "@molecules/FTransactionItem/FTransactionItem.t
 
 export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSummaryCard.tsx";
 export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";
+export { FFooter } from "@organisms/FFooter/FFooter.tsx";

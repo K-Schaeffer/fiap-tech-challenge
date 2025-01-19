@@ -1,5 +1,5 @@
-import FFooter from "@/components/organisms/FFooter/FFooter";
 import type { Meta, StoryObj } from "@storybook/react";
+import { FFooter } from "./FFooter";
 
 const meta = {
   title: "Organisms/Footer",
@@ -15,11 +15,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    listService: ["Conta corrente", "Conta PJ", "Cartão de crédito"],
-    listContact: [
-      "0800 004 250 08",
-      "meajuda@bytebank.com.br",
-      "ouvidoria@bytebank.com.br",
-    ],
+    children: (
+      <>
+        <img src="" alt="Image" />{" "}
+      </>
+    ),
   },
 };

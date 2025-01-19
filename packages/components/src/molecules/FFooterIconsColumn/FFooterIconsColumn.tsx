@@ -1,14 +1,14 @@
+import { FIconButton } from "@atoms/FIconButton/FIconButton";
 import { Instagram, WhatsApp, YouTube } from "@mui/icons-material";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { FIconButton } from "components";
-import Image from "next/image";
 
-export interface FFoterIconsColumnProps {
+export interface FFooterIconsColumnProps {
   textHeader?: string;
+  children?: React.ReactNode;
 }
 
-export default function FFoterIconsColumn(props: FFoterIconsColumnProps) {
+export function FFooterIconsColumn(props: FFooterIconsColumnProps) {
   return (
     <Stack
       spacing={3}
@@ -26,7 +26,8 @@ export default function FFoterIconsColumn(props: FFoterIconsColumnProps) {
         {props.textHeader}
       </Typography>
 
-      <Image src="/assets/logo-white.svg" alt="" width={145} height={32} />
+      {props.children}
+
       <Stack spacing={3} direction="row">
         <FIconButton>
           <Instagram sx={{ width: "29px", height: "29.6px" }} />

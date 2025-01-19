@@ -1,6 +1,5 @@
 "use client";
 import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FFooter from "@/components/organisms/FFooter/FFooter";
 import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import { MENU_ITEMS_HOME } from "@/constants";
 import { Box, Container, Grid2, Typography } from "@mui/material";
@@ -9,6 +8,7 @@ import {
   FAccountButtons,
   FAdvantageColumn,
   FAdvantageContainer,
+  FFooter,
   FHeader,
 } from "components";
 import Image from "next/image";
@@ -210,7 +210,9 @@ export default function AccountHome(props: FAccountHomeProps) {
         </Box>
       </Container>
 
-      <FFooter />
+      <FFooter>
+        <Image src="/assets/logo-white.svg" alt="" width={145} height={32} />
+      </FFooter>
     </main>
   );
 }

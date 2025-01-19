@@ -1,20 +1,14 @@
-import FFoterIconsColumn from "@/components/molecules/FFooterIconsColumn/FFooterIconsColumn";
+import { FFooterIconsColumn } from "@molecules/FFooterIconsColumn/FFooterIconsColumn";
+import { FFooterTextColumn } from "@molecules/FFooterTextColumn/FFooterTextColumn";
 import { Box, Container, Grid2 } from "@mui/material";
-import { FFooterTextColumn } from "components";
 
-const listService: string[] = [
-  "Conta corrente",
-  "Conta PJ",
-  "Cartão de crédito",
-];
+import { listContact, listService } from "./FFooter.constants";
 
-const listContact: string[] = [
-  "0800 004 250 08",
-  "meajuda@bytebank.com.br",
-  "ouvidoria@bytebank.com.br",
-];
+interface FFooterProps {
+  children?: React.ReactNode;
+}
 
-export default function FFooter() {
+export function FFooter({ children }: FFooterProps) {
   return (
     <Box
       sx={{
@@ -32,7 +26,9 @@ export default function FFooter() {
             <FFooterTextColumn textHeader="Contato" listItems={listContact} />
           </Grid2>
           <Grid2 size={{ xs: 12, sm: 4 }}>
-            <FFoterIconsColumn textHeader="Desenvolvido por Alura" />
+            <FFooterIconsColumn textHeader="Desenvolvido por Alura">
+              {children}
+            </FFooterIconsColumn>
           </Grid2>
         </Grid2>
       </Container>
