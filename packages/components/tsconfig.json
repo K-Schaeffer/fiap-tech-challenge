@@ -12,7 +12,8 @@
     "paths": {
       "@atoms/*": ["src/atoms/*"],
       "@molecules/*": ["src/molecules/*"],
-      "@organisms/*": ["src/organisms/*"]
+      "@organisms/*": ["src/organisms/*"],
+      "@pages/*": ["src/pages/*"]
     }
   },
   "include": ["src"],
