@@ -30,7 +30,7 @@ export function NotFound({ onBack }: notFoundProps) {
           <FButton
             options={{ variant: "outlined", color: "secondary" }}
             onClick={onBack}
-            innerText="Voltar para a Home"
+            innerText="Voltar"
           />
         </Box>
       </Container>

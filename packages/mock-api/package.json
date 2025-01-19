@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "json-server db.json --port 3006",
-    "build": "json-server db.json --port 3006"
+    "dev": "json-server db.json --port 5000",
+    "build": "json-server db.json --port 5000"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
