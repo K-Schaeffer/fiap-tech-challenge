@@ -1,0 +1,70 @@
+{
+  "name": "components",
+  "private": true,
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./theme": "./dist/theme/index.js"
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev:storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "dev": "concurrently --names \"storybook,vite\" \"npm run dev:storybook\" \"vite build --watch\"",
+    "build": "tsc -p ./tsconfig.json && vite build",
+    "lint": "eslint",
+    "format": "prettier --write .",
+    "analyze": "source-map-explorer dist/*.js"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.13.1",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "6.4.0",
+    "@mui/material": "6.4.0",
+    "@mui/material-nextjs": "6.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@eslint/js": "^9.17.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/manager-api": "^8.3.5",
+    "@storybook/react-vite": "^8.5.0",
+    "@storybook/test": "^8.3.5",
+    "@storybook/theming": "^8.3.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "eslint": "^8",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "eslint-plugin-storybook": "^0.9.0",
+    "glob": "^11.0.1",
+    "globals": "^15.14.0",
+    "prettier": "^3.3.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "source-map-explorer": "^2.5.3",
+    "storybook": "^8.3.5",
+    "typescript": "^5",
+    "typescript-eslint": "^8.18.2",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}

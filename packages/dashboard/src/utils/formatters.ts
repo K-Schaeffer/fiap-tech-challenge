@@ -1,17 +1,4 @@
-const MONTHS = [
-  "Janeiro",
-  "Fevereiro",
-  "Março",
-  "Abril",
-  "Maio",
-  "Junho",
-  "Julho",
-  "Agosto",
-  "Setembro",
-  "Outubro",
-  "Novembro",
-  "Dezembro",
-];
+import { MONTHS } from "@/constants/months";
 
 export const formatMonth = (_date: string) => {
   const date = new Date(_date);

@@ -1,8 +1,8 @@
 "use client";
-import { ThemeProvider } from "@mui/material/styles";
-import { usePathname } from "next/navigation";
 import CssBaseline from "@mui/material/CssBaseline";
-import { light, dark } from "./theme";
+import { ThemeProvider } from "@mui/material/styles";
+import { dark, light } from "components/theme";
+import { usePathname } from "next/navigation";
 
 interface ThemeProviderWrapperProps {
   children: React.ReactNode;

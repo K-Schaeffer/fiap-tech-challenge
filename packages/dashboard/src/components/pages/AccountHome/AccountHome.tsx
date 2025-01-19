@@ -1,29 +1,26 @@
 "use client";
-import FAccountButtons, {
-  FAccountButtonActions,
-} from "@/components/molecules/FAccountButtons/FAccountButtons";
-import FHeader from "@/components/molecules/FHeader/FHeader";
-import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FAdvantageContainer from "@/components/organisms/FAdvantageContainer/FAdvantageContainer";
-import FFooter from "@/components/organisms/FFooter/FFooter";
-import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
-import { MENU_ITEMS_HOME } from "@/constants";
 import { Box, Container, Grid2, Typography } from "@mui/material";
+
+import {
+  FAccountButtonActions,
+  FAccountButtons,
+  FAdvantageColumn,
+  FAdvantageContainer,
+  FFooter,
+  FHeader,
+  FMenuDropdown,
+  FMenuList,
+  FMenuListItem,
+} from "components";
+
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 interface FAccountHomeProps {
   actions: FAccountButtonActions;
+  menuItems: FMenuListItem[];
 }
-
 export default function AccountHome(props: FAccountHomeProps) {
-  const pathname = usePathname();
-
-  const menuItems = MENU_ITEMS_HOME.map((item) => ({
-    ...item,
-    current: item.path === pathname,
-  }));
-
   return (
     <main
       style={{
@@ -65,16 +62,20 @@ export default function AccountHome(props: FAccountHomeProps) {
               />
             </Box>
             <FMenuDropdown
-              menuItems={menuItems}
+              menuItems={props.menuItems}
               options={{ sx: { display: { xs: "flex", md: "none" } } }}
-            />
+            >
+              <Link href="" />
+            </FMenuDropdown>
             <FMenuList
-              menuItems={menuItems}
+              menuItems={props.menuItems}
               variant="row"
               options={{
                 sx: { display: { xs: "none", md: "flex" }, fontWeight: 600 },
               }}
-            />
+            >
+              <Link href="" />
+            </FMenuList>
           </Box>
         }
         rightContent={
@@ -156,14 +157,65 @@ export default function AccountHome(props: FAccountHomeProps) {
               marginTop: 4,
               marginBottom: 4,
             }}
-            handleNewAccount={props.actions?.handleNewAccount}
-            handleLogin={props.actions?.handleLogin}
+            handleNewAccount={() => {
+              props.actions.handleNewAccount();
+            }}
+            handleLogin={() => {
+              props.actions.handleLogin();
+            }}
           />
-          <FAdvantageContainer />
+          <FAdvantageContainer>
+            <FAdvantageColumn
+              title="Conta e cartão gratuitos"
+              description="Isso mesmo, nossa conta é digital, sem custo fixo e mais que isso: sem tarifa de manutenção."
+            >
+              <Image
+                src="/assets/GiftBox.svg"
+                alt="Ícone de caixa de presente"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Saques sem custo"
+              description="Você pode sacar gratuitamente 4x por mês de qualquer Banco 24h."
+            >
+              <Image
+                src="/assets/Exchange.svg"
+                alt="Ícone de mão entregando dinheiro"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Programa de pontos"
+              description="Você pode acumular pontos com suas compras no crédito sem pagar mensalidade!"
+            >
+              <Image
+                src="/assets/Star.svg"
+                alt="Ícone de estrela"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+            <FAdvantageColumn
+              title="Seguro dispositivos"
+              description="Seus dispositivos móveis (computador e laptop) protegidos por uma mensalidade simbólica."
+            >
+              <Image
+                src="/assets/Devices.svg"
+                alt="Ícone de diversas telas de diferentes dispositivos"
+                width="64"
+                height="64"
+              />{" "}
+            </FAdvantageColumn>
+          </FAdvantageContainer>
         </Box>
       </Container>
 
-      <FFooter />
+      <FFooter>
+        <Image src="/assets/logo-white.svg" alt="" width={145} height={32} />
+      </FFooter>
     </main>
   );
 }
