@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import FMenuDropdown from "./FMenuDropdown";
+import { FMenuDropdown } from "./FMenuDropdown";
 
 const meta = {
   title: "Organisms/MenuDropdown",
@@ -23,12 +23,14 @@ const menuItems = [
   {
     label: "About",
     path: "/about",
+    current: false,
   },
 ];
 
 export const Default: Story = {
   args: {
     menuItems,
+    children: <div></div>,
   },
 };
 
@@ -38,5 +40,6 @@ export const Dark: Story = {
   },
   args: {
     menuItems,
+    children: <div></div>,
   },
 };

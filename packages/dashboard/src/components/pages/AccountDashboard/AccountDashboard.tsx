@@ -1,9 +1,6 @@
 "use client";
-import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
-import { MENU_ITEMS_DASHBOARD } from "@/constants";
 import { Account } from "@/services/Account/Account.model";
 import {
   Transaction,
@@ -13,9 +10,17 @@ import {
 import { formatCurrency, getFormattedDateNow } from "@/utils/formatters";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
-import { FAccountSummaryCard, FCard, FHeader } from "components";
+import {
+  FAccountSummaryCard,
+  FCard,
+  FHeader,
+  FMenuDropdown,
+  FMenuList,
+} from "components";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { MENU_ITEMS_DASHBOARD } from "./AccountDashboard.constants";
 
 interface AccountDashboardProps {
   account: Account;
@@ -34,6 +39,13 @@ export default function AccountDashboard({
   const formattedBalance = formatCurrency(account.balance, account.currency);
   const formattedDate = getFormattedDateNow();
 
+  const pathname = usePathname();
+
+  const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
+    ...item,
+    current: item.path === pathname,
+  }));
+
   return (
     <main
       style={{
@@ -46,9 +58,11 @@ export default function AccountDashboard({
         leftContent={
           <Box>
             <FMenuDropdown
-              menuItems={MENU_ITEMS_DASHBOARD}
+              menuItems={menuItems}
               options={{ sx: { display: { xs: "flex", lg: "none" } } }}
-            />
+            >
+              <Link href="" />
+            </FMenuDropdown>
           </Box>
         }
         rightContent={
@@ -70,7 +84,9 @@ export default function AccountDashboard({
                 },
               }}
             >
-              <FMenuList menuItems={MENU_ITEMS_DASHBOARD} />
+              <FMenuList menuItems={menuItems}>
+                <Link href="" />
+              </FMenuList>
             </FCard>
           </Grid2>
 

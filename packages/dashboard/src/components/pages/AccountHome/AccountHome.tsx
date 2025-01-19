@@ -1,7 +1,4 @@
 "use client";
-import FMenuList from "@/components/molecules/FMenuList/FMenuList";
-import FMenuDropdown from "@/components/organisms/FMenuDropdown/FMenuDropdown";
-import { MENU_ITEMS_HOME } from "@/constants";
 import { Box, Container, Grid2, Typography } from "@mui/material";
 import {
   FAccountButtonActions,
@@ -10,10 +7,13 @@ import {
   FAdvantageContainer,
   FFooter,
   FHeader,
+  FMenuDropdown,
+  FMenuList,
 } from "components";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-
+import { MENU_ITEMS_HOME } from "./AccountHome.constants";
 interface FAccountHomeProps {
   actions: FAccountButtonActions;
 }
@@ -69,14 +69,18 @@ export default function AccountHome(props: FAccountHomeProps) {
             <FMenuDropdown
               menuItems={menuItems}
               options={{ sx: { display: { xs: "flex", md: "none" } } }}
-            />
+            >
+              <Link href="" />
+            </FMenuDropdown>
             <FMenuList
               menuItems={menuItems}
               variant="row"
               options={{
                 sx: { display: { xs: "none", md: "flex" }, fontWeight: 600 },
               }}
-            />
+            >
+              <Link href="" />
+            </FMenuList>
           </Box>
         }
         rightContent={
@@ -158,8 +162,12 @@ export default function AccountHome(props: FAccountHomeProps) {
               marginTop: 4,
               marginBottom: 4,
             }}
-            handleNewAccount={props.actions?.handleNewAccount}
-            handleLogin={props.actions?.handleLogin}
+            handleNewAccount={() => {
+              props.actions.handleNewAccount();
+            }}
+            handleLogin={() => {
+              props.actions.handleLogin();
+            }}
           />
           <FAdvantageContainer>
             <FAdvantageColumn

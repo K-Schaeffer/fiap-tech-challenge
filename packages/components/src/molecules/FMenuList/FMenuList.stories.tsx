@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
-import FMenuList from "./FMenuList";
+import { FMenuList } from "./FMenuList";
 
 const meta = {
   title: "Molecules/MenuList",
@@ -32,7 +32,9 @@ const menuItems = [
 export const Default: StoryFn = () => {
   return (
     <Box width={200} padding={4} sx={{ backgroundColor: "#fff" }}>
-      <FMenuList menuItems={menuItems} />
+      <FMenuList menuItems={menuItems}>
+        <div></div>
+      </FMenuList>
     </Box>
   );
 };

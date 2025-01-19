@@ -1,5 +1,3 @@
-"use client";
-import { MenuItemType } from "@/types";
 import {
   Box,
   Divider,
@@ -8,8 +6,13 @@ import {
   MenuListProps,
   useTheme,
 } from "@mui/material";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import React from "react";
+
+export type MenuItemType = {
+  label: string;
+  path: string;
+  current?: boolean;
+};
 
 type MenuVariant = "column" | "row";
 
@@ -17,33 +20,28 @@ interface FMenuListProps {
   options?: MenuListProps;
   variant?: MenuVariant;
   menuItems: MenuItemType[];
+  children: React.ReactElement;
 }
 
-export default function FMenuList({
+export function FMenuList({
   options,
   variant = "column",
   menuItems,
+  children,
 }: FMenuListProps) {
   const isDarkTheme = useTheme().palette.mode === "dark";
 
-  const pathname = usePathname();
-
-  const items = menuItems.map((item) => ({
-    ...item,
-    current: item.path === pathname,
-  }));
-
   return (
     <MenuList {...options}>
-      {items.map(({ label, path, current }, index) => (
+      {menuItems.map(({ label, path, current }, index) => (
         <Box key={`menu-item-${index}`}>
           <MenuItem
             key={`menu-item-${index}`}
             sx={{ justifyContent: "center" }}
           >
-            <Link
-              href={path}
-              style={{
+            {React.cloneElement(children, {
+              href: path,
+              style: {
                 color: current
                   ? "var(--mui-palette-tertiary-main)"
                   : isDarkTheme
@@ -51,10 +49,9 @@ export default function FMenuList({
                     : "currentColor",
                 fontWeight: variant === "row" ? 600 : current ? 700 : 400,
                 textDecoration: "none",
-              }}
-            >
-              {label}
-            </Link>
+              },
+              children: label,
+            })}
           </MenuItem>
           <Divider
             sx={{
