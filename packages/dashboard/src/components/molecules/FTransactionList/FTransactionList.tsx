@@ -1,55 +1,46 @@
 "use client";
-import { editTransaction } from "@/services/Transaction/Transaction.controller";
-import { TransactionData } from "@/services/Transaction/Transaction.model";
-import { formatCurrency, formatDate } from "@/utils/formatters";
 import { List, Typography } from "@mui/material";
-import { FModal, FTransactionItem } from "components";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import FTransactionForm from "../FTransactionForm/FTransactionForm";
+import { FTransactionItem } from "components";
+
+export interface FTransactionItem {
+  id: string;
+  type: string;
+  date: string;
+  currency: string;
+  value: number;
+  formattedValue: string;
+}
 
 export interface FTransactionListProps {
-  transactionItems: TransactionData[];
+  transactionItems: FTransactionItem[];
   deleteTransaction?: (transactionId: string) => void;
-  editTransaction?: (transaction: TransactionData) => void;
+  editTransaction?: (transactionId: string) => void;
 }
 
 export default function FTransactionList({
   transactionItems,
+  editTransaction,
   deleteTransaction,
 }: FTransactionListProps) {
-  const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentTransaction, setCurrentTransaction] =
-    useState<TransactionData>();
-
-  const handleEdit = (transactionId: string) => {
-    setCurrentTransaction(
-      transactionItems.find(({ id }) => id === transactionId)
-    );
-    setIsModalOpen(true);
-  };
-
   const handleDelete = (transactionId: string) => {
     if (!deleteTransaction) {
       return;
     }
 
     deleteTransaction(transactionId);
-    router.refresh();
   };
 
   return (
     <>
       <List>
-        {transactionItems.map(({ id, date, type, value, currency }) => (
+        {transactionItems.map(({ id, date, type, formattedValue }) => (
           <FTransactionItem
             key={`transaction-item-${id}`}
-            date={formatDate(date)}
+            date={date}
             type={type}
-            value={formatCurrency(value, currency)}
+            value={formattedValue}
             onDelete={() => handleDelete(id)}
-            onEdit={() => handleEdit(id)}
+            onEdit={() => editTransaction && editTransaction(id)}
           />
         ))}
       </List>
@@ -58,18 +49,6 @@ export default function FTransactionList({
           Nenhuma transação encontrada.
         </Typography>
       )}
-      <FModal
-        title="Editar transação"
-        isOpen={isModalOpen}
-        handleClose={() => setIsModalOpen(false)}
-      >
-        <FTransactionForm
-          currentTransaction={currentTransaction}
-          editTransaction={editTransaction}
-          closeEditModal={() => setIsModalOpen(false)}
-          buttonText="Concluir edição"
-        />
-      </FModal>
     </>
   );
 }

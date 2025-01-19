@@ -1,60 +1,54 @@
 "use client";
-import { getAccountInfo } from "@/services/Account/Account.controller";
-import { Account } from "@/services/Account/Account.model";
-import {
-  Transaction,
-  TransactionData,
-  TransactionInput,
-} from "@/services/Transaction/Transaction.model";
 import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { FAlert, FButton, FChip, FInput, FSelectInput } from "components";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+export interface FTransactionFormItemInput {
+  type: string;
+  value: number;
+}
+
+export interface FTransactionFormItem extends FTransactionFormItemInput {
+  id: string;
+}
 
 export interface FTransactionFormProps {
-  currentTransaction?: Transaction;
-  addTransaction?: (transaction: TransactionInput) => void;
-  editTransaction?: (transaction: TransactionData) => void;
+  accountBalance: number;
+  currentTransaction?: FTransactionFormItem;
+  addTransaction?: (transaction: FTransactionFormItemInput) => void;
+  editTransaction?: (transaction: FTransactionFormItem) => void;
   closeEditModal?: () => void;
   buttonText?: string;
 }
 
 export default function FTransactionForm({
+  accountBalance,
   currentTransaction,
   addTransaction,
   editTransaction,
   closeEditModal,
   buttonText,
 }: FTransactionFormProps) {
-  const router = useRouter();
-
-  const [account, setAccount] = useState<Account>({} as Account);
   const [transactionType, setTransactionType] = useState<string>(
     currentTransaction?.type || ""
   );
+
   const [transactionValue, setTransactionValue] = useState<number>(
     currentTransaction?.value || 0
   );
 
+  // TODO: Use constants for those plain string values (Currently we have those mapped on an array in the component lib - FSelectInput.constants.js)
   const isAddValueAccount = ["Depósito", "Empréstimo"].includes(
     transactionType
   );
+
   const [alert, setAlert] = useState<{
     severity: AlertColor;
     text: string;
   } | null>(null);
+
   const [alertOpen, setAlertOpen] = useState(false);
-
-  useEffect(() => {
-    loadBalanceAccount();
-  }, []);
-
-  const loadBalanceAccount = async () => {
-    const accountResp: Account = await getAccountInfo();
-
-    setAccount(accountResp);
-  };
 
   const handleSelectTransactionType = (event: SelectChangeEvent) => {
     setTransactionType(event.target.value);
@@ -66,7 +60,7 @@ export default function FTransactionForm({
   ) => {
     const newValue: number = Math.abs(Number(event.target.value));
 
-    if (newValue > account?.balance && !isAddValueAccount) {
+    if (newValue > accountBalance && !isAddValueAccount) {
       setAlert({ severity: "warning", text: "Saldo insuficiente!" });
       setAlertOpen(true);
       return;
@@ -84,7 +78,6 @@ export default function FTransactionForm({
       ...currentTransaction,
       type: transactionType,
       value: transactionValue,
-      date: new Date().toISOString(),
     });
 
     if (!closeEditModal) {
@@ -106,8 +99,6 @@ export default function FTransactionForm({
     addTransaction({
       type: transactionType,
       value: newValue,
-      date: new Date().toISOString(),
-      currency: "R$",
     });
   };
 
@@ -117,9 +108,9 @@ export default function FTransactionForm({
     } else {
       handleAddTransaction();
     }
+
     cleanTransactionForm();
 
-    loadBalanceAccount();
     setAlert({ severity: "success", text: "Transação realizada com sucesso!" });
     setAlertOpen(true);
   };
@@ -127,7 +118,6 @@ export default function FTransactionForm({
   const cleanTransactionForm = () => {
     setTransactionValue(0);
     setTransactionType("");
-    router.refresh();
   };
 
   const onChangeNewValue = (value: number) => {
@@ -137,7 +127,7 @@ export default function FTransactionForm({
   const handleValueClick = (valueAdded: number) => {
     const newValue: number = transactionValue + valueAdded;
 
-    if (newValue > account?.balance && !isAddValueAccount) {
+    if (newValue > accountBalance && !isAddValueAccount) {
       setAlert({ severity: "warning", text: "Saldo insuficiente!" });
       setAlertOpen(true);
       return;
@@ -182,7 +172,7 @@ export default function FTransactionForm({
             <FChip valueAdd={50} handleValueClick={handleValueClick} />
             <FChip valueAdd={100} handleValueClick={handleValueClick} />
             <FChip
-              valueAdd={isAddValueAccount ? 500 : (account?.balance ?? 0)}
+              valueAdd={isAddValueAccount ? 500 : (accountBalance ?? 0)}
               handleValueClick={handleValueClick}
             />
           </Stack>

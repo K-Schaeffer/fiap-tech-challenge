@@ -7,6 +7,7 @@ import Image from "next/image";
 import styles from "./FTransactionFormCard.styles";
 
 export default function FTransactionFormCard({
+  accountBalance,
   addTransaction,
 }: FTransactionFormProps) {
   return (
@@ -50,6 +51,7 @@ export default function FTransactionFormCard({
 
       <Box width={{ xs: "100%", sm: "70%" }}>
         <FTransactionForm
+          accountBalance={accountBalance}
           addTransaction={addTransaction}
           buttonText="Concluir transação"
         />

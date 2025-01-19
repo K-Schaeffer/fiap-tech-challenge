@@ -1,4 +1,9 @@
 "use client";
+import FTransactionForm, {
+  FTransactionFormItem,
+  FTransactionFormItemInput,
+} from "@/components/molecules/FTransactionForm/FTransactionForm";
+import { FTransactionItem } from "@/components/molecules/FTransactionList/FTransactionList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { Account } from "@/services/Account/Account.model";
@@ -7,7 +12,11 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
-import { formatCurrency, getFormattedDateNow } from "@/utils/formatters";
+import {
+  formatCurrency,
+  formatDate,
+  getFormattedDateNow,
+} from "@/utils/formatters";
 import { AccountCircle } from "@mui/icons-material";
 import { Box, Container, Grid2, Typography } from "@mui/material";
 import {
@@ -16,25 +25,27 @@ import {
   FHeader,
   FMenuDropdown,
   FMenuList,
+  FModal,
 } from "components";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { MENU_ITEMS_DASHBOARD } from "./AccountDashboard.constants";
 
 interface AccountDashboardProps {
   account: Account;
   transactionList: Transaction[];
-  handleAddTransaction?: (transaction: TransactionInput) => void;
-  handleEditTransaction?: (transaction: TransactionData) => void;
-  handleDeleteTransaction?: (transactionId: string) => void;
+  submitAddTransaction?: (transaction: TransactionInput) => void;
+  submitEditTransaction?: (transaction: TransactionData) => void;
+  submitDeleteTransaction?: (transactionId: string) => void;
 }
 export default function AccountDashboard({
   account,
   transactionList,
-  handleAddTransaction,
-  handleEditTransaction,
-  handleDeleteTransaction,
+  submitAddTransaction,
+  submitEditTransaction,
+  submitDeleteTransaction,
 }: AccountDashboardProps) {
   const formattedBalance = formatCurrency(account.balance, account.currency);
   const formattedDate = getFormattedDateNow();
@@ -45,6 +56,54 @@ export default function AccountDashboard({
     ...item,
     current: item.path === pathname,
   }));
+
+  const formattedTransactions = transactionList.map((transaction) => ({
+    ...transaction,
+    date: formatDate(transaction.date),
+    value: transaction.value,
+    formattedValue: formatCurrency(transaction.value, transaction.currency),
+  }));
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [currentTransaction, setCurrentTransaction] =
+    useState<FTransactionItem>();
+
+  const openEditModal = (transactionId: string) => {
+    setCurrentTransaction(
+      formattedTransactions.find(({ id }) => id === transactionId)
+    );
+
+    setIsModalOpen(true);
+  };
+
+  const handleEditTransaction = (transaction: FTransactionFormItem) => {
+    if (!submitEditTransaction) {
+      return;
+    }
+
+    const editedTransaction: TransactionData = {
+      ...transaction,
+      currency: "R$",
+      date: new Date().toISOString(),
+    };
+
+    submitEditTransaction(editedTransaction);
+  };
+
+  const handleAddTransaction = (transaction: FTransactionFormItemInput) => {
+    if (!submitAddTransaction) {
+      return;
+    }
+
+    const newTransaction: TransactionInput = {
+      ...transaction,
+      currency: "R$",
+      date: new Date().toISOString(),
+    };
+
+    submitAddTransaction(newTransaction);
+  };
 
   return (
     <main
@@ -106,17 +165,33 @@ export default function AccountDashboard({
               <Image src="/assets/card-pixels-1.svg" alt="" fill />
               <Image src="/assets/card-illustration-1.svg" alt="" fill />
             </FAccountSummaryCard>
-            <FTransactionFormCard addTransaction={handleAddTransaction} />
+            <FTransactionFormCard
+              addTransaction={handleAddTransaction}
+              accountBalance={account.balance}
+            />
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
             <FTransactionListCard
-              transactionItems={transactionList}
-              editTransaction={handleEditTransaction}
-              deleteTransaction={handleDeleteTransaction}
+              transactionItems={formattedTransactions}
+              editTransaction={openEditModal}
+              deleteTransaction={submitDeleteTransaction}
             />
           </Grid2>
         </Grid2>
+        <FModal
+          title="Editar transação"
+          isOpen={isModalOpen}
+          handleClose={() => setIsModalOpen(false)}
+        >
+          <FTransactionForm
+            accountBalance={account.balance}
+            currentTransaction={currentTransaction}
+            editTransaction={handleEditTransaction}
+            closeEditModal={() => setIsModalOpen(false)}
+            buttonText="Concluir edição"
+          />
+        </FModal>
       </Container>
     </main>
   );

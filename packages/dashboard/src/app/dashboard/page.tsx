@@ -22,17 +22,19 @@ export default async function DashboardView() {
     ...transaction,
   }));
 
-  async function handleAddTransaction(transaction: TransactionInput) {
+  async function submitAddTransaction(transaction: TransactionInput) {
     "use server";
     await addTransaction(transaction);
+    revalidatePath("/dashboard");
   }
 
-  async function handleEditTransaction(transaction: TransactionData) {
+  async function submitEditTransaction(transaction: TransactionData) {
     "use server";
     await editTransaction(transaction);
+    revalidatePath("/dashboard");
   }
 
-  async function handleDeleteTransaction(transactionId: string) {
+  async function submitDeleteTransaction(transactionId: string) {
     "use server";
     await deleteTransaction(transactionId);
     revalidatePath("/dashboard");
@@ -42,9 +44,9 @@ export default async function DashboardView() {
     <AccountDashboard
       account={{ ...account }}
       transactionList={[...transactionList]}
-      handleAddTransaction={handleAddTransaction}
-      handleEditTransaction={handleEditTransaction}
-      handleDeleteTransaction={handleDeleteTransaction}
+      submitAddTransaction={submitAddTransaction}
+      submitEditTransaction={submitEditTransaction}
+      submitDeleteTransaction={submitDeleteTransaction}
     />
   );
 }
