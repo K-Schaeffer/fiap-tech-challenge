@@ -1,5 +1,5 @@
+import AccountHome from "@/app/components/pages/AccountHome/AccountHome";
 import { MENU_ITEMS } from "@/constants/menuItems";
-import AccountHome from "@/pages/AccountHome/AccountHome";
 import { FAccountButtonActions } from "components";
 import { redirect } from "next/navigation";
 

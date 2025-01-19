@@ -1,5 +1,5 @@
+import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
 import { MENU_ITEMS } from "@/constants/menuItems";
-import AccountDashboard from "@/pages/AccountDashboard/AccountDashboard";
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
 import {
