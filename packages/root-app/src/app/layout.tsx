@@ -12,7 +12,7 @@ const font = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LandingPage",
+  title: "Bytebank",
   description: "By FIAP Tech Challenge",
 };
 

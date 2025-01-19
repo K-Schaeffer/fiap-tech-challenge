@@ -10,7 +10,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "components": "*"
+    "components": "*",
+    "single-spa-react": "^6.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
