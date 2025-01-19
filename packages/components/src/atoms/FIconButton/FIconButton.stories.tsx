@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
 import { DeleteTwoTone, EditTwoTone } from "@mui/icons-material";
-import React from "react";
 import { FIconButton } from "./FIconButton";
 
 const meta = {

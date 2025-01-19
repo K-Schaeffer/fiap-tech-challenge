@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import type { Meta, StoryFn } from "@storybook/react";
 import { fn } from "@storybook/test";
-import React from "react";
 import { FSelectInput } from "./FSelectInput";
 
 const meta: Meta<typeof FSelectInput> = {

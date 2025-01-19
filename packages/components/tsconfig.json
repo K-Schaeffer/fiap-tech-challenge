@@ -1,13 +1,20 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowImportingTsExtensions": true,
     "outDir": "./dist",
-    "noEmit": true
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@atoms/*": ["src/atoms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@organisms/*": ["src/organisms/*"],
+      "@pages/*": ["src/pages/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

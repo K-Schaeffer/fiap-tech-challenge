@@ -1,5 +1,13 @@
-import NotFound from "@/components/pages/NotFound/NotFound";
+"use client";
+import { NotFound } from "components";
+import { useRouter } from "next/navigation";
 
-export default async function NotFoundView() {
-  return <NotFound />;
+export default function NotFoundView() {
+  const router = useRouter();
+
+  const redirectToHome = () => {
+    router.push("/");
+  };
+
+  return <NotFound onBack={redirectToHome} />;
 }

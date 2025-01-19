@@ -1,8 +1,14 @@
-import { FAccountButtonActions } from "@/components/molecules/FAccountButtons/FAccountButtons";
 import AccountHome from "@/components/pages/AccountHome/AccountHome";
+import { MENU_ITEMS_HOME } from "@/constants/menuItems";
+import { FAccountButtonActions } from "components";
 import { redirect } from "next/navigation";
 
-export default function HomeView() {
+export default async function HomeView() {
+  const menuItems = MENU_ITEMS_HOME.map((item) => ({
+    ...item,
+    current: false,
+  }));
+
   const actionsHome: FAccountButtonActions = {
     handleNewAccount: async () => {
       "use server";
@@ -14,5 +20,5 @@ export default function HomeView() {
     },
   };
 
-  return <AccountHome actions={actionsHome} />;
+  return <AccountHome actions={actionsHome} menuItems={menuItems} />;
 }

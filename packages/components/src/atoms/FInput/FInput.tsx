@@ -1,5 +1,4 @@
 import { Box, TextField, TextFieldProps } from "@mui/material";
-import React from "react";
 
 interface InputProps {
   options?: TextFieldProps;

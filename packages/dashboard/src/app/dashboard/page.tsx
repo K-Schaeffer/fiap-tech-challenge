@@ -1,4 +1,5 @@
 import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
+import { MENU_ITEMS_DASHBOARD } from "@/constants/menuItems";
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
 import {
@@ -12,6 +13,7 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
+import { revalidatePath } from "next/cache";
 
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
@@ -21,28 +23,32 @@ export default async function DashboardView() {
     ...transaction,
   }));
 
-  async function handleAddTransaction(transaction: TransactionInput) {
+  async function submitAddTransaction(transaction: TransactionInput) {
     "use server";
     await addTransaction(transaction);
+    revalidatePath("/dashboard");
   }
 
-  async function hanldeEditTransaction(transaction: TransactionData) {
+  async function submitEditTransaction(transaction: TransactionData) {
     "use server";
     await editTransaction(transaction);
+    revalidatePath("/dashboard");
   }
 
-  async function handleDeleteTransaction(transactionId: string) {
+  async function submitDeleteTransaction(transactionId: string) {
     "use server";
     await deleteTransaction(transactionId);
+    revalidatePath("/dashboard");
   }
 
   return (
     <AccountDashboard
+      menuItems={MENU_ITEMS_DASHBOARD}
       account={{ ...account }}
       transactionList={[...transactionList]}
-      handleAddTransaction={handleAddTransaction}
-      handleEditTransaction={hanldeEditTransaction}
-      handleDeleteTransaction={handleDeleteTransaction}
+      submitAddTransaction={submitAddTransaction}
+      submitEditTransaction={submitEditTransaction}
+      submitDeleteTransaction={submitDeleteTransaction}
     />
   );
 }
