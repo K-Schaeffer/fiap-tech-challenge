@@ -18,6 +18,7 @@ import {
   FHeader,
   FMenuDropdown,
   FMenuList,
+  FMenuListItem,
   FModal,
   FTransactionForm,
   FTransactionFormCard,
@@ -30,9 +31,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MENU_ITEMS_DASHBOARD } from "./AccountDashboard.constants";
 
 interface AccountDashboardProps {
+  menuItems: FMenuListItem[];
   account: Account;
   transactionList: Transaction[];
   submitAddTransaction?: (transaction: TransactionInput) => void;
@@ -40,6 +41,7 @@ interface AccountDashboardProps {
   submitDeleteTransaction?: (transactionId: string) => void;
 }
 export default function AccountDashboard({
+  menuItems,
   account,
   transactionList,
   submitAddTransaction,
@@ -51,7 +53,7 @@ export default function AccountDashboard({
 
   const pathname = usePathname();
 
-  const menuItems = MENU_ITEMS_DASHBOARD.map((item) => ({
+  const currentMenuItems = menuItems.map((item) => ({
     ...item,
     current: item.path === pathname,
   }));
@@ -117,7 +119,7 @@ export default function AccountDashboard({
         leftContent={
           <Box>
             <FMenuDropdown
-              menuItems={menuItems}
+              menuItems={currentMenuItems}
               options={{ sx: { display: { xs: "flex", lg: "none" } } }}
             >
               <Link href="" />
@@ -143,7 +145,7 @@ export default function AccountDashboard({
                 },
               }}
             >
-              <FMenuList menuItems={menuItems}>
+              <FMenuList menuItems={currentMenuItems}>
                 <Link href="" />
               </FMenuList>
             </FCard>

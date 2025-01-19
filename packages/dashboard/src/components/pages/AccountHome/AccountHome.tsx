@@ -18,10 +18,9 @@ import Link from "next/link";
 
 interface FAccountHomeProps {
   actions: FAccountButtonActions;
-  currentPath?: string;
   menuItems: FMenuListItem[];
 }
-export function AccountHome(props: FAccountHomeProps) {
+export default function AccountHome(props: FAccountHomeProps) {
   return (
     <main
       style={{

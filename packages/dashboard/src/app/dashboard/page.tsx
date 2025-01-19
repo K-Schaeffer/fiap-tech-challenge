@@ -1,4 +1,5 @@
 import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
+import { MENU_ITEMS_DASHBOARD } from "@/constants/menuItems";
 import { getAccountInfo } from "@/services/Account/Account.controller";
 import { Account } from "@/services/Account/Account.model";
 import {
@@ -42,6 +43,7 @@ export default async function DashboardView() {
 
   return (
     <AccountDashboard
+      menuItems={MENU_ITEMS_DASHBOARD}
       account={{ ...account }}
       transactionList={[...transactionList]}
       submitAddTransaction={submitAddTransaction}

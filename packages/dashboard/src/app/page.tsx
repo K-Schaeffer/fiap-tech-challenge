@@ -1,15 +1,13 @@
-import { AccountHome } from "@/components/pages/AccountHome/AccountHome";
-import { MENU_ITEMS_HOME } from "@/components/pages/AccountHome/AccountHome.constants";
+import AccountHome from "@/components/pages/AccountHome/AccountHome";
+import { MENU_ITEMS_HOME } from "@/constants/menuItems";
 import { FAccountButtonActions } from "components";
 import { redirect } from "next/navigation";
 
-export default function HomeView() {
+export default async function HomeView() {
   const menuItems = MENU_ITEMS_HOME.map((item) => ({
     ...item,
     current: false,
   }));
-
-  const currentPath = "";
 
   const actionsHome: FAccountButtonActions = {
     handleNewAccount: async () => {
@@ -22,11 +20,5 @@ export default function HomeView() {
     },
   };
 
-  return (
-    <AccountHome
-      actions={actionsHome}
-      menuItems={menuItems}
-      currentPath={currentPath}
-    />
-  );
+  return <AccountHome actions={actionsHome} menuItems={menuItems} />;
 }

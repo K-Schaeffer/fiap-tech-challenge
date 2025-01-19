@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:storybook": "storybook dev -p 6006",
     "build": "next build",
-    "build:storybook": "storybook build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -15,15 +13,6 @@
     "components": "*"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.9.0",
-    "@storybook/addon-essentials": "^8.3.5",
-    "@storybook/addon-interactions": "^8.3.5",
-    "@storybook/addon-links": "^8.3.5",
-    "@storybook/addon-onboarding": "^8.3.5",
-    "@storybook/blocks": "^8.3.5",
-    "@storybook/nextjs": "^8.3.5",
-    "@storybook/react": "^8.3.5",
-    "@storybook/test": "^8.3.5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -33,7 +22,6 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-storybook": "^0.9.0",
     "prettier": "^3.3.3",
-    "storybook": "^8.3.5",
     "typescript": "^5"
   }
 }
