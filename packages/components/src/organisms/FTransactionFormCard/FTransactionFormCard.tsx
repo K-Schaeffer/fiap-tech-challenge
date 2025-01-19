@@ -1,12 +1,20 @@
+import { FCard } from "@molecules/FCard/FCard";
+import {
+  FTransactionForm,
+  FTransactionFormProps,
+} from "@molecules/FTransactionForm/FTransactionForm";
 import { Box } from "@mui/material";
-import { FCard, FTransactionForm, FTransactionFormProps } from "components";
-import Image from "next/image";
 import styles from "./FTransactionFormCard.styles";
 
-export default function FTransactionFormCard({
+interface FTransactionFormCardProps extends FTransactionFormProps {
+  children?: React.ReactNode[];
+}
+
+export function FTransactionFormCard({
+  children,
   accountBalance,
   addTransaction,
-}: FTransactionFormProps) {
+}: FTransactionFormCardProps) {
   return (
     <FCard
       title="Nova transação"
@@ -24,7 +32,7 @@ export default function FTransactionFormCard({
           ...styles.bottomPixelsImage,
         }}
       >
-        <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
+        {children && children[0]}
       </Box>
       <Box
         sx={{
@@ -32,7 +40,7 @@ export default function FTransactionFormCard({
           ...styles.topPixelsImage,
         }}
       >
-        <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
+        {children && children[1]}
       </Box>
       <Box
         sx={{
@@ -43,7 +51,7 @@ export default function FTransactionFormCard({
           height: "231px",
         }}
       >
-        <Image src="/assets/card-illustration-2.svg" alt="" layout="fill" />
+        {children && children[2]}
       </Box>
 
       <Box width={{ xs: "100%", sm: "70%" }}>

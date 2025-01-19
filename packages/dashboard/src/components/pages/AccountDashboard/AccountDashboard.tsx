@@ -1,5 +1,4 @@
 "use client";
-import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { Account } from "@/services/Account/Account.model";
 import {
@@ -22,6 +21,7 @@ import {
   FMenuList,
   FModal,
   FTransactionForm,
+  FTransactionFormCard,
   FTransactionFormItem,
   FTransactionFormItemInput,
   TransactionItem,
@@ -168,7 +168,15 @@ export default function AccountDashboard({
             <FTransactionFormCard
               addTransaction={handleAddTransaction}
               accountBalance={account.balance}
-            />
+            >
+              <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
+              <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
+              <Image
+                src="/assets/card-illustration-2.svg"
+                alt=""
+                layout="fill"
+              />
+            </FTransactionFormCard>
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>

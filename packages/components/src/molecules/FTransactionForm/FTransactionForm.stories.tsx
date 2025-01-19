@@ -4,6 +4,7 @@ import { fn } from "@storybook/test";
 
 import { FTransactionForm, FTransactionFormProps } from "./FTransactionForm";
 
+//TODO: Document edit flow
 const meta = {
   title: "Molecules/TransactionForm",
   component: FTransactionForm,
@@ -12,7 +13,6 @@ const meta = {
   },
   args: {
     addTransaction: fn(),
-    closeEditModal: fn(),
     accountBalance: 2500,
     buttonText: "Concluir",
   },

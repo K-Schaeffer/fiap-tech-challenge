@@ -38,3 +38,4 @@ export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSumm
 export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";
 export { FFooter } from "@organisms/FFooter/FFooter.tsx";
 export { FMenuDropdown } from "@organisms/FMenuDropdown/FMenuDropdown.tsx";
+export { FTransactionFormCard } from "@organisms/FTransactionFormCard/FTransactionFormCard.tsx";
