@@ -1,11 +1,11 @@
-"use client";
+import { FButton } from "@atoms/FButton/FButton";
 import { Box, Container, Typography } from "@mui/material";
-import { FButton } from "components";
-import { useRouter } from "next/navigation";
 
-export default function NotFound() {
-  const router = useRouter();
+interface notFoundProps {
+  onBack: () => void;
+}
 
+export function NotFound({ onBack }: notFoundProps) {
   return (
     <main
       style={{
@@ -29,8 +29,8 @@ export default function NotFound() {
           </Typography>
           <FButton
             options={{ variant: "outlined", color: "secondary" }}
-            onClick={() => router.back()}
-            innerText="Voltar para a Dashboard"
+            onClick={onBack}
+            innerText="Voltar para a Home"
           />
         </Box>
       </Container>

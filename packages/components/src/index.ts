@@ -1,7 +1,3 @@
-// export { NotFound } from "../pages/NotFound/NotFound.tsx";
-// export { AccountHome } from "@pages/AccountHome/AccountHome.tsx";
-// export { AccountDashboard } from "../pages/AccountDashboard/AccountDashboard.tsx";
-
 export { FButton } from "@atoms/FButton/FButton.tsx";
 export { FIconButton } from "@atoms/FIconButton/FIconButton.tsx";
 export { FInput } from "@atoms/FInput/FInput.tsx";
@@ -40,3 +36,5 @@ export { FFooter } from "@organisms/FFooter/FFooter.tsx";
 export { FMenuDropdown } from "@organisms/FMenuDropdown/FMenuDropdown.tsx";
 export { FTransactionFormCard } from "@organisms/FTransactionFormCard/FTransactionFormCard.tsx";
 export { FTransactionListCard } from "@organisms/FTransactionListCard/FTransactionListCard.tsx";
+
+export { NotFound } from "@pages/NotFound/NotFound.tsx";

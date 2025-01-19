@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import NotFound from "./NotFound";
+import { fn } from "@storybook/test";
+import { NotFound } from "./NotFound";
 
 const meta = {
   title: "Pages/NotFound",
@@ -13,6 +14,9 @@ const meta = {
         pathname: "/dashboard",
       },
     },
+  },
+  args: {
+    onBack: fn(),
   },
 } satisfies Meta<typeof NotFound>;
 
