@@ -12,6 +12,7 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
+import { revalidatePath } from "next/cache";
 
 export default async function DashboardView() {
   const account: Account = await getAccountInfo();
@@ -26,7 +27,7 @@ export default async function DashboardView() {
     await addTransaction(transaction);
   }
 
-  async function hanldeEditTransaction(transaction: TransactionData) {
+  async function handleEditTransaction(transaction: TransactionData) {
     "use server";
     await editTransaction(transaction);
   }
@@ -34,6 +35,7 @@ export default async function DashboardView() {
   async function handleDeleteTransaction(transactionId: string) {
     "use server";
     await deleteTransaction(transactionId);
+    revalidatePath("/dashboard");
   }
 
   return (
@@ -41,7 +43,7 @@ export default async function DashboardView() {
       account={{ ...account }}
       transactionList={[...transactionList]}
       handleAddTransaction={handleAddTransaction}
-      handleEditTransaction={hanldeEditTransaction}
+      handleEditTransaction={handleEditTransaction}
       handleDeleteTransaction={handleDeleteTransaction}
     />
   );
