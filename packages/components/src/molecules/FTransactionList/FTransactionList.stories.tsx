@@ -2,29 +2,26 @@ import type { Meta, StoryFn } from "@storybook/react";
 
 import { Box } from "@mui/material";
 import { fn } from "@storybook/test";
-import FTransactionList, { FTransactionListProps } from "./FTransactionList";
+import { FTransactionList, FTransactionListProps } from "./FTransactionList";
 
 const transactionItems = [
   {
     id: "1",
-    date: "2024-11-02",
+    formattedDate: "2024-11-02",
     type: "Depósito",
-    value: 2000,
-    currency: "R$",
+    formattedValue: "R$ 2000",
   },
   {
-    id: "1",
-    date: "2024-11-02",
+    id: "2",
+    formattedDate: "2024-11-02",
     type: "Depósito",
-    value: 2000,
-    currency: "R$",
+    formattedValue: "R$ 2000",
   },
   {
-    id: "1",
-    date: "2024-11-02",
+    id: "3",
+    formattedDate: "2024-11-02",
     type: "Depósito",
-    value: 2000,
-    currency: "R$",
+    formattedValue: "R$ 2000",
   },
 ];
 

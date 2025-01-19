@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 
-import { FTransactionListProps } from "@/components/molecules/FTransactionList/FTransactionList";
 import { Box } from "@mui/material";
+import { FTransactionListProps } from "components";
 import FTransactionListCard from "./FTransactionListCard";
 
 const meta = {
@@ -17,33 +17,23 @@ const meta = {
     transactionItems: [
       {
         id: "1",
-        date: "2024-11-02",
+        formattedDate: "2024-11-02",
         type: "Depósito",
-        value: 2000,
-        currency: "R$",
+        formattedValue: "R$ 2000",
       },
       {
         id: "2",
-        date: "2024-11-01",
+        formattedDate: "2024-11-02",
         type: "Depósito",
-        value: 69.99,
-        currency: "$",
+        formattedValue: "R$ 2000",
       },
       {
         id: "3",
-        date: "2024-11-01",
+        formattedDate: "2024-11-02",
         type: "Depósito",
-        value: 100,
-        currency: "$",
+        formattedValue: "R$ 2000",
       },
-      {
-        id: "4",
-        date: "2024-10-31",
-        type: "Transferência",
-        value: -500,
-        currency: "R$",
-      },
-    ],
+    ];
   },
 } satisfies Meta<typeof FTransactionListCard>;
 

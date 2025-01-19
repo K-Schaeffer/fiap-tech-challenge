@@ -3,7 +3,6 @@ import FTransactionForm, {
   FTransactionFormItem,
   FTransactionFormItemInput,
 } from "@/components/molecules/FTransactionForm/FTransactionForm";
-import { FTransactionItem } from "@/components/molecules/FTransactionList/FTransactionList";
 import FTransactionFormCard from "@/components/organisms/FTransactionFormCard/FTransactionFormCard";
 import FTransactionListCard from "@/components/organisms/FTransactionListCard/FTransactionListCard";
 import { Account } from "@/services/Account/Account.model";
@@ -26,6 +25,7 @@ import {
   FMenuDropdown,
   FMenuList,
   FModal,
+  TransactionItem,
 } from "components";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,21 +57,22 @@ export default function AccountDashboard({
     current: item.path === pathname,
   }));
 
-  const formattedTransactions = transactionList.map((transaction) => ({
-    ...transaction,
-    date: formatDate(transaction.date),
-    value: transaction.value,
-    formattedValue: formatCurrency(transaction.value, transaction.currency),
-  }));
+  const formattedTransactions: TransactionItem[] = transactionList.map(
+    (transaction) => ({
+      id: transaction.id,
+      type: transaction.type,
+      formattedDate: formatDate(transaction.date),
+      formattedValue: formatCurrency(transaction.value, transaction.currency),
+    })
+  );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [currentTransaction, setCurrentTransaction] =
-    useState<FTransactionItem>();
+  const [currentTransaction, setCurrentTransaction] = useState<Transaction>();
 
   const openEditModal = (transactionId: string) => {
     setCurrentTransaction(
-      formattedTransactions.find(({ id }) => id === transactionId)
+      transactionList.find(({ id }) => id === transactionId)
     );
 
     setIsModalOpen(true);

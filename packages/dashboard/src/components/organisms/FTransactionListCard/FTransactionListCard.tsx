@@ -1,8 +1,5 @@
-import FTransactionList, {
-  FTransactionListProps,
-} from "@/components/molecules/FTransactionList/FTransactionList";
 import { Container, Stack, Typography } from "@mui/material";
-import { FCard } from "components";
+import { FCard, FTransactionList, FTransactionListProps } from "components";
 
 export default function FTransactionListCard({
   transactionItems,

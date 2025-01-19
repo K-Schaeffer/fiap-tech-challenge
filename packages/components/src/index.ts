@@ -24,6 +24,9 @@ export { FModal } from "@molecules/FModal/FModal.tsx";
 export { FTransactionAction } from "@molecules/FTransactionAction/FTransactionAction.tsx";
 export type { FTransactionActionProps } from "@molecules/FTransactionAction/FTransactionAction.tsx";
 export { FTransactionItem } from "@molecules/FTransactionItem/FTransactionItem.tsx";
+export type { TransactionItem } from "@molecules/FTransactionItem/FTransactionItem.tsx";
+export { FTransactionList } from "@molecules/FTransactionList/FTransactionList.tsx";
+export type { FTransactionListProps } from "@molecules/FTransactionList/FTransactionList.tsx";
 
 export { FAccountSummaryCard } from "@organisms/FAccountSummaryCard/FAccountSummaryCard.tsx";
 export { FAdvantageContainer } from "@organisms/FAdvantageContainer/FAdvantageContainer.tsx";
