@@ -17,9 +17,9 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-2
-          aws-access-key-id: ${{ secrets. }}
-          aws-secret-access-key: ${{ secrets. }}
+          aws-access-key-id: ${{ secrets.ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.SECRET_KEY }}
 
       - name: Copy files to S3
         run: |
-          aws s3 sync . s3://${{ secrets. }} --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync . s3://${{ secrets.BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*"
