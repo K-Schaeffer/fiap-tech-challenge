@@ -1,16 +1,13 @@
-"use client"
 import { TRANSACTION_TYPES } from "@atoms/FSelectInput/FSelectInput.constants";
 import { FormControl, MenuItem, Select, SelectChangeEvent, Stack } from "@mui/material";
 import { useState } from "react";
-
 
 interface FFilterProps {
     onFilterChange: (filterTypes: string[]) => void;
     showSelect: Boolean;
 }
 
-
-export default function FFilter({ onFilterChange, showSelect }: FFilterProps) {
+export function FFilter({ onFilterChange, showSelect }: FFilterProps) {
 
     const [filterSelected, setFilterSelected] = useState<string[]>([""]);
 
@@ -34,46 +31,34 @@ export default function FFilter({ onFilterChange, showSelect }: FFilterProps) {
             justifyContent="right"
             alignItems="center"
             paddingBottom={1}
-            maxWidth="100%"
+            width="100%"
         >
 
-
             {showSelect && (
-                <FormControl>
+                <FormControl sx={{ width: "100%" }}>
                     <Select
                         multiple
                         value={filterSelected}
                         onChange={handleFilterChange}
                         displayEmpty
-                        disableUnderline
-                        style={{
-                            minHeight: "40px",
-                            minWidth: "100px",
-                            overflow: "hidden",
-                            borderRadius: 8,
-                            backgroundColor: "#FFFFFF",
-                        }}
                         sx={{
+                            width: "100%",
+                            minHeight: "40px",
+                            overflow: "hidden",
+                            borderRadius: "8px",
+                            backgroundColor: "#FFFFFF",
                             marginRight: 1,
                         }}
                     >
                         <MenuItem value="">Todos</MenuItem>
-                        {TRANSACTION_TYPES.map((type) => {
-                            return (
-                                <MenuItem key={type} value={type}>
-                                    {type}
-                                </MenuItem>
-                            )
-                        })}
+                        {TRANSACTION_TYPES.map((type) => (
+                            <MenuItem key={type} value={type}>
+                                {type}
+                            </MenuItem>
+                        ))}
                     </Select>
                 </FormControl>
             )}
-
-
         </Stack>
-
-    )
+    );
 }
-
-
-

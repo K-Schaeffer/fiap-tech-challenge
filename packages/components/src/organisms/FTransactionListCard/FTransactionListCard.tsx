@@ -1,7 +1,6 @@
-"use client"
 import { FIconButton } from "@atoms/FIconButton/FIconButton";
 import { FCard } from "@molecules/FCard/FCard";
-import FFilter from "@molecules/FFilter/FFilter";
+import { FFilter } from "@molecules/FFilter/FFilter";
 import {
   FTransactionList,
   FTransactionListProps,
@@ -63,6 +62,18 @@ export function FTransactionListCard({
           <FilterList />
         </FIconButton>
       </Stack>
+      <Stack
+        direction="row"
+        justifyContent="start"
+        alignItems="start"
+        paddingBottom={1}
+      >
+        <FFilter
+          onFilterChange={handleFilterChange}
+          showSelect={showSelect}
+        />
+
+      </Stack>
       <Container
         sx={{
           height: "600px",
@@ -70,18 +81,6 @@ export function FTransactionListCard({
           overflowX: "hidden",
         }}
       >
-        <Stack
-          direction="row"
-          justifyContent="start"
-          alignItems="start"
-          paddingBottom={1}
-        >
-          <FFilter
-            onFilterChange={handleFilterChange}
-            showSelect={showSelect}
-          />
-
-        </Stack>
 
 
         <FTransactionList
