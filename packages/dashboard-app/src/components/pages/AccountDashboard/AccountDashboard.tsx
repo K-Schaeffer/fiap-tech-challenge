@@ -40,6 +40,7 @@ interface AccountDashboardProps {
   submitEditTransaction?: (transaction: TransactionData) => void;
   submitDeleteTransaction?: (transactionId: string) => void;
 }
+
 export default function AccountDashboard({
   menuItems,
   account,
