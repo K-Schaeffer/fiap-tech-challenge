@@ -69,3 +69,4 @@ Para instalar as deps quando já estiver utilizando a versão LTS do Node, rode 
 
 - [Material Design Color Pallete](https://m2.material.io/inline-tools/color/): Para gerar a paleta de cores;
 - [Adobe Color](https://color.adobe.com/create/color-contrast-analyzer): Para validar contraste;
+
