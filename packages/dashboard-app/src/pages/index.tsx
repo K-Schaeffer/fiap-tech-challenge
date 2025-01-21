@@ -79,7 +79,7 @@ export default function DashboardView({
   return (
     <>
       <Head>
-        <title>Bytebank</title>
+        <title>Dashboard</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <AccountDashboard
