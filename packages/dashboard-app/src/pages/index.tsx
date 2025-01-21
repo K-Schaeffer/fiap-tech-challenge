@@ -14,7 +14,8 @@ import {
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
 import { GetServerSideProps } from "next";
-import { revalidatePath } from "next/cache";
+import Head from "next/head";
+import { useState } from "react";
 
 function serializeAccount(account: Account) {
   return {
@@ -35,11 +36,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const serializedAccount = serializeAccount(account);
   const serializedTransactions = serializeTransactions(transactions);
 
-  console.log("Retornando dados");
-  console.log(serializedAccount);
-  console.log(serializedTransactions);
-  console.log("Retornando dados fim");
-
   return {
     props: {
       account: serializedAccount,
@@ -57,33 +53,43 @@ export default function DashboardView({
   account,
   transactions,
 }: DashboardProps) {
-  console.log("Rececbendo dados");
-  console.log(account);
-  console.log(transactions);
-  console.log("Rececbendo dados fim");
+  const [localTransactions, setLocalTransactions] = useState(transactions);
+
   async function submitAddTransaction(transaction: TransactionInput) {
     await addTransaction(transaction);
-    revalidatePath("/");
+
+    const updatedTransactions = await getTransactions();
+    setLocalTransactions(updatedTransactions);
   }
 
   async function submitEditTransaction(transaction: TransactionData) {
     await editTransaction(transaction);
-    revalidatePath("/");
+    setLocalTransactions(
+      localTransactions.map((t) => (t.id === transaction.id ? transaction : t))
+    );
   }
 
   async function submitDeleteTransaction(transactionId: string) {
     await deleteTransaction(transactionId);
-    revalidatePath("/");
+    setLocalTransactions(
+      localTransactions.filter((t) => t.id !== transactionId)
+    );
   }
 
   return (
-    <AccountDashboard
-      menuItems={MENU_ITEMS}
-      account={account}
-      transactionList={transactions}
-      submitAddTransaction={submitAddTransaction}
-      submitEditTransaction={submitEditTransaction}
-      submitDeleteTransaction={submitDeleteTransaction}
-    />
+    <>
+      <Head>
+        <title>Bytebank</title>
+        <meta name="description" content="By FIAP Tech Challenge" />
+      </Head>
+      <AccountDashboard
+        menuItems={MENU_ITEMS}
+        account={account}
+        transactionList={localTransactions}
+        submitAddTransaction={submitAddTransaction}
+        submitEditTransaction={submitEditTransaction}
+        submitDeleteTransaction={submitDeleteTransaction}
+      />
+    </>
   );
 }
