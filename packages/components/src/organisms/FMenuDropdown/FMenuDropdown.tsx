@@ -1,6 +1,5 @@
-"use client";
 import { FMenuList } from "@molecules/FMenuList/FMenuList";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import { Box, BoxProps, IconButton, Menu, useTheme } from "@mui/material";
 import { useState } from "react";
 
