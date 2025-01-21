@@ -1,3 +1,4 @@
+import { TransactionModel } from "./../Transaction/Transaction.model";
 export interface AccountData {
   fullName: string;
   firstName: string;
@@ -5,16 +6,31 @@ export interface AccountData {
   currency: string;
 }
 
-export class Account {
-  readonly fullName: string;
-  readonly firstName: string;
-  readonly balance: number;
-  readonly currency: string;
+//Novos dados
+export interface AccountModel {
+  id: string;
+  type: string;
+  userId: string;
+}
 
-  constructor(data: AccountData) {
-    this.fullName = data.fullName;
-    this.firstName = data.firstName;
-    this.balance = data.balance;
-    this.currency = data.currency;
-  }
+export interface AccountInfoModel {
+  account?: Array<AccountModel>;
+  transactions?: Array<TransactionModel>;
+  cards?: Array<CardModel>;
+  balance?: number;
+  currency?: string;
+  fullName?: string;
+}
+
+export interface CardModel {
+  id?: string;
+  accountId?: string;
+  type?: string;
+  is_blocked?: boolean;
+  number?: string;
+  dueDate?: string;
+  functions?: string;
+  cvc?: string;
+  paymentDate?: string | null;
+  name?: string;
 }

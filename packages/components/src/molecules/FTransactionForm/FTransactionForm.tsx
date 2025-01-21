@@ -7,20 +7,25 @@ import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useState } from "react";
 
-export interface FTransactionFormItemInput {
-  type: string;
-  value: number;
-}
-
-export interface FTransactionFormItem extends FTransactionFormItemInput {
-  id: string;
+export interface TransactionModel {
+  id?: string;
+  accountId?: string;
+  type?: string;
+  value?: number;
+  from?: string;
+  to?: string;
+  date?: Date | string;
+  anexo?: string;
+  currency?: string;
+  formattedDate?: string;
+  formattedValue?: string;
 }
 
 export interface FTransactionFormProps {
   accountBalance: number;
-  currentTransaction?: FTransactionFormItem;
-  addTransaction?: (transaction: FTransactionFormItemInput) => void;
-  editTransaction?: (transaction: FTransactionFormItem) => void;
+  currentTransaction?: TransactionModel;
+  addTransaction?: (transaction: TransactionModel) => void;
+  editTransaction?: (transaction: TransactionModel) => void;
   closeEditModal?: () => void;
   buttonText?: string;
 }

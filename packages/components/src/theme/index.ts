@@ -6,12 +6,14 @@ declare module "@mui/material/styles" {
     textLight?: Palette["primary"];
     bgCard?: Palette["primary"];
     bgHeader?: Palette["primary"];
+    bgModal?: Palette["primary"];
   }
   interface PaletteOptions {
     tertiary?: PaletteOptions["primary"];
     textLight?: PaletteOptions["primary"];
     bgCard?: PaletteOptions["primary"];
     bgHeader?: PaletteOptions["primary"];
+    bgModal?: PaletteOptions["primary"];
   }
 }
 
@@ -87,6 +89,9 @@ export const dark = createTheme({
     },
     bgHeader: {
       main: "#000000",
+    },
+    bgModal: {
+      main: "#F8F8F8",
     },
   },
 });

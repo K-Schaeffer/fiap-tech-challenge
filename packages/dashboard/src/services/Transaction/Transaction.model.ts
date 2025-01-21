@@ -28,3 +28,18 @@ export class Transaction {
     this.currency = data.currency;
   }
 }
+
+// Novos tipos de dados
+export interface TransactionModel {
+  id?: string;
+  accountId?: string;
+  type?: string;
+  value?: number;
+  from?: string;
+  to?: string;
+  date?: Date | string;
+  anexo?: string;
+  currency?: string;
+  formattedDate?: string;
+  formattedValue?: string;
+}

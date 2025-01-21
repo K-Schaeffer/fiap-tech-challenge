@@ -1,6 +1,6 @@
 import http from "../../api/http-common";
-import { ResultTypeModel } from "../Result.type.model";
-import { AccountInfoModel, AccountModel } from "./Account.model";
+import { ResultTypeModel } from "./../Result.type.model";
+import { ExtractModel } from "./Extract.model";
 
 const init = () => {
   const accessToken =
@@ -15,22 +15,16 @@ const init = () => {
   return config;
 };
 
-const getAll = () => {
+const getByAccount = (accountId: string) => {
   let config = init();
-  return http.get<ResultTypeModel<Array<AccountModel>>>(`/account`, config);
-};
-
-const getByUserId = (userId: string) => {
-  let config = init();
-  return http.get<ResultTypeModel<AccountInfoModel>>(
-    `/account/user/${userId}`,
+  return http.get<ResultTypeModel<ExtractModel>>(
+    `/account/${accountId}/statement`,
     config
   );
 };
 
-const AccountService = {
-  getAll,
-  getByUserId,
+const ExtractService = {
+  getByAccount,
 };
 
-export default AccountService;
+export default ExtractService;

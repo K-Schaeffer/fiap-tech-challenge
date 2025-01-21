@@ -1,10 +1,6 @@
 "use client";
-import { Account } from "@/services/Account/Account.model";
-import {
-  Transaction,
-  TransactionData,
-  TransactionInput,
-} from "@/services/Transaction/Transaction.model";
+import { AccountInfoModel } from "@/services/Account/Account.model";
+import { TransactionModel } from "@/services/Transaction/Transaction.model";
 import {
   formatCurrency,
   formatDate,
@@ -22,10 +18,7 @@ import {
   FModal,
   FTransactionForm,
   FTransactionFormCard,
-  FTransactionFormItem,
-  FTransactionFormItemInput,
   FTransactionListCard,
-  TransactionItem,
 } from "components";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,10 +27,10 @@ import { useState } from "react";
 
 interface AccountDashboardProps {
   menuItems: FMenuListItem[];
-  account: Account;
-  transactionList: Transaction[];
-  submitAddTransaction?: (transaction: TransactionInput) => void;
-  submitEditTransaction?: (transaction: TransactionData) => void;
+  account: AccountInfoModel;
+  transactionList: TransactionModel[];
+  submitAddTransaction?: (transaction: TransactionModel) => void;
+  submitEditTransaction?: (transaction: TransactionModel) => void;
   submitDeleteTransaction?: (transactionId: string) => void;
 }
 export default function AccountDashboard({
@@ -48,7 +41,7 @@ export default function AccountDashboard({
   submitEditTransaction,
   submitDeleteTransaction,
 }: AccountDashboardProps) {
-  const formattedBalance = formatCurrency(account.balance, account.currency);
+  const formattedBalance = formatCurrency(account.balance!, account.currency!);
   const formattedDate = getFormattedDateNow();
 
   const pathname = usePathname();
@@ -58,18 +51,22 @@ export default function AccountDashboard({
     current: item.path === pathname,
   }));
 
-  const formattedTransactions: TransactionItem[] = transactionList.map(
-    (transaction) => ({
+  const formattedTransactions: TransactionModel[] = transactionList.map(
+    (transaction: TransactionModel) => ({
       id: transaction.id,
       type: transaction.type,
-      formattedDate: formatDate(transaction.date),
-      formattedValue: formatCurrency(transaction.value, transaction.currency),
+      formattedDate: formatDate(transaction.date?.toString()!),
+      formattedValue: formatCurrency(
+        transaction.value!,
+        transaction.currency! ?? "R$"
+      ),
     })
   );
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [currentTransaction, setCurrentTransaction] = useState<Transaction>();
+  const [currentTransaction, setCurrentTransaction] =
+    useState<TransactionModel>();
 
   const openEditModal = (transactionId: string) => {
     setCurrentTransaction(
@@ -79,12 +76,12 @@ export default function AccountDashboard({
     setIsModalOpen(true);
   };
 
-  const handleEditTransaction = (transaction: FTransactionFormItem) => {
+  const handleEditTransaction = (transaction: TransactionModel) => {
     if (!submitEditTransaction) {
       return;
     }
 
-    const editedTransaction: TransactionData = {
+    const editedTransaction: TransactionModel = {
       ...transaction,
       currency: "R$",
       date: new Date().toISOString(),
@@ -93,12 +90,12 @@ export default function AccountDashboard({
     submitEditTransaction(editedTransaction);
   };
 
-  const handleAddTransaction = (transaction: FTransactionFormItemInput) => {
+  const handleAddTransaction = (transaction: TransactionModel) => {
     if (!submitAddTransaction) {
       return;
     }
 
-    const newTransaction: TransactionInput = {
+    const newTransaction: TransactionModel = {
       ...transaction,
       currency: "R$",
       date: new Date().toISOString(),
@@ -158,8 +155,8 @@ export default function AccountDashboard({
             gap={3}
           >
             <FAccountSummaryCard
-              firstName={account.firstName}
-              currency={account.currency}
+              firstName={account.fullName!}
+              currency={account.currency!}
               balance={formattedBalance}
               date={formattedDate}
             >
@@ -169,7 +166,7 @@ export default function AccountDashboard({
             </FAccountSummaryCard>
             <FTransactionFormCard
               addTransaction={handleAddTransaction}
-              accountBalance={account.balance}
+              accountBalance={account.balance!}
             >
               <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
               <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
@@ -195,7 +192,7 @@ export default function AccountDashboard({
           handleClose={() => setIsModalOpen(false)}
         >
           <FTransactionForm
-            accountBalance={account.balance}
+            accountBalance={account.balance!}
             currentTransaction={currentTransaction}
             editTransaction={handleEditTransaction}
             closeEditModal={() => setIsModalOpen(false)}

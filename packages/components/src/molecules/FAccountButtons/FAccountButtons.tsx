@@ -27,12 +27,12 @@ export function FAccountButtons({
       <FButton
         options={{ variant: "contained", color }}
         innerText={matches ? "Abrir Conta" : "Abrir minha conta"}
-        onClick={handleNewAccount}
+        onClick={() => handleNewAccount()}
       />
       <FButton
         options={{ variant: "outlined", color }}
         innerText="Ja tenho conta"
-        onClick={handleLogin}
+        onClick={() => handleLogin()}
       />
     </Box>
   );

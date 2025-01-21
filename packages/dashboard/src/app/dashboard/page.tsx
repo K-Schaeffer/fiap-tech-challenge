@@ -1,51 +1,75 @@
 import AccountDashboard from "@/components/pages/AccountDashboard/AccountDashboard";
 import { MENU_ITEMS_DASHBOARD } from "@/constants/menuItems";
-import { getAccountInfo } from "@/services/Account/Account.controller";
-import { Account } from "@/services/Account/Account.model";
-import {
-  addTransaction,
-  deleteTransaction,
-  editTransaction,
-  getTransactions,
-} from "@/services/Transaction/Transaction.controller";
-import {
-  Transaction,
-  TransactionData,
-  TransactionInput,
-} from "@/services/Transaction/Transaction.model";
+import AccountService from "@/services/Account/Account.controller";
+import { AccountInfoModel } from "@/services/Account/Account.model";
+import TransactionService from "@/services/Transaction/Transaction.controller";
+import { TransactionModel } from "@/services/Transaction/Transaction.model";
+
+import { UserModel } from "@/services/User/User.model";
+
 import { revalidatePath } from "next/cache";
 
 export default async function DashboardView() {
-  const account: Account = await getAccountInfo();
+  let account: AccountInfoModel = {} as AccountInfoModel;
+  let user: UserModel = {} as UserModel;
 
-  const transactions: Transaction[] = await getTransactions();
-  const transactionList = transactions.map((transaction) => ({
-    ...transaction,
-  }));
+  async function handleLoadAccount() {
+    "use client";
 
-  async function submitAddTransaction(transaction: TransactionInput) {
-    "use server";
-    await addTransaction(transaction);
-    revalidatePath("/dashboard");
+    const respAccountData = await AccountService.getByUserId(user?.id!);
+
+    account = respAccountData?.data?.result!;
   }
 
-  async function submitEditTransaction(transaction: TransactionData) {
+  async function submitAddTransaction(transaction: TransactionModel) {
     "use server";
-    await editTransaction(transaction);
+    transaction.to = account?.account![0].userId;
+    transaction.from = account?.account![0].userId;
+    transaction.anexo = "";
+    transaction.accountId = account?.account![0].id;
+
+    const respTransaction = await TransactionService.create(transaction);
+
+    if (respTransaction?.data?.id!) {
+      const respAccountData = await AccountService.getByUserId("idUser");
+
+      account = respAccountData?.data?.result!;
+    }
+
+    handleLoadAccount();
     revalidatePath("/dashboard");
+    return respTransaction?.data;
+  }
+
+  async function submitEditTransaction(transaction: TransactionModel) {
+    "use server";
+    const respTransaction = await TransactionService.update(
+      transaction.id!,
+      transaction
+    );
+
+    if (respTransaction?.data) {
+      handleLoadAccount();
+      revalidatePath("/dashboard");
+      return respTransaction.data;
+    }
   }
 
   async function submitDeleteTransaction(transactionId: string) {
     "use server";
-    await deleteTransaction(transactionId);
-    revalidatePath("/dashboard");
+    const respTransaction = await TransactionService.remove(transactionId);
+
+    if (respTransaction?.data) {
+      handleLoadAccount();
+      revalidatePath("/dashboard");
+    }
   }
 
   return (
     <AccountDashboard
       menuItems={MENU_ITEMS_DASHBOARD}
       account={{ ...account }}
-      transactionList={[...transactionList]}
+      transactionList={account.transactions ?? []}
       submitAddTransaction={submitAddTransaction}
       submitEditTransaction={submitEditTransaction}
       submitDeleteTransaction={submitDeleteTransaction}

@@ -1,11 +1,9 @@
-import {
-  FTransactionItem,
-  TransactionItem,
-} from "@molecules/FTransactionItem/FTransactionItem";
+import { TransactionModel } from "@molecules/FTransactionForm/FTransactionForm";
+import { FTransactionItem } from "@molecules/FTransactionItem/FTransactionItem";
 import { List, Typography } from "@mui/material";
 
 export interface FTransactionListProps {
-  transactionItems: TransactionItem[];
+  transactionItems: TransactionModel[];
   deleteTransaction?: (transactionId: string) => void;
   editTransaction?: (transactionId: string) => void;
 }
