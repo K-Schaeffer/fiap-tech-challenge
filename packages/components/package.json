@@ -15,7 +15,8 @@
   "scripts": {
     "dev:storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",
-    "dev": "concurrently --names \"storybook,vite\" \"npm run dev:storybook\" \"vite build --watch\"",
+    "dev:watch": "vite build --watch",
+    "dev": "tsc -p ./tsconfig.json && vite build",
     "build": "tsc -p ./tsconfig.json && vite build",
     "lint": "eslint",
     "format": "prettier --write .",
