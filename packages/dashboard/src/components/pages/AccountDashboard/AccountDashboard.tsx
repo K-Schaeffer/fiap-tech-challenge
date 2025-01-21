@@ -16,6 +16,7 @@ import {
   FAccountSummaryCard,
   FCard,
   FHeader,
+  FInvestmentsCard,
   FMenuDropdown,
   FMenuList,
   FMenuListItem,
@@ -179,6 +180,10 @@ export default function AccountDashboard({
                 layout="fill"
               />
             </FTransactionFormCard>
+            <FInvestmentsCard>
+              <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
+              <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
+            </FInvestmentsCard>
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>
