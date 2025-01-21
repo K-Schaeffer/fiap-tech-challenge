@@ -7,18 +7,12 @@ import {
   FAdvantageColumn,
   FAdvantageContainer,
   FFooter,
-  FHeader,
-  FMenuDropdown,
-  FMenuList,
-  FMenuListItem,
 } from "components";
 
 import Image from "next/image";
-import Link from "next/link";
 
 interface FAccountHomeProps {
   actions: FAccountButtonActions;
-  menuItems: FMenuListItem[];
 }
 export default function AccountHome(props: FAccountHomeProps) {
   return (
@@ -31,86 +25,6 @@ export default function AccountHome(props: FAccountHomeProps) {
         background: "linear-gradient(var(--mui-palette-tertiary-main), #fff)",
       }}
     >
-      <FHeader
-        maxWidth="lg"
-        leftContent={
-          <Box display="flex" alignItems="center" gap={8}>
-            <Box
-              sx={{
-                display: { xs: "none", md: "none", lg: "flex" },
-                userSelect: "none",
-              }}
-            >
-              <Image
-                src="/assets/logo.svg"
-                alt="logo Bytebank"
-                width={146}
-                height={32}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: { xs: "none", md: "flex", lg: "none" },
-                userSelect: "none",
-              }}
-            >
-              <Image
-                src="/assets/logo-small.svg"
-                alt="logo Bytebank pequeno"
-                width={27}
-                height={27}
-              />
-            </Box>
-            <FMenuDropdown
-              menuItems={props.menuItems}
-              options={{ sx: { display: { xs: "flex", md: "none" } } }}
-            >
-              <Link href="" />
-            </FMenuDropdown>
-            <FMenuList
-              menuItems={props.menuItems}
-              variant="row"
-              options={{
-                sx: { display: { xs: "none", md: "flex" }, fontWeight: 600 },
-              }}
-            >
-              <Link href="" />
-            </FMenuList>
-          </Box>
-        }
-        rightContent={
-          <Box>
-            <FAccountButtons
-              color="primary"
-              options={{
-                sx: {
-                  display: { xs: "none", md: "flex" },
-                },
-              }}
-              handleNewAccount={() => {
-                props.actions.handleNewAccount();
-              }}
-              handleLogin={() => {
-                props.actions.handleLogin();
-              }}
-            />
-            <Box
-              sx={{
-                display: { xs: "flex", md: "none" },
-                userSelect: "none",
-              }}
-            >
-              <Image
-                src="/assets/logo.svg"
-                alt="logo Bytebank"
-                width={146}
-                height={32}
-              />
-            </Box>
-          </Box>
-        }
-      />
-
       <Container maxWidth="lg" sx={{ flex: 1 }}>
         <Box paddingTop={3} paddingBottom={3} gap={8}>
           <Grid2

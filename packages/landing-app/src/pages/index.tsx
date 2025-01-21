@@ -1,39 +1,20 @@
 import AccountHome from "@/components/pages/AccountHome/AccountHome";
-import { MENU_ITEMS } from "@/constants/menuItems";
-import { FAccountButtonActions, FMenuListItem } from "components";
-import { GetStaticProps } from "next";
+import { FAccountButtonActions } from "components";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const menuItems = MENU_ITEMS.map((item) => ({
-    ...item,
-    current: false,
-  }));
-
-  return {
-    props: {
-      menuItems,
-    },
-  };
-};
-
-interface HomeProps {
-  menuItems: FMenuListItem[];
-}
-
-export default function HomeView({ menuItems }: HomeProps) {
+export default function HomeView() {
   const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
-  if (!isMounted) {
-    return <div>Loading...</div>;
-  }
+  // if (!isMounted) {
+  //   return <div>Loading...</div>;
+  // }
 
   const actionsHome: FAccountButtonActions = {
     handleNewAccount: async () => {
@@ -47,10 +28,10 @@ export default function HomeView({ menuItems }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Bytebank</title>
+        <title>Bytebank | Landing Page</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
-      <AccountHome actions={actionsHome} menuItems={menuItems} />
+      <AccountHome actions={actionsHome} />
     </>
   );
 }
