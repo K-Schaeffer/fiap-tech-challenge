@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npx lerna run build --scope landing-app
+        run: npx lerna run build --scope dashboard-app
 
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4
@@ -31,9 +31,9 @@ jobs:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_KEY }}
 
-      - name: Copy files to S3_C
+      - name: Copy files to S3_B
         run: |
-          aws s3 sync ./packages/landing-app/.next/ s3://${{ secrets.BUCKET_NAME_C }}
+          aws s3 sync ./packages/landing-app/.next/ s3://${{ secrets.BUCKET_NAME_B }}
 
       - name: Invalidate Cache CDN A
         run: |
