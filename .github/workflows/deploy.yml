@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: npx lerna run build --scope landing-app
 
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4
@@ -30,14 +30,6 @@ jobs:
           aws-region: us-east-2
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_KEY }}
-
-      - name: Copy files to S3_A
-        run: |
-          aws s3 sync .github s3://${{ secrets.BUCKET_NAME_A }}
-
-      - name: Copy files to S3_B
-        run: |
-          aws s3 sync ./packages/dashboard-app/.next/ s3://${{ secrets.BUCKET_NAME_B }}
 
       - name: Copy files to S3_C
         run: |
