@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "components": "*",
-    "landing-app": "*",
     "@module-federation/nextjs-mf": "^8.8.12"
   },
   "devDependencies": {
