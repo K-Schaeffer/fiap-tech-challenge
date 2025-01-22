@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "dev": "lerna run dev --stream",
-    "dev:apps": "lerna run dev --scope root-app --scope dashboard-app --scope landing-app --stream",
+    "dev:apps": "lerna run dev --scope root-app --scope dashboard-app --scope landing-app --scope mock-api --stream",
     "build": "lerna run build --stream",
     "build:components": "lerna run build --scope components --stream",
     "build:root": "lerna run build --scope components --stream",

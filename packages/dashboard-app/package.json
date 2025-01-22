@@ -10,8 +10,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "components": "*",
-    "@module-federation/nextjs-mf": "^8.8.12"
+    "@module-federation/nextjs-mf": "^8.8.12",
+    "components": "*"
   },
   "devDependencies": {
     "@types/node": "^20",
