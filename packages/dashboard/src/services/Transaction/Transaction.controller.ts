@@ -5,7 +5,7 @@ import {
 } from "./Transaction.model";
 
 export const getTransactions = async () => {
-  const res = await fetch("http://localhost:3006/transactions", {
+  const res = await fetch("http://localhost:5000/transactions", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (transaction: TransactionInput) => {
-  const res = await fetch("http://localhost:3006/transactions", {
+  const res = await fetch("http://localhost:5000/transactions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const addTransaction = async (transaction: TransactionInput) => {
 
 export const editTransaction = async (transaction: TransactionData) => {
   const res = await fetch(
-    `http://localhost:3006/transactions/${transaction.id}`,
+    `http://localhost:5000/transactions/${transaction.id}`,
     {
       method: "PUT",
       headers: {
@@ -51,7 +51,7 @@ export const editTransaction = async (transaction: TransactionData) => {
 
 export const deleteTransaction = async (transactionId: string) => {
   const res = await fetch(
-    `http://localhost:3006/transactions/${transactionId}`,
+    `http://localhost:5000/transactions/${transactionId}`,
     {
       method: "DELETE",
       headers: {
