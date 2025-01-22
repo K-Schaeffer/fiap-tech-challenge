@@ -27,7 +27,8 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "6.4.0",
     "@mui/material": "6.4.0",
-    "@mui/material-nextjs": "6.3.1"
+    "@mui/material-nextjs": "6.3.1",
+    "@mui/x-charts": "^7.24.0"
   },
   "peerDependencies": {
     "react": "^18",
