@@ -56,10 +56,10 @@ export default function AccountDashboard({
     loadData();
   }, []);
 
-  const accountUpdatedEvent = new CustomEvent("dashboardApp: accountUpdated", {
-    detail: account.fullName,
-  });
-  document.dispatchEvent(accountUpdatedEvent);
+  // const accountUpdatedEvent = new CustomEvent("dashboardApp: accountUpdated", {
+  //   detail: account.fullName,
+  // });
+  // document.dispatchEvent(accountUpdatedEvent);
 
   const formattedBalance = formatCurrency(account.balance, account.currency);
   const formattedDate = getFormattedDateNow();
