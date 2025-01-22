@@ -15,7 +15,7 @@ export function FInvestmentsCard({ children }: FInvestmentsCardProps) {
       variant="light"
       options={{
         sx: {
-          height: "600px",
+          height: "auto",
           position: "relative",
           zIndex: 0,
         },
@@ -66,11 +66,22 @@ export function FInvestmentsCard({ children }: FInvestmentsCardProps) {
         </Box>
         <Box>
           <Typography variant="h6">Estatisticas</Typography>
-          <Grid2 container spacing={2} columns={12} sx={{ marginTop: 2 }}>
+          <Grid2 container spacing={2} columns={12} sx={{ marginTop: 2, marginBottom: 2 }}>
             <Grid2 size={{ xs: 12, sm: 12, md: 12 }} component="div">
-              <FInvestmentStat backgroundColor="#004D61">
+              <Box
+                sx={{
+                  width: '100%',
+                  minHeight: '300px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: 'center',
+                  borderRadius: "8px",
+                  backgroundColor: '#004D61',
+                }}
+              >
                 <FPieChart />
-              </FInvestmentStat>
+              </Box>
             </Grid2>
           </Grid2>
         </Box>

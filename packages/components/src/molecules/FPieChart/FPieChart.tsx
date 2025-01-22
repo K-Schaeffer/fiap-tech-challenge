@@ -11,10 +11,11 @@ export function FPieChart() {
                         { id: 2, value: 30, label: 'Previdência Privada' },
                         { id: 3, value: 30, label: 'Bolsa de Valores' },
                     ],
+                    cx: "30%"
                 },
             ]}
-            width={400}
-            height={200}
+            width={600}
+            height={250}
         />
     );
 }
