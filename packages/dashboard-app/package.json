@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 4000",
-    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 4000",
+    "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
     "start": "next start -p 4000",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -17,6 +17,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
     "eslint-config-prettier": "^9.1.0",
