@@ -10,9 +10,9 @@ const nextConfig = {
         filename: "static/chunks/remoteEntry.js",
         remotes: {
           landingApp:
-            "landingApp@https://tech-challenge-deploy3.s3.us-east-2.amazonaws.com/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
+            "landingApp@https://d3dplysmogbw6u.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
           dashboardApp:
-            "dashboardApp@https://tech-challenge-deploy2.s3.us-east-2.amazonaws.com/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
+            "dashboardApp@https://d2iczn3dksg2b4.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
         },
         shared: {
           // react: {
