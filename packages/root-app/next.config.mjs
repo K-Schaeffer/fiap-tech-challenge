@@ -9,10 +9,8 @@ const nextConfig = {
         name: "rootApp",
         filename: "static/chunks/remoteEntry.js",
         remotes: {
-          landingApp:
-            "landingApp@https://d3dplysmogbw6u.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
-          dashboardApp:
-            "dashboardApp@https://d2iczn3dksg2b4.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
+          landingApp: `landingApp@${process.env.LANDING_APP_REMOTE_ENTRY}`,
+          dashboardApp: `dashboardApp@${process.env.DASHBOARD_APP_REMOTE_ENTRY}`,
         },
         shared: {
           "@mui/core-downloads-tracker": {
