@@ -4,30 +4,30 @@ import { FHeader, FMenuDropdown } from "components";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const DashboardApp = dynamic(() => import("dashboardApp/Index"), {
   ssr: false,
 });
 
-interface AccountUpdatedEvent extends Event {
-  detail: string;
-}
+// interface AccountUpdatedEvent extends Event {
+//   detail: string;
+// }
 
 export default function RootViewDashboard() {
-  const fullName: string = "";
+  const fullName: string = "Joana da Silva Oliveira";
 
-  const [updatedName, setUpdatedName] = useState(fullName);
+  // const [updatedName, setUpdatedName] = useState(fullName);
 
-  useEffect(() => {
-    document.addEventListener(
-      "dashboardApp: accountUpdated",
-      (event: Event) => {
-        const accountUpdatedEvent = event as AccountUpdatedEvent;
-        setUpdatedName(accountUpdatedEvent.detail);
-      }
-    );
-  }, []);
+  // // useEffect(() => {
+  // //   document.addEventListener(
+  // //     "dashboardApp: accountUpdated",
+  // //     (event: Event) => {
+  // //       const accountUpdatedEvent = event as AccountUpdatedEvent;
+  // //       setUpdatedName(accountUpdatedEvent.detail);
+  // //     }
+  // //   );
+  // // }, []);
 
   return (
     <>
@@ -47,7 +47,7 @@ export default function RootViewDashboard() {
         }
         rightContent={
           <Box display="flex" alignItems="center" gap={2}>
-            <Typography variant="body1">{updatedName}</Typography>
+            <Typography variant="body1">{fullName}</Typography>
             <Link href={"/profile"} style={{ display: "flex" }}>
               <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
             </Link>
