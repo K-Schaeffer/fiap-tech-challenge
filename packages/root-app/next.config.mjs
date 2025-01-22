@@ -15,22 +15,6 @@ const nextConfig = {
             "dashboardApp@https://d2iczn3dksg2b4.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
         },
         shared: {
-          // react: {
-          //   singleton: true,
-          //   requiredVersion: deps.react,
-          // },
-          // "react-dom": {
-          //   singleton: true,
-          //   requiredVersion: deps["react-dom"],
-          // },
-          // "@emotion/cache": {
-          //   singleton: true,
-          //   requiredVersion: "6.4.0"
-          // },
-          // "@emotion/styled": {
-          //   singleton: true,
-          //   requiredVersion: "6.4.0"
-          // },
           "@mui/core-downloads-tracker": {
             singleton: true,
             requiredVersion: "6.4.0",
@@ -75,9 +59,7 @@ const nextConfig = {
             singleton: true,
             requiredVersion: "6.4.0",
           },
-        }, // extraOptions: {
-        //   automaticAsyncBoundary: true,
-        // },
+        },
       })
     );
     return config;
