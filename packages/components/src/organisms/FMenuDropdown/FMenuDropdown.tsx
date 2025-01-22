@@ -5,7 +5,7 @@ import { useState } from "react";
 
 interface FMenuDropdownProps {
   options?: BoxProps;
-  menuItems: {
+  menuItems?: {
     label: string;
     path: string;
     current?: boolean;
@@ -42,18 +42,20 @@ export function FMenuDropdown({
       >
         <MenuIcon color={isDarkTheme ? "primary" : "secondary"} />
       </IconButton>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-          sx: { minWidth: "172px", padding: 2 },
-        }}
-      >
-        <FMenuList menuItems={menuItems}>{children}</FMenuList>
-      </Menu>
+      {menuItems && (
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+            sx: { minWidth: "172px", padding: 2 },
+          }}
+        >
+          <FMenuList menuItems={menuItems}>{children}</FMenuList>
+        </Menu>
+      )}
     </Box>
   );
 }

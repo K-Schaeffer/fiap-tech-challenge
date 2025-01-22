@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 9000",
+    "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
     "lint": "next lint",
     "format": "prettier --write ."
   },
   "dependencies": {
     "components": "*",
-    "dashboard-app": "*",
     "landing-app": "*",
-    "single-spa": "^6.0.3",
-    "single-spa-react": "^6.0.2"
+    "@module-federation/nextjs-mf": "^8.8.12"
   },
   "devDependencies": {
     "@types/node": "^20",

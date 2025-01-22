@@ -13,47 +13,36 @@ import {
   TransactionData,
   TransactionInput,
 } from "@/services/Transaction/Transaction.model";
-import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { useState } from "react";
 
-function serializeAccount(account: Account) {
-  return {
-    ...account,
+export default function DashboardView() {
+  const account: Account = {
+    fullName: "",
+    firstName: "",
+    balance: 0,
+    currency: "",
   };
-}
 
-function serializeTransactions(transactions: Transaction[]) {
-  return transactions.map((transaction) => ({
-    ...transaction,
-  }));
-}
+  const transactions: Transaction[] = [];
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const account: Account = await getAccountInfo();
-  const transactions: Transaction[] = await getTransactions();
-
-  const serializedAccount = serializeAccount(account);
-  const serializedTransactions = serializeTransactions(transactions);
-
-  return {
-    props: {
-      account: serializedAccount,
-      transactions: serializedTransactions,
-    },
-  };
-};
-
-interface DashboardProps {
-  account: Account;
-  transactions: Transaction[];
-}
-
-export default function DashboardView({
-  account,
-  transactions,
-}: DashboardProps) {
+  const [localAccount, setLocalAccount] = useState(account);
   const [localTransactions, setLocalTransactions] = useState(transactions);
+
+  async function getInitialData() {
+    await fetchAccount();
+    await fetchTransactions();
+  }
+
+  async function fetchAccount() {
+    const updatedTransactions = await getAccountInfo();
+    setLocalAccount(updatedTransactions);
+  }
+
+  async function fetchTransactions() {
+    const updatedTransactions = await getTransactions();
+    setLocalTransactions(updatedTransactions);
+  }
 
   async function submitAddTransaction(transaction: TransactionInput) {
     await addTransaction(transaction);
@@ -79,12 +68,13 @@ export default function DashboardView({
   return (
     <>
       <Head>
-        <title>Dashboard</title>
+        <title>Bytebank | Dashboard</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <AccountDashboard
         menuItems={MENU_ITEMS}
-        account={account}
+        account={localAccount}
+        getInitialData={getInitialData}
         transactionList={localTransactions}
         submitAddTransaction={submitAddTransaction}
         submitEditTransaction={submitEditTransaction}
