@@ -3,7 +3,7 @@ name: Deploy na S3
 on:
   push:
     branches:
-      -main
+      - main
 
 jobs:
   deploy:
@@ -20,6 +20,26 @@ jobs:
           aws-access-key-id: ${{ secrets.ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.SECRET_KEY }}
 
-      - name: Copy files to S3
+      - name: Copy files to S3_A
         run: |
-          aws s3 sync . s3://${{ secrets.BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync .github s3://${{ secrets.BUCKET_NAME_A }}
+
+      - name: Copy files to S3_B
+        run: |
+          aws s3 sync .github s3://${{ secrets.BUCKET_NAME_B }}
+
+      - name: Copy files to S3_C
+        run: |
+          aws s3 sync .github s3://${{ secrets.BUCKET_NAME_C }}
+
+      - name: Invalidate Cache CDN A
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_A }} --paths "/*"
+
+      - name: Invalidate Cache CDN B
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_B }} --paths "/*"
+
+      - name: Invalidate Cache CDN C
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_C }} --paths "/*"

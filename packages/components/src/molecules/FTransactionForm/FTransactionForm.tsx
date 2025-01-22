@@ -3,8 +3,7 @@ import { FButton } from "@atoms/FButton/FButton";
 import { FChip } from "@atoms/FChip/FChip";
 import { FInput } from "@atoms/FInput/FInput";
 import { FSelectInput } from "@atoms/FSelectInput/FSelectInput";
-import { AlertColor, Box, SelectChangeEvent } from "@mui/material";
-import Stack from "@mui/material/Stack";
+import { AlertColor, Box, SelectChangeEvent, Stack } from "@mui/material";
 import { useState } from "react";
 
 export interface FTransactionFormItemInput {
