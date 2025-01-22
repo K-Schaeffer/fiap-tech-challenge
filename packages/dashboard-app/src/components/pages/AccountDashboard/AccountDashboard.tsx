@@ -14,6 +14,7 @@ import { Container, Grid2 } from "@mui/material";
 import {
   FAccountSummaryCard,
   FCard,
+  FInvestmentsCard,
   FMenuList,
   FMenuListItem,
   FModal,
@@ -113,6 +114,7 @@ export default function AccountDashboard({
     const newTransaction: TransactionInput = {
       ...transaction,
       currency: "R$",
+
       date: new Date().toISOString(),
     };
 
@@ -171,6 +173,10 @@ export default function AccountDashboard({
                 layout="fill"
               />
             </FTransactionFormCard>
+            <FInvestmentsCard>
+              <Image src="/assets/card-pixels-3.svg" alt="" layout="fill" />
+              <Image src="/assets/card-pixels-4.svg" alt="" layout="fill" />
+            </FInvestmentsCard>
           </Grid2>
 
           <Grid2 size={{ xs: 12, lg: 4 }}>

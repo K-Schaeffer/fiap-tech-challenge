@@ -2,6 +2,7 @@ import { FAlert } from "@atoms/FAlert/FAlert";
 import { FButton } from "@atoms/FButton/FButton";
 import { FChip } from "@atoms/FChip/FChip";
 import { FInput } from "@atoms/FInput/FInput";
+import { FInputFile } from "@atoms/FInputFile/FInputFile";
 import { FSelectInput } from "@atoms/FSelectInput/FSelectInput";
 import { AlertColor, Box, SelectChangeEvent, Stack } from "@mui/material";
 import { useState } from "react";
@@ -9,6 +10,8 @@ import { useState } from "react";
 export interface FTransactionFormItemInput {
   type: string;
   value: number;
+  fileBase64?: string;
+  fileName?: string;
 }
 
 export interface FTransactionFormItem extends FTransactionFormItemInput {
@@ -39,6 +42,8 @@ export function FTransactionForm({
   const [transactionValue, setTransactionValue] = useState<number>(
     currentTransaction?.value || 0
   );
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [fileBase64, setFileBase64] = useState<string | null>(null);
 
   // TODO: Use constants for those plain string values (Currently we have those mapped on an array in the component lib - FSelectInput.constants.js)
   const isAddValueAccount = ["Depósito", "Empréstimo"].includes(
@@ -101,6 +106,8 @@ export function FTransactionForm({
     addTransaction({
       type: transactionType,
       value: newValue,
+      fileBase64: fileBase64 ?? "",
+      fileName: fileName ?? "",
     });
   };
 
@@ -120,6 +127,8 @@ export function FTransactionForm({
   const cleanTransactionForm = () => {
     setTransactionValue(0);
     setTransactionType("");
+    setFileName(null);
+    setFileBase64(null);
   };
 
   const onChangeNewValue = (value: number) => {
@@ -141,6 +150,46 @@ export function FTransactionForm({
 
   const handleCloseAlert = () => {
     setAlertOpen(false);
+  };
+
+  const onUploadFile = (files: FileList) => {
+    try {
+      const file = files[0];
+      const fileExtension = file.name.split(".").pop()?.toLowerCase();
+
+      if (file.size > 1048576) {
+        setAlert({
+          severity: "warning",
+          text: "O tamanho do arquivo é muito grande. Por favor, envie uma imagem menor ou igual a 1MB.",
+        });
+        setAlertOpen(true);
+        return;
+      }
+
+      if (
+        !(
+          file &&
+          (fileExtension === "jpg" ||
+            fileExtension === "jpeg" ||
+            fileExtension === "png")
+        )
+      ) {
+        setAlert({
+          severity: "warning",
+          text: "Formato de arquivo inválido. Por favor, envie uma imagem do tipo .jpg, .jpeg ou .png.",
+        });
+        setAlertOpen(true);
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        setFileName(file.name);
+        setFileBase64(base64String);
+      };
+      reader.readAsDataURL(file);
+    } catch (error) {}
   };
 
   return (
@@ -178,6 +227,10 @@ export function FTransactionForm({
               handleValueClick={handleValueClick}
             />
           </Stack>
+          <FInputFile
+            innerText="Anexar comprovante"
+            onUploadFile={onUploadFile}
+          />
           <FButton
             innerText={buttonText}
             options={{
