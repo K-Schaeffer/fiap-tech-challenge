@@ -4,6 +4,7 @@ export { FInput } from "@atoms/FInput/FInput.tsx";
 export { FSelectInput } from "@atoms/FSelectInput/FSelectInput.tsx";
 export { FAlert } from "./atoms/FAlert/FAlert.tsx";
 export { FChip } from "./atoms/FChip/FChip.tsx";
+export { FInputFile } from "./atoms/FInputFile/FInputFile.tsx";
 export { FInvestmentStat } from "./atoms/FInvestmentStat/FInvestmentStat.tsx";
 
 export { FAccountButtons } from "@molecules/FAccountButtons/FAccountButtons.tsx";
