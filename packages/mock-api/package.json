@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
-    "build": "node server.js"
+    "dev": "node server.js"
   },
   "dependencies": {
     "json-server": "0.17.4"
