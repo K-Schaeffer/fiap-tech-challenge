@@ -23,8 +23,6 @@ export function FInputFile(props: FInputFileProps) {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
-      console.log(event.target.files);
-
       props.onUploadFile(files);
       event.target.value = "";
       event.target.files = null;

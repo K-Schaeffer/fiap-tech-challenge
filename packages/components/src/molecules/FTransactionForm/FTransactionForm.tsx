@@ -186,12 +186,8 @@ export function FTransactionForm({
       const reader = new FileReader();
       reader.onloadend = () => {
         const base64String = reader.result as string;
-        console.log("File Name:", file.name);
-        console.log("Base64 String:", base64String);
         setFileName(file.name);
         setFileBase64(base64String);
-        console.log(file.name);
-        console.log(base64String);
       };
       reader.readAsDataURL(file);
     } catch (error) {}
