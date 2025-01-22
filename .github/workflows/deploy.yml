@@ -34,12 +34,12 @@ jobs:
 
       - name: Invalidate Cache CDN A
         run: |
-          aws cloudfront creat-invalidation --distribution-id ${{ secrets.CDN_ID_A }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_A }} --paths "/*"
 
       - name: Invalidate Cache CDN B
         run: |
-          aws cloudfront creat-invalidation --distribution-id ${{ secrets.CDN_ID_B }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_B }} --paths "/*"
 
       - name: Invalidate Cache CDN C
         run: |
-          aws cloudfront creat-invalidation --distribution-id ${{ secrets.CDN_ID_C }} --paths "/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID_C }} --paths "/*"
