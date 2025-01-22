@@ -46,7 +46,7 @@ Para instalar as deps quando já estiver utilizando a versão LTS do Node, rode 
 
 2. Back-end (JSON server): `npm run dev:server`
 
-   a. A api iniciará em [http://localhost:3006](http://localhost:3006)
+   a. A api iniciará em [http://localhost:5000](http://localhost:5000)
 
 3. Storybook: `npm run dev:storybook`
 
