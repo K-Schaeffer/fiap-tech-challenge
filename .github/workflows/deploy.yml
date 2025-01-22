@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: lerna run build --scope landing-page
+        run: npx lerna run build --scope landing-page
 
       - name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v4
