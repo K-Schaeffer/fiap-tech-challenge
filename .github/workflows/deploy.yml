@@ -22,15 +22,15 @@ jobs:
 
       - name: Copy files to S3_A
         run: |
-          aws s3 sync "README.md" s3://${{ secrets.BUCKET_NAME_A }} --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync . s3://${{ secrets.BUCKET_NAME_A }} --exclude='*' --include='README.md'
 
       - name: Copy files to S3_B
         run: |
-          aws s3 sync "README.md" s3://${{ secrets.BUCKET_NAME_B }} --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync . s3://${{ secrets.BUCKET_NAME_B }} --exclude='*' --include='README.md'
 
       - name: Copy files to S3_C
         run: |
-          aws s3 sync "README.md" s3://${{ secrets.BUCKET_NAME_C }} --delete --exclude ".git/*" --exclude ".github/*"
+          aws s3 sync . s3://${{ secrets.BUCKET_NAME_C }} --exclude='*' --include='README.md'
 
       - name: Invalidate Cache CDN A
         run: |
