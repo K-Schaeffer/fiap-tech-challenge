@@ -59,7 +59,7 @@ export default function DashboardView() {
     await getInitialData();
   }
 
-  async function submitDeleteTransaction(transactionId: string) {
+  async function submitDeleteTransaction(transactionId: number) {
     await deleteTransaction(transactionId);
     await getInitialData();
   }

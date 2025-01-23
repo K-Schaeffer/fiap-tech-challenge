@@ -49,7 +49,7 @@ export const editTransaction = async (transaction: TransactionData) => {
   return new Transaction(data);
 };
 
-export const deleteTransaction = async (transactionId: string) => {
+export const deleteTransaction = async (transactionId: number) => {
   const res = await fetch(
     `https://bytebankfiapfase2.vercel.app/transactions/${transactionId}`,
     {
