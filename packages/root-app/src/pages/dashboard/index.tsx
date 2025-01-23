@@ -32,7 +32,7 @@ export default function RootViewDashboard() {
   return (
     <>
       <Head>
-        <title>Dashboard</title>
+        <title>Bytebank | Dashboard</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <FHeader
