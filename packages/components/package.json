@@ -13,7 +13,7 @@
   ],
   "type": "module",
   "scripts": {
-    "dev:storybook": "storybook dev -p 6006",
+    "dev:storybook": "storybook dev --ci -p 6006",
     "build:storybook": "storybook build",
     "dev:watch": "vite build --watch",
     "dev:concurrent": "concurrently --names \"storybook,vite\" \"npm run dev:storybook\" \"vite build --watch\"",
