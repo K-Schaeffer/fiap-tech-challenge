@@ -18,6 +18,7 @@ import { useState } from "react";
 
 export default function DashboardView() {
   const account: Account = {
+    id: 1,
     fullName: "",
     firstName: "",
     balance: 0,
@@ -36,7 +37,10 @@ export default function DashboardView() {
 
   async function fetchAccount() {
     const updatedTransactions = await getAccountInfo();
-    setLocalAccount(updatedTransactions);
+
+    if (updatedTransactions) {
+      setLocalAccount(updatedTransactions[0]);
+    }
   }
 
   async function fetchTransactions() {
@@ -47,22 +51,17 @@ export default function DashboardView() {
   async function submitAddTransaction(transaction: TransactionInput) {
     await addTransaction(transaction);
 
-    const updatedTransactions = await getTransactions();
-    setLocalTransactions(updatedTransactions);
+    await getInitialData();
   }
 
   async function submitEditTransaction(transaction: TransactionData) {
     await editTransaction(transaction);
-    setLocalTransactions(
-      localTransactions.map((t) => (t.id === transaction.id ? transaction : t))
-    );
+    await getInitialData();
   }
 
   async function submitDeleteTransaction(transactionId: string) {
     await deleteTransaction(transactionId);
-    setLocalTransactions(
-      localTransactions.filter((t) => t.id !== transactionId)
-    );
+    await getInitialData();
   }
 
   return (

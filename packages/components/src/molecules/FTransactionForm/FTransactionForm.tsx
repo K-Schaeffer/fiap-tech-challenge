@@ -8,17 +8,20 @@ import { AlertColor, Box, SelectChangeEvent, Stack } from "@mui/material";
 import { useState } from "react";
 
 export interface FTransactionFormItemInput {
+  id: number;
   type: string;
   value: number;
   fileBase64?: string;
   fileName?: string;
+  userId: number;
 }
 
 export interface FTransactionFormItem extends FTransactionFormItemInput {
-  id: string;
+  id: number;
 }
 
 export interface FTransactionFormProps {
+  accountId?: number;
   accountBalance: number;
   currentTransaction?: FTransactionFormItem;
   addTransaction?: (transaction: FTransactionFormItemInput) => void;
@@ -28,6 +31,7 @@ export interface FTransactionFormProps {
 }
 
 export function FTransactionForm({
+  accountId,
   accountBalance,
   currentTransaction,
   addTransaction,
@@ -106,8 +110,10 @@ export function FTransactionForm({
     addTransaction({
       type: transactionType,
       value: newValue,
-      fileBase64: fileBase64 ?? "",
+      fileBase64: "",
       fileName: fileName ?? "",
+      userId: accountId,
+      id: 0,
     });
   };
 

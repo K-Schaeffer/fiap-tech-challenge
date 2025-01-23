@@ -1,8 +1,10 @@
 export interface TransactionInput {
+  id: number;
   type: string;
   value: number;
   currency: string;
   date: string;
+  userId: number;
 }
 
 export interface TransactionData {
@@ -13,6 +15,7 @@ export interface TransactionData {
   currency: string;
   fileBase64?: string;
   fileName?: string;
+  userId?: number;
 }
 
 export class Transaction {
@@ -23,6 +26,7 @@ export class Transaction {
   readonly currency: string;
   readonly fileBase64?: string;
   readonly fileName?: string;
+  readonly userId?: number;
 
   constructor(data: TransactionData) {
     this.id = data.id;
@@ -32,5 +36,6 @@ export class Transaction {
     this.currency = data.currency;
     this.fileBase64 = data.fileBase64;
     this.fileName = data.fileName;
+    this.userId = data.userId;
   }
 }
