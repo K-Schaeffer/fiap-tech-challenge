@@ -7,6 +7,8 @@ Projeto desenvolvido em grupo para o segundo tech challenge da FIAP.
 Trata-se de uma plataforma fictícia para a empresa financeira "Bytebank".
 O protótipo das telas desenvolvidas pode ser encontrado no [Figma](https://www.figma.com/design/ns5TC3X5Xr8V7I3LYKg9KA/Projeto-Financeiro?node-id=503-4264&t=nhWQMyJ7ZmXNWbb6-1).
 
+O link para acesso a aplicação em prod é [https://production.d2d9243zykuhuo.amplifyapp.com/](https://production.d2d9243zykuhuo.amplifyapp.com/).
+
 ## Arquitetura do projeto
 
 A arquitetura da segunda fase do projeto levou em consideração as decisões arquiteturais do resultado da primeira fase, tendo em vista que decidimos usar o mesmo projeto e expandir a partir dele.
