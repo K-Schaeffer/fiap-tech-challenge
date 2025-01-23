@@ -1,14 +1,14 @@
 import { Account } from "./Account.model";
 
 export const getAccountInfo = async () => {
-  const res = await fetch("http://localhost:5000/account", {
+  const res = await fetch("https://bytebankfiapfase2.vercel.app/accounts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
 
-  const data: Account = await res.json();
+  const response: Account[] = await res.json();
 
-  return new Account(data);
+  return response.map((account) => new Account(account));
 };
