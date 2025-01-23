@@ -8,16 +8,16 @@ import { AlertColor, Box, SelectChangeEvent, Stack } from "@mui/material";
 import { useState } from "react";
 
 export interface FTransactionFormItemInput {
-  id: number;
+  id?: number;
   type: string;
   value: number;
   fileBase64?: string;
   fileName?: string;
-  userId: number;
+  userId?: number;
 }
 
 export interface FTransactionFormItem extends FTransactionFormItemInput {
-  id: number;
+  id?: number;
 }
 
 export interface FTransactionFormProps {

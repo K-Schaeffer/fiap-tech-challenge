@@ -37,7 +37,7 @@ interface AccountDashboardProps {
   getInitialData: () => void;
   submitAddTransaction?: (transaction: TransactionInput) => void;
   submitEditTransaction?: (transaction: TransactionData) => void;
-  submitDeleteTransaction?: (transactionId: string) => void;
+  submitDeleteTransaction?: (transactionId: number) => void;
 }
 
 export default function AccountDashboard({
@@ -87,7 +87,7 @@ export default function AccountDashboard({
 
   const [currentTransaction, setCurrentTransaction] = useState<Transaction>();
 
-  const openEditModal = (transactionId: string) => {
+  const openEditModal = (transactionId: number) => {
     setCurrentTransaction(
       transactionList.find(({ id }) => id === transactionId)
     );
@@ -102,6 +102,7 @@ export default function AccountDashboard({
 
     const editedTransaction: TransactionData = {
       ...transaction,
+      id: currentTransaction!.id,
       currency: "R$",
       date: new Date().toISOString(),
       userId: account.id!,
@@ -200,7 +201,7 @@ export default function AccountDashboard({
           <FTransactionForm
             accountId={account.id}
             accountBalance={account.balance}
-            currentTransaction={currentTransaction}
+            currentTransaction={currentTransaction!}
             addTransaction={handleAddTransaction}
             editTransaction={handleEditTransaction}
             closeEditModal={() => setIsModalOpen(false)}

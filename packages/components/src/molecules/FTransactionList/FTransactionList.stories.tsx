@@ -6,19 +6,19 @@ import { FTransactionList, FTransactionListProps } from "./FTransactionList";
 
 const transactionItems = [
   {
-    id: "1",
+    id: 1,
     formattedDate: "2024-11-02",
     type: "Depósito",
     formattedValue: "R$ 2000",
   },
   {
-    id: "2",
+    id: 2,
     formattedDate: "2024-11-02",
     type: "Depósito",
     formattedValue: "R$ 2000",
   },
   {
-    id: "3",
+    id: 3,
     formattedDate: "2024-11-02",
     type: "Depósito",
     formattedValue: "R$ 2000",

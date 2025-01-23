@@ -7,8 +7,8 @@ import { useState } from "react";
 
 export interface FTransactionListProps {
   transactionItems: TransactionItem[];
-  deleteTransaction?: (transactionId: string) => void;
-  editTransaction?: (transactionId: string) => void;
+  deleteTransaction?: (transactionId: number) => void;
+  editTransaction?: (transactionId: number) => void;
 }
 
 export function FTransactionList({
@@ -27,7 +27,7 @@ export function FTransactionList({
     (page - 1) * ITEMS_PER_PAGE,
     page * ITEMS_PER_PAGE
   );
-  const handleDelete = (transactionId: string) => {
+  const handleDelete = (transactionId: number) => {
     if (!deleteTransaction) {
       return;
     }
@@ -47,7 +47,7 @@ export function FTransactionList({
                   formattedDate={formattedDate}
                   formattedValue={formattedValue}
                   type={type}
-                  onDelete={() => handleDelete(id)}
+                  onDelete={() => handleDelete(id!)}
                   onEdit={() => editTransaction && editTransaction(id)}
                 />
               )

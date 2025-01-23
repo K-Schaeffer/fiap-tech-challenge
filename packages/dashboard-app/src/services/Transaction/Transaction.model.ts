@@ -8,7 +8,7 @@ export interface TransactionInput {
 }
 
 export interface TransactionData {
-  id: string;
+  id: number;
   type: string;
   date: string;
   value: number;
@@ -19,7 +19,7 @@ export interface TransactionData {
 }
 
 export class Transaction {
-  readonly id: string;
+  readonly id: number;
   readonly type: string;
   readonly date: string;
   readonly value: number;
