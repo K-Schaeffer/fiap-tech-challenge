@@ -3,7 +3,7 @@ name: Deploy Landing App
 on:
   push:
     branches:
-      - main
+      - production
 
 jobs:
   deploy:
