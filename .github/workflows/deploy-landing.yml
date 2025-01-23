@@ -36,7 +36,7 @@ jobs:
 
       - name: Copy files to S3
         run: |
-          aws s3 sync ./packages/dashboard-app/.next/ s3://${{ secrets.BUCKET_NAME_LANDINGAPP }}
+          aws s3 sync ./packages/landing-app/.next/ s3://${{ secrets.BUCKET_NAME_LANDINGAPP }}
 
       - name: Invalidate Cache
         run: |
