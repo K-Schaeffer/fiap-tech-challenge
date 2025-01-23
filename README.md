@@ -106,9 +106,9 @@ Tenha certeza de que os componentes estão buildados em seu ambiente, caso contr
 - [Material UI](https://mui.com/): Framework de UI para construção de componentes com base nos guidelines do [Material design](https://m3.material.io/) e utilização de Style-In-JS com [Emotion](https://emotion.sh/docs/introduction).
 - [Vite](https://vite.dev/): Bundler para construção de aplicações, bibliotecas e outras soluções.
 - [Next JS Module Federation](https://www.npmjs.com/package/@module-federation/nextjs-mf): Plugin Next para a construção de microfrontends através de [module federation](https://module-federation.io/).
-- [Lerna](https://lerna.js.org/): Tecnologia para gerenciamento de monorepositórios e execução de tarefas paralelas e orquestradas através do [Nx](https://nx.dev/).
+- [Lerna](https://lerna.js.org/): Tecnologia para gerenciamento de monorepositórios, hoisting das deps e execução de tarefas paralelas e orquestradas através do [Nx](https://nx.dev/).
 - [Amplify](https://aws.amazon.com/amplify/): Para deploy de produção da aplicação root.
-- [Github Actions](https://github.com/features/actions): Para criar workflows de build e deploy para produção dos microfrontends.
+- [Github Actions](https://github.com/features/actions): Para criar workflows de build/deploy para produção dos microfrontends.
 - [S3](https://aws.amazon.com/s3/): Para armazenamento em nuvem dos bundles dos microfrontends.
 - [Cloudfront](https://aws.amazon.com/cloudfront/): CDN em nuvem para distribuição dos arquivos de entrada dos microfrontends.
 - [Docker](https://www.docker.com/): Para criar containers das aplicações.
