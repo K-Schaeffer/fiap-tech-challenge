@@ -6,7 +6,7 @@ import { Grid2, Typography } from "@mui/material";
 import styles from "./FTransactionItem.styles";
 
 export interface TransactionItem {
-  id: string;
+  id: number;
   type: string;
   formattedDate: string;
   formattedValue: string;
