@@ -77,6 +77,9 @@ export default function AccountDashboard({
       type: transaction.type,
       formattedDate: formatDate(transaction.date),
       formattedValue: formatCurrency(transaction.value, transaction.currency),
+      userId: transaction.userId,
+      fileBase64: transaction.fileBase64,
+      fileName: transaction.fileName,
     })
   );
 
@@ -101,6 +104,7 @@ export default function AccountDashboard({
       ...transaction,
       currency: "R$",
       date: new Date().toISOString(),
+      userId: account.id!,
     };
 
     submitEditTransaction(editedTransaction);
@@ -114,8 +118,9 @@ export default function AccountDashboard({
     const newTransaction: TransactionInput = {
       ...transaction,
       currency: "R$",
-
+      id: 0,
       date: new Date().toISOString(),
+      userId: account.id!,
     };
 
     submitAddTransaction(newTransaction);
@@ -193,8 +198,10 @@ export default function AccountDashboard({
           handleClose={() => setIsModalOpen(false)}
         >
           <FTransactionForm
+            accountId={account.id}
             accountBalance={account.balance}
             currentTransaction={currentTransaction}
+            addTransaction={handleAddTransaction}
             editTransaction={handleEditTransaction}
             closeEditModal={() => setIsModalOpen(false)}
             buttonText="Concluir edição"
