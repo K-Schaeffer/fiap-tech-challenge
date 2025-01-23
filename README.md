@@ -1,4 +1,4 @@
-# FIAP Tech Challenge - Fase 1
+# FIAP Tech Challenge - Fase 2
 
 Projeto desenvolvido em grupo para o segundo tech challenge da FIAP.
 
@@ -40,7 +40,7 @@ Para o desenvolvimento do projeto nós seguimos o style guide proposto, porém c
 
 ### Demo
 
-Video de demonstração do projeto no [Youtube]().
+Video de demonstração do projeto no [Youtube](https://www.youtube.com/watch?v=s-Wxs5mpjcw).
 
 ## Rodando o projeto
 
