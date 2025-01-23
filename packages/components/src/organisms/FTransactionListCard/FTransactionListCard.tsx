@@ -14,15 +14,14 @@ export function FTransactionListCard({
   editTransaction,
   deleteTransaction,
 }: FTransactionListProps) {
-
   const [showSelect, setShowSelect] = useState(false);
-  const [filteredTransactions, setFilteredTransactions] = useState(transactionItems);
+  const [filteredTransactions, setFilteredTransactions] =
+    useState(transactionItems);
   const [filterTypes, setFilterTypes] = useState<string[]>([]);
 
   const toggleSelectVisibility = () => {
     setShowSelect((prev) => !prev);
   };
-
 
   const handleFilterChange = (filterTypes: string[]) => {
     setFilterTypes(filterTypes);
@@ -68,11 +67,7 @@ export function FTransactionListCard({
         alignItems="start"
         paddingBottom={1}
       >
-        <FFilter
-          onFilterChange={handleFilterChange}
-          showSelect={showSelect}
-        />
-
+        <FFilter onFilterChange={handleFilterChange} showSelect={showSelect} />
       </Stack>
       <Container
         sx={{
@@ -81,8 +76,6 @@ export function FTransactionListCard({
           overflowX: "hidden",
         }}
       >
-
-
         <FTransactionList
           transactionItems={filteredTransactions}
           editTransaction={editTransaction}

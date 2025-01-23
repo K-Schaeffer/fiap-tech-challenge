@@ -9,28 +9,10 @@ const nextConfig = {
         name: "rootApp",
         filename: "static/chunks/remoteEntry.js",
         remotes: {
-          landingApp:
-            "landingApp@https://d3dplysmogbw6u.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
-          dashboardApp:
-            "dashboardApp@https://d2iczn3dksg2b4.cloudfront.net/static/chunks/remoteEntry.js", // Use from environment variable to allow dev environment
+          landingApp: `landingApp@${process.env.LANDING_APP_REMOTE_ENTRY}`,
+          dashboardApp: `dashboardApp@${process.env.DASHBOARD_APP_REMOTE_ENTRY}`,
         },
         shared: {
-          // react: {
-          //   singleton: true,
-          //   requiredVersion: deps.react,
-          // },
-          // "react-dom": {
-          //   singleton: true,
-          //   requiredVersion: deps["react-dom"],
-          // },
-          // "@emotion/cache": {
-          //   singleton: true,
-          //   requiredVersion: "6.4.0"
-          // },
-          // "@emotion/styled": {
-          //   singleton: true,
-          //   requiredVersion: "6.4.0"
-          // },
           "@mui/core-downloads-tracker": {
             singleton: true,
             requiredVersion: "6.4.0",
@@ -75,9 +57,7 @@ const nextConfig = {
             singleton: true,
             requiredVersion: "6.4.0",
           },
-        }, // extraOptions: {
-        //   automaticAsyncBoundary: true,
-        // },
+        },
       })
     );
     return config;

@@ -68,7 +68,7 @@ export default function DashboardView() {
   return (
     <>
       <Head>
-        <title>Bytebank | Dashboard</title>
+        <title>Dashboard</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <AccountDashboard

@@ -12,16 +12,6 @@ const nextConfig = {
           "./Index": "./src/pages/index.tsx",
         },
         shared: {
-          // react: {
-          //   singleton: true,
-          //   requiredVersion: deps.react,
-          //   eager: true,
-          // },
-          // "react-dom": {
-          //   singleton: true,
-          //   requiredVersion: deps["react-dom"],
-          //   eager: true,
-          // },
           "@mui/core-downloads-tracker": {
             singleton: true,
             requiredVersion: "6.4.0",
@@ -66,14 +56,11 @@ const nextConfig = {
             singleton: true,
             requiredVersion: "6.4.0",
           },
-        }, // extraOptions: {
-        //   automaticAsyncBoundary: true,
-        // },
+        },
       })
     );
     return config;
   },
-  // ssr: true,
   reactStrictMode: true,
 };
 

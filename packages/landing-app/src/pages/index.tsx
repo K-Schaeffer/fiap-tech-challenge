@@ -18,7 +18,7 @@ export default function HomeView() {
   return (
     <>
       <Head>
-        <title>Bytebank | Landing Page</title>
+        <title>Landing Page</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <AccountHome actions={actionsHome} />

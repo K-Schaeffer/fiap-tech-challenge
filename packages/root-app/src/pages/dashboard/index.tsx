@@ -32,7 +32,7 @@ export default function RootViewDashboard() {
   return (
     <>
       <Head>
-        <title>Dashboard</title>
+        <title>Bytebank | Dashboard</title>
         <meta name="description" content="By FIAP Tech Challenge" />
       </Head>
       <FHeader
@@ -48,7 +48,7 @@ export default function RootViewDashboard() {
         rightContent={
           <Box display="flex" alignItems="center" gap={2}>
             <Typography variant="body1">{fullName}</Typography>
-            <Link href={"/profile"} style={{ display: "flex" }}>
+            <Link href={"/"} style={{ display: "flex" }}>
               <AccountCircle color="secondary" sx={{ fontSize: 40 }} />
             </Link>
           </Box>

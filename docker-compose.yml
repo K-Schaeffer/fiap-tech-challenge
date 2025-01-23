@@ -1,0 +1,24 @@
+networks:
+  bytebank-net: 
+    driver: bridge
+
+services:
+  storybook-components:
+    build:
+      context: ./packages/components
+      dockerfile: Dockerfile-components
+    container_name: components-container
+    ports:
+      - "6006:6006"
+    networks:
+      - bytebank-net
+
+  mock-api-service:
+    build:
+      context: ./packages/mock-api
+      dockerfile: Dockerfile-mock-api
+    container_name: mock-api-container
+    ports:
+      - "5000:5000"
+    networks:
+      - bytebank-net
